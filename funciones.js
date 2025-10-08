@@ -53,6 +53,10 @@ const jsonToCsv = (arrayJson, nameFile, path) =>{
 
     })
 
+    if(!fs.existsSync("./csv_output/"+path)){
+        fs.mkdirSync("./csv_output/"+path);
+    }
+    
     const csvWriter = createCsvWriter({
         path: "./csv_output/"+path+nameFile+'.csv',
         encoding: 'utf8',

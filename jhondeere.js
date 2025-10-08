@@ -1,6 +1,7 @@
 const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
+const { jsonToCsv } = require("./funciones");
 
 /**
  * Busca partes en el catálogo de John Deere
@@ -11,7 +12,7 @@ const path = require("path");
 
 //Nos trae toda la lista completa de modelos al introducir una parte
 
-async function searchJohnDeereParts(searchTerm) {
+async function getAllModelsByPart(searchTerm) {
   const url = "https://partscatalog.deere.com/jdrc-services/v1/search/parts";
 
   const headers = {
@@ -89,23 +90,38 @@ async function getModelsByPartNumber() {
     for (let i = 0; i < piezas.length; i++) {
       const item = piezas[i];
       console.log(
-        `[${i + 1}/${piezas.length}] Procesando: ${item.id_pieza} - ${
-          item.parte
-        }`
+        `------${i + 1}/${piezas.length}] ${item.id_pieza}`
       );
-      console.log("searchJohnDeereParts");
+      console.log("getAllModelsByPart");
       try {
-        const resultado = await searchJohnDeereParts(item.id_pieza);
+        const resultado = await getAllModelsByPart(item.id_pieza);
+        const modelData = [];
 
-        /*for (let j = 0; j < resultado.data.searchResults.length; j++) {
-          console.log("getModelPartUse",j);
-          await getModelPartUse(item.id_pieza, resultado.data.searchResults[j]);
+        //for (let j = 0; j < resultado.searchResults.length; j++) {
 
-        */
-        //TODO descomentar lo anterior await getModelPartUse(item.id_pieza, resultado.data.searchResults[j]);
-        await getModelPartUse(item.id_pieza, resultado.searchResults[0]);
+        for (let j = 0; j <= 0; j++) {
+          console.log("MODELO", j);
+          const { baseCode, model, equipmentName } = resultado.searchResults[j];
 
-        /*}*/
+          modelData.push({
+            id_model: baseCode,
+            model_name: model,
+            equipment_name: equipmentName,
+          });
+          await getModelPart(item.id_pieza, resultado.searchResults[j]);
+
+          //TODO descomentar lo anterior await getModelPart(item.id_pieza, resultado.data.searchResults[j]);
+          //await getModelPart(item.id_pieza, resultado.searchResults[0]);
+        }
+        await jsonToCsv(
+          modelData,
+          `model_${item.id_pieza}`,
+          `${item.id_pieza}/`
+        );
+        await jsonToCsv(ModelParts,`part_${item.id_pieza}`,`${item.id_pieza}/`);
+        ModelParts = [];
+
+
 
         console.log(`✓ Completado: ${item.id_pieza}\n`);
       } catch (error) {
@@ -138,7 +154,7 @@ async function getModelsByPartNumber() {
  * @param {string} base64Data - Datos de la imagen en base64
  * @param {string} fileName - Nombre del archivo (sin extensión)
  */
-async function saveBase64Image(base64Data, fileName) {
+async function saveBase64Image(base64Data, fileName, pathFull = "") {
   try {
     // Crear el directorio images si no existe
     const imagesDir = path.join(__dirname, "images");
@@ -213,8 +229,9 @@ async function saveBase64Image(base64Data, fileName) {
     "hasAttachment": false
   }
 ]*/
+let ModelParts = [];
 
-async function getModelPartUse(partNumber, { equipmentRefId }) {
+async function getModelPart(partNumber, { equipmentRefId }) {
   const url = "https://partscatalog.deere.com/jdrc-services/v1/search/parts";
 
   const headers = {
@@ -228,9 +245,7 @@ async function getModelPartUse(partNumber, { equipmentRefId }) {
   };
 
   try {
-    console.log("partNumber, { equipmentRefId }", partNumber, {
-      equipmentRefId,
-    });
+    console.log(`PARTE ${partNumber} - ${equipmentRefId}`);
     const response = await axios({
       method: "post",
       url: url,
@@ -240,111 +255,130 @@ async function getModelPartUse(partNumber, { equipmentRefId }) {
       data: data,
     });
     const businessRegion = { brID: "1189" };
+    console.log("INICIO DE PARTE DE MODELO");
+    for (let i = 0; i < response.data.searchResults.length; i++) {
 
-    //for (let i = 0; i < response.data.searchResults.length; i++) {
-    //TODO
-    //const partUsedModel = response.data.searchResults[i];
-    const partUsedModel = response.data.searchResults[0];
+      const {  partLocation, partLocationPath } = response.data.searchResults[i];
 
-    const {  pageId, baseCode } = partUsedModel;
+      const partUsedModel = response.data.searchResults[i];
+      //TODO const partUsedModel = response.data.searchResults[0];
 
-    console.log("Procesando:", { equipmentRefId, pageId, baseCode });
+      const { pageId, baseCode } = partUsedModel;
+      const imagePart = `${partNumber}_${equipmentRefId}_${pageId}`;
 
-    let getImageModel;
 
-    try {
-      console.log("petición para guardar imagen general", partNumber, {
-        equipmentRefId,
+      ModelParts.push({
+        equipment_id: equipmentRefId,
+        part_id: pageId,
+        part_name: partLocation,
+        part_path: partLocationPath,
+        image: imagePart+".png",
       });
+      console.log("Procesando:", { equipmentRefId, pageId, baseCode });
 
-      /*
-        {
-          "id": 2752688,
-          "name": "65QK Turbocharger ( - 000379)",
-          "code": "ST818296",
-          "catKey": "PC9795",
-          "image":base64,
-          "imageSupplementCode": null,
-          "partItems": [
-            {
-                "id": 11989764,
-                "partID": 364677,
-                "partNumber": "24M7096",
-                "displayPartNumber": "24M7096",
-                "partDescription": "Round Hole Washer",
-                "calloutLabel": "27",
-                "sortCalloutLabel": "27",
-                "sortSequence": "0000000029",
-                "sortPartNumID": "24M709611989764",
-                "quantity": 1,
-                "quantityReq": "1",
-                "remarks": "10.500 X 18 X 1.600 mm",
-                "serialNumber": null,
-                "serialNumberLabel": null,
-                "supportedModels": null,
-                "price": 0,
-                "formattedPrice": null,
-                "pUnit": null,
-                "availability": null,
-                "parentPno": null,
-                "currencySymbol": null,
-                "substituteMsg": null,
-                "extraColumns": [],
-                "taxInfo": null,
-                "formattedPriceInclTax": null,
-                "hasAttachment": false,
-                "hasPartImage": true
-            }
-      ]
+      let getImageModel;
 
+      try {
+  
 
-        
-        */
-
-      getImageModel = await axios({
-        method: "post",
-        url: "https://partscatalog.deere.com/jdrc-services/v1/sidebyside/sidebysidePage",
-        headers: {
-          ...headers,
-        },
-        data: {
-          eqID: equipmentRefId,
-          pgID: pageId,
-          ...businessRegion,
-          locale: "en-US",
-        },
-      });
-
-      // Guardar la imagen si existe en la respuesta
-      if (getImageModel.data && getImageModel.data.image) {
-        const fileName = `${baseCode}_${partNumber}`;
-        const imageFilePath = await saveBase64Image(
-          getImageModel.data.image,
-          fileName
-        );
-        getImageModel.data.imageFilePath = imageFilePath;
-      }
-
-      /*for (let j = 0; j < getImageModel.data.partItems.length; j++) {
-        try {
-          console.log("part detail");
+        /*
+          {
+            "id": 2752688,
+            "name": "65QK Turbocharger ( - 000379)",
+            "code": "ST818296",
+            "catKey": "PC9795",
+            "image":base64,
+            "imageSupplementCode": null,
+            "partItems": [
+              {
+                  "id": 11989764,
+                  "partID": 364677,
+                  "partNumber": "24M7096",
+                  "displayPartNumber": "24M7096",
+                  "partDescription": "Round Hole Washer",
+                  "calloutLabel": "27",
+                  "sortCalloutLabel": "27",
+                  "sortSequence": "0000000029",
+                  "sortPartNumID": "24M709611989764",
+                  "quantity": 1,
+                  "quantityReq": "1",
+                  "remarks": "10.500 X 18 X 1.600 mm",
+                  "serialNumber": null,
+                  "serialNumberLabel": null,
+                  "supportedModels": null,
+                  "price": 0,
+                  "formattedPrice": null,
+                  "pUnit": null,
+                  "availability": null,
+                  "parentPno": null,
+                  "currencySymbol": null,
+                  "substituteMsg": null,
+                  "extraColumns": [],
+                  "taxInfo": null,
+                  "formattedPriceInclTax": null,
+                  "hasAttachment": false,
+                  "hasPartImage": true
+              }
+        ]
+  
+  
+          
           */
-         if(getImageModel.data.partItems){
-          await getPartDetail({...getImageModel.data.partItems[10], equipmentRefId: equipmentRefId});
-          //TODO await getPartDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
-         }
 
-        /*} catch (error) {
-          console.error("Error:", error.message);
-          throw error;
+        getImageModel = await axios({
+          method: "post",
+          url: "https://partscatalog.deere.com/jdrc-services/v1/sidebyside/sidebysidePage",
+          headers: {
+            ...headers,
+          },
+          data: {
+            eqID: equipmentRefId,
+            pgID: pageId,
+            ...businessRegion,
+            locale: "en-US",
+          },
+        });
+
+        // Guardar la imagen si existe en la respuesta
+        if (getImageModel.data && getImageModel.data.image) {
+          const imageFilePath = await saveBase64Image(
+            getImageModel.data.image,
+            imagePart,
+          );
+          getImageModel.data.imageFilePath = imageFilePath;
         }
-      }*/
-    } catch (error) {
-      console.error("Error:", error.message);
-      throw error;
-      //}
-      //console.log(getImageModel.data);
+
+       /* for (let j = 0; j < getImageModel.data.partItems.length; j++) {
+          try {*/
+            console.log("piece detail");
+
+            if (getImageModel.data.partItems) {
+              const piece = getImageModel.data.partItems.find(
+                (partItem) => {
+                  console.log(`Comparando: ${partItem.partNumber} === R520632`);
+                  return partItem.partNumber === "R520632";//partNumber
+                }
+              );
+              console.log("Resultado del find:", piece);
+              if(Object.keys(piece).length > 0){
+                console.log("encontrado");
+                await getPieceDetail({...piece, equipmentRefId: equipmentRefId});
+                //TODO await getPieceDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
+              }
+            }
+         /* } catch (error) {
+            console.error("Error:", error.message);
+            throw error;
+          }
+        }*/
+      } catch (error) {
+        console.error("Error:", error.message);
+        throw error;
+        //}
+        //console.log(getImageModel.data);
+      }
     }
+    console.log("FIN DE PARTE DE MODELO");
   } catch (error) {
     console.error("Error:", error.message);
     throw error;
@@ -374,7 +408,10 @@ async function getModelPartUse(partNumber, { equipmentRefId }) {
 }
 */
 // id es el id de la parte
-async function getPartDetailRemarks({equipmentRefId,partNumber, id}, isAlternative = true) {
+async function getPieceDetailRemarks(
+  { equipmentRefId, partNumber, id },
+  isAlternative = true
+) {
   const url =
     "https://partscatalog.deere.com/jdrc-services/v1/partdetail/partinfo";
 
@@ -383,23 +420,22 @@ async function getPartDetailRemarks({equipmentRefId,partNumber, id}, isAlternati
   };
 
   const data = {
-    "pid": id,
-    "fr": {
-        "equipmentRefId": equipmentRefId,
-        "currentPin": null,
-        "businessRegion": 1189,
-        "filtersEnabled": true,
-        "filteringLevel": null,
-        "encodedFilters": null,
-        "encodedFiltersHash": null
+    pid: id,
+    fr: {
+      equipmentRefId: equipmentRefId,
+      currentPin: null,
+      businessRegion: 1189,
+      filtersEnabled: true,
+      filteringLevel: null,
+      encodedFilters: null,
+      encodedFiltersHash: null,
     },
-    "locale": "en-US",
-    "snp": "",
-    "eqId": equipmentRefId
-}
+    locale: "en-US",
+    snp: "",
+    eqId: equipmentRefId,
+  };
 
   try {
-    console.log("remarks", data);
     const response = await axios({
       method: "post",
       url: url,
@@ -409,25 +445,14 @@ async function getPartDetailRemarks({equipmentRefId,partNumber, id}, isAlternati
       data: data,
     });
 
-    console.log("respuesta detalle remarks",response.data);
-
-    if(response.data.alternateParts && response.data.alternateParts.length > 0 && isAlternative){
-      console.log("alternativa");
-      for (let index = 0; index < response.data.alternateParts.length; index++) {
-        
-        const {partNumber , partId} = response.data.alternateParts[index];
-        await getPartDetail({equipmentRefId,partNumber, id:partId}, false);
-      }
-    
-    }
-    
-
+    console.log("respuesta detalle remarks", response.data);
+    return response.data;
+ 
   } catch (error) {
     console.error("Error:", error.message);
     throw error;
   }
 }
-
 
 /*
 {
@@ -458,7 +483,10 @@ async function getPartDetailRemarks({equipmentRefId,partNumber, id}, isAlternati
 }
 */
 
-async function getPartDetail({equipmentRefId,partNumber, id} , isAlternative = true) {
+async function getPieceDetail(
+  { equipmentRefId, partNumber, id },
+  isAlternative = true
+) {
   const url =
     "https://partscatalog.deere.com/jdrc-services/v1/integration/parts";
 
@@ -478,7 +506,7 @@ async function getPartDetail({equipmentRefId,partNumber, id} , isAlternative = t
   };
 
   try {
-    console.log(equipmentRefId,partNumber, id);
+    console.log(equipmentRefId, partNumber, id);
     const response = await axios({
       method: "post",
       url: url,
@@ -488,12 +516,61 @@ async function getPartDetail({equipmentRefId,partNumber, id} , isAlternative = t
       data: data,
     });
 
-    console.log("respuesta detalle",response.data);
+    console.log("respuesta detalle", response.data);
 
- ///remark
-    await getPartDetailRemarks({equipmentRefId, id}, isAlternative);
 
-    await getImagesPart({partNumber});
+
+    ///remark
+    const remarks = await getPieceDetailRemarks({ equipmentRefId, id }, isAlternative);
+
+    const images = await getImagesPart({ partNumber });
+    const partOps = response.data.partOps;
+    const pieceDetail = {
+      piece_id: partOps[0].partBasicInfo.partNumber,
+      piece_name: remarks.name,
+      piece_description: remarks.description,
+      piece_qty: remarks.qty,
+      piece_remarks: remarks.remarks,
+      piece_packageWeight: partOps[0].partShippingInfo.packageWeight,
+      piece_packageWeightUnit: partOps[0].partShippingInfo.packageWeightUnit,
+      piece_images: images,
+    };
+
+    if (
+        remarks.alternateParts &&
+        remarks.alternateParts.length > 0 
+      ) {
+        console.log("alternativa");
+        pieceDetail.piece_alternative_piece_id = remarks.alternateParts[0].partNumber;
+      }
+
+    await jsonToCsv(
+      [pieceDetail],
+      `piece_${partNumber}`,
+      `${partNumber}/`
+    );
+    
+    // if (
+    //   remarks.alternateParts &&
+    //   remarks.alternateParts.length > 0 
+    // ) {
+    //   console.log("alternativa");
+    //   for (
+    //     let index = 0;
+    //     index < remarks.alternateParts.length;
+    //     index++
+    //   ) {
+    //     //const { partNumber, partId } = remarks.alternateParts[index];
+    //     await getPieceDetail({ 
+    //       equipmentRefId, 
+    //       partNumber: remarks.alternateParts[index].partNumber,
+    //       id: remarks.alternateParts[index].partId }, false);
+    //   }
+    // }
+
+
+
+
   } catch (error) {
     console.error("Error:", error.message);
     throw error;
@@ -528,10 +605,10 @@ async function getPartDetail({equipmentRefId,partNumber, id} , isAlternative = t
     });
 
     console.log(response.data);
-    await getPartDetail({equipmentRefId,partNumber, id, equipmentRefId});
+    await getPieceDetail({equipmentRefId,partNumber, id, equipmentRefId});
 
  ///remark
-    await getPartDetailRemarks({equipmentRefId, partNumber, id});
+    await getPieceDetailRemarks({equipmentRefId, partNumber, id});
 
     await getImagesPart({partNumber});
   } catch (error) {
@@ -539,7 +616,6 @@ async function getPartDetail({equipmentRefId,partNumber, id} , isAlternative = t
     throw error;
   }
 }*/
-
 
 /**
  * Obtiene y guarda todas las imágenes de una parte
@@ -554,7 +630,7 @@ async function getPartDetail({equipmentRefId,partNumber, id} , isAlternative = t
     }
 }*/
 
-async function getImagesPart({partNumber}) {
+async function getImagesPart({ partNumber }) {
   const url =
     "https://partscatalog.deere.com/jdrc-services/v1/partdetail/partImages";
 
@@ -563,9 +639,9 @@ async function getImagesPart({partNumber}) {
   };
 
   const data = {
-    "partNum": partNumber,
-    "locale": "en-US",
-    "imageFormat": ""
+    partNum: partNumber,
+    locale: "en-US",
+    imageFormat: "",
   };
 
   try {
@@ -582,42 +658,63 @@ async function getImagesPart({partNumber}) {
     if (response.data && response.data.imagesMap) {
       const imagesMap = response.data.imagesMap;
       const imageIds = Object.keys(imagesMap);
-      
-      console.log(`📸 Encontradas ${imageIds.length} imágenes para ${partNumber}`);
-      
+
+      console.log(
+        `📸 Encontradas ${imageIds.length} imágenes para ${partNumber}`
+      );
+      let arrayImages = "";
       // Guardar cada imagen de forma secuencial
       for (let index = 0; index < imageIds.length; index++) {
         const imageId = imageIds[index];
         const base64Image = imagesMap[imageId];
         const fileName = `${partNumber}_${index}`;
-        
+
         try {
           await saveBase64Image(base64Image, fileName);
-          console.log(`  ✓ Imagen ${index + 1}/${imageIds.length} guardada: ${fileName}.png`);
+          console.log(
+            `  ✓ Imagen ${index + 1}/${
+              imageIds.length
+            } guardada: ${fileName}.png`
+          );
+          console.log("arrayImages", arrayImages);
+          // Concatenar el nombre del archivo
+          arrayImages += `${fileName}.png`;
+          // Agregar coma si no es el último elemento
+          if (index < imageIds.length - 1) {
+            arrayImages += ",";
+          }
+          return arrayImages
+
         } catch (error) {
-          console.error(`  ✗ Error guardando imagen ${index}: ${error.message}`);
+          console.error(
+            `  ✗ Error guardando imagen ${index}: ${error.message}`
+          );
         }
       }
-      
+
       console.log(`✓ Todas las imágenes de ${partNumber} guardadas\n`);
-      return imageIds.length;
+      console.log(`📋 Lista de imágenes: ${arrayImages}`);
+      return { count: imageIds.length, images: arrayImages };
     } else {
       console.log(`⚠ No se encontraron imágenes para ${partNumber}\n`);
       return 0;
     }
-    
   } catch (error) {
     console.error("Error:", error.message);
     throw error;
   }
 }
 
-
 (async () => {
   await getModelsByPartNumber();
   //segundo argumento es un string con el equipmentRefId
-  //await getModelPartUse("RE527858", { equipmentRefId: "16566" });
+  //await getModelPart("RE527858", { equipmentRefId: "16566" });
 })();
 
 // Exportar las funciones
-module.exports = { getModelsByPartNumber, getModelPartUse, getImagesPart, getPartDetail };
+module.exports = {
+  getModelsByPartNumber,
+  getModelPart,
+  getImagesPart,
+  getPieceDetail,
+};
