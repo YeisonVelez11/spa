@@ -11,7 +11,7 @@ const { jsonToCsv } = require("./funciones");
  */
 
 //Nos trae toda la lista completa de modelos al introducir una parte
-
+const tiempoMs = 200;
 async function getAllModelsByPart(searchTerm) {
   const url = "https://partscatalog.deere.com/jdrc-services/v1/search/parts";
 
@@ -28,6 +28,7 @@ async function getAllModelsByPart(searchTerm) {
   };
 
   try {
+    await new Promise(resolve => setTimeout(resolve, tiempoMs));
     const response = await axios({
       method: "post",
       url: url,
@@ -97,9 +98,9 @@ async function getModelsByPartNumber() {
         const resultado = await getAllModelsByPart(item.id_pieza);
         const modelData = [];
 
-        //for (let j = 0; j < resultado.searchResults.length; j++) {
+        for (let j = 0; j < resultado.searchResults.length; j++) {
 
-        for (let j = 0; j <= 0; j++) {
+        //for (let j = 0; j <= 0; j++) {
           console.log("MODELO", j);
           const { baseCode, model, equipmentName } = resultado.searchResults[j];
 
@@ -127,6 +128,12 @@ async function getModelsByPartNumber() {
       } catch (error) {
         console.error(`✗ Error en ${item.id_pieza}: ${error.message}\n`);
 
+        // Si es error 403, propagar el error para reiniciar el proceso
+        if (error.response && error.response.status === 403) {
+          console.error("🚫 Error 403 crítico detectado - propagando error...");
+          throw error;
+        }
+
         resultados.push({
           ...item,
           success: false,
@@ -136,7 +143,7 @@ async function getModelsByPartNumber() {
 
       // Pequeña pausa entre peticiones (opcional, para no saturar el servidor)
       /*if (i < piezas.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, tiempoMs));
       }*/
     }
 
@@ -246,6 +253,7 @@ async function getModelPart(partNumber, { equipmentRefId }) {
 
   try {
     console.log(`PARTE ${partNumber} - ${equipmentRefId}`);
+    await new Promise(resolve => setTimeout(resolve, tiempoMs));
     const response = await axios({
       method: "post",
       url: url,
@@ -274,7 +282,6 @@ async function getModelPart(partNumber, { equipmentRefId }) {
         part_path: partLocationPath,
         image: imagePart+".png",
       });
-      console.log("Procesando:", { equipmentRefId, pageId, baseCode });
 
       let getImageModel;
 
@@ -324,6 +331,7 @@ async function getModelPart(partNumber, { equipmentRefId }) {
   
           
           */
+        await new Promise(resolve => setTimeout(resolve, tiempoMs));
 
         getImageModel = await axios({
           method: "post",
@@ -355,15 +363,23 @@ async function getModelPart(partNumber, { equipmentRefId }) {
             if (getImageModel.data.partItems) {
               const piece = getImageModel.data.partItems.find(
                 (partItem) => {
-                  console.log(`Comparando: ${partItem.partNumber} === R520632`);
-                  return partItem.partNumber === "R520632";//partNumber
+                  //console.log(`Comparando: ${partItem.partNumber} === R520632`);
+                  return partItem.partNumber === partNumber
                 }
               );
-              console.log("Resultado del find:", piece);
               if(Object.keys(piece).length > 0){
                 console.log("encontrado");
-                await getPieceDetail({...piece, equipmentRefId: equipmentRefId});
-                //TODO await getPieceDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
+
+                // Verificar si el archivo CSV ya existe
+                const csvFilePath = path.join(__dirname, "csv_output", partNumber, `piece_${partNumber}.csv`);
+                
+                if (!fs.existsSync(csvFilePath)) {
+                  console.log(`Procesando pieza ${partNumber}...`);
+                  await getPieceDetail({...piece, equipmentRefId: equipmentRefId});
+                  //TODO await getPieceDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
+                } else {
+                  console.log(`⏭ Saltando ${partNumber} - archivo CSV ya existe`);
+                }
               }
             }
          /* } catch (error) {
@@ -436,6 +452,8 @@ async function getPieceDetailRemarks(
   };
 
   try {
+    await new Promise(resolve => setTimeout(resolve, tiempoMs));
+
     const response = await axios({
       method: "post",
       url: url,
@@ -445,7 +463,7 @@ async function getPieceDetailRemarks(
       data: data,
     });
 
-    console.log("respuesta detalle remarks", response.data);
+    console.log("respuesta detalle remarks");
     return response.data;
  
   } catch (error) {
@@ -507,6 +525,8 @@ async function getPieceDetail(
 
   try {
     console.log(equipmentRefId, partNumber, id);
+    await new Promise(resolve => setTimeout(resolve, tiempoMs));
+
     const response = await axios({
       method: "post",
       url: url,
@@ -516,7 +536,7 @@ async function getPieceDetail(
       data: data,
     });
 
-    console.log("respuesta detalle", response.data);
+    console.log("respuesta detalle");
 
 
 
@@ -536,13 +556,13 @@ async function getPieceDetail(
       piece_images: images,
     };
 
-    if (
+    /*if (
         remarks.alternateParts &&
         remarks.alternateParts.length > 0 
       ) {
         console.log("alternativa");
         pieceDetail.piece_alternative_piece_id = remarks.alternateParts[0].partNumber;
-      }
+      }*/
 
     await jsonToCsv(
       [pieceDetail],
@@ -550,23 +570,23 @@ async function getPieceDetail(
       `${partNumber}/`
     );
     
-    // if (
-    //   remarks.alternateParts &&
-    //   remarks.alternateParts.length > 0 
-    // ) {
-    //   console.log("alternativa");
-    //   for (
-    //     let index = 0;
-    //     index < remarks.alternateParts.length;
-    //     index++
-    //   ) {
-    //     //const { partNumber, partId } = remarks.alternateParts[index];
-    //     await getPieceDetail({ 
-    //       equipmentRefId, 
-    //       partNumber: remarks.alternateParts[index].partNumber,
-    //       id: remarks.alternateParts[index].partId }, false);
-    //   }
-    // }
+    if (
+      remarks.alternateParts &&
+      remarks.alternateParts.length > 0 
+    ) {
+      console.log("alternativa");
+      for (
+        let index = 0;
+        index < remarks.alternateParts.length;
+        index++
+      ) {
+        //const { partNumber, partId } = remarks.alternateParts[index];
+        await getPieceDetail({ 
+          equipmentRefId, 
+          partNumber: remarks.alternateParts[index].partNumber,
+          id: remarks.alternateParts[index].partId }, false);
+      }
+    }
 
 
 
@@ -645,6 +665,8 @@ async function getImagesPart({ partNumber }) {
   };
 
   try {
+    await new Promise(resolve => setTimeout(resolve, tiempoMs));
+
     const response = await axios({
       method: "post",
       url: url,
@@ -676,14 +698,12 @@ async function getImagesPart({ partNumber }) {
               imageIds.length
             } guardada: ${fileName}.png`
           );
-          console.log("arrayImages", arrayImages);
           // Concatenar el nombre del archivo
           arrayImages += `${fileName}.png`;
-          // Agregar coma si no es el último elemento
+          // Agregar salto de línea si no es el último elemento
           if (index < imageIds.length - 1) {
-            arrayImages += ",";
+            arrayImages += "\n";
           }
-          return arrayImages
 
         } catch (error) {
           console.error(
@@ -694,7 +714,7 @@ async function getImagesPart({ partNumber }) {
 
       console.log(`✓ Todas las imágenes de ${partNumber} guardadas\n`);
       console.log(`📋 Lista de imágenes: ${arrayImages}`);
-      return { count: imageIds.length, images: arrayImages };
+      return arrayImages;
     } else {
       console.log(`⚠ No se encontraron imágenes para ${partNumber}\n`);
       return 0;
@@ -705,11 +725,58 @@ async function getImagesPart({ partNumber }) {
   }
 }
 
-(async () => {
-  await getModelsByPartNumber();
-  //segundo argumento es un string con el equipmentRefId
-  //await getModelPart("RE527858", { equipmentRefId: "16566" });
-})();
+// Función principal con manejo de errores y reinicio automático
+async function main() {
+  try {
+    await getModelsByPartNumber();
+    //segundo argumento es un string con el equipmentRefId
+    //await getModelPart("RE527858", { equipmentRefId: "16566" });
+    console.log("✅ Proceso completado exitosamente");
+    process.exit(0);
+  } catch (error) {
+    console.error("\n" + "=".repeat(60));
+    console.error("❌ ERROR EN EL PROCESO PRINCIPAL");
+    console.error("=".repeat(60));
+    console.error("Mensaje:", error.message);
+    console.error("Status:", error.response?.status || "N/A");
+    console.error("=".repeat(60) + "\n");
+    
+    // Si es error 403, esperar más tiempo antes de reintentar
+    if (error.response && error.response.status === 403) {
+      console.log("⏳ Error 403 detectado. Esperando 30 segundos antes de reintentar...");
+      let countdown = 30;
+      const interval = setInterval(() => {
+        process.stdout.write(`\r⏱️  Reintentando en ${countdown--} segundos...`);
+      }, 1000);
+      
+      await new Promise(resolve => setTimeout(resolve, 30000));
+      clearInterval(interval);
+      console.log("\n");
+    } else {
+      console.log("⏳ Esperando 5 segundos antes de reintentar...");
+      await new Promise(resolve => setTimeout(resolve, 5000));
+    }
+    
+    console.log("🔄 REINICIANDO PROCESO...\n");
+    console.log("=".repeat(60) + "\n");
+    return main(); // Reiniciar recursivamente
+  }
+}
+
+// Manejar señales de terminación
+process.on('SIGINT', () => {
+  console.log('\n⚠️  Proceso interrumpido por el usuario');
+  process.exit(0);
+});
+
+process.on('uncaughtException', (error) => {
+  console.error('💥 Excepción no capturada:', error);
+  console.log('🔄 Reiniciando en 5 segundos...');
+  setTimeout(() => main(), 5000);
+});
+
+// Iniciar el proceso
+main();
 
 // Exportar las funciones
 module.exports = {
