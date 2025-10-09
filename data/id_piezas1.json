@@ -1,6 +1,12 @@
  [
     {
-      "id_pieza": "RE527858",
+      "id_pieza": "DZ108149",
       "parte": "Arandela"
+    },
+    {
+      "id_pieza": "24M7471",
+      "parte": "Casquillo"
+      
     }
+
   ]

@@ -40,10 +40,17 @@ function removeSpecialCharacters(str) {
 
 
 
-const jsonToCsv = (arrayJson, nameFile, path) =>{
+const jsonToCsv = async (arrayJson, nameFile, path) =>{
     if(!path){
         path = "";
     }
+    
+    // Validar que arrayJson no esté vacío
+    if (!arrayJson || arrayJson.length === 0) {
+        console.warn(`⚠️  Array vacío para ${nameFile}.csv - no se creará el archivo`);
+        return;
+    }
+    
     const arrayHeaders = [];
     Object.keys(arrayJson[0]).forEach((key)=>{
         const tempArray = {};
@@ -54,7 +61,7 @@ const jsonToCsv = (arrayJson, nameFile, path) =>{
     })
 
     if(!fs.existsSync("./csv_output/"+path)){
-        fs.mkdirSync("./csv_output/"+path);
+        fs.mkdirSync("./csv_output/"+path, { recursive: true });
     }
     
     const csvWriter = createCsvWriter({
@@ -64,15 +71,13 @@ const jsonToCsv = (arrayJson, nameFile, path) =>{
         recordDelimiter: "\n"
     });
 
-    csvWriter
-    .writeRecords(arrayJson)
-    .then(() => {
-        console.log('se creó el archivo' + nameFile +".csv" );
-    })
-    .catch((error) => {
-        console.error('Error writing CSV:'+ nameFile +".csv", error);
-    });
-
+    try {
+        await csvWriter.writeRecords(arrayJson);
+        console.log('✓ Se creó el archivo ' + nameFile +".csv" );
+    } catch (error) {
+        console.error('✗ Error writing CSV: '+ nameFile +".csv", error);
+        throw error;
+    }
 }
 
 module.exports = {
