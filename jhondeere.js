@@ -4,35 +4,144 @@ const path = require("path");
 const { jsonToCsv } = require("./funciones");
 
 // Configuración para reintentos
-const MAX_RETRIES = 3;
-const RETRY_DELAY_MS = 5000; // 5 segundos
-const RETRY_DELAY_403_MS = 15000; // 30 segundos para 403
+const MAX_RETRIES = 5;
+const RETRY_DELAY_MS = 8000; // 8 segundos
+const RETRY_DELAY_403_MS = 30000; // 30 segundos para 403
+const MIN_DELAY_BETWEEN_REQUESTS = 2000; // 2 segundos mínimo
+const MAX_DELAY_BETWEEN_REQUESTS = 5000; // 5 segundos máximo
 
-// Headers completos para evitar detección como bot
-const COMMON_HEADERS = {
-  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-  'Accept': 'application/json, text/plain, */*',
-  'Accept-Language': 'en-US,en;q=0.9,es;q=0.8',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Connection': 'keep-alive',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin',
-  'Sec-Ch-Ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
-  'Sec-Ch-Ua-Mobile': '?0',
-  'Sec-Ch-Ua-Platform': '"macOS"',
-  'Origin': 'https://partscatalog.deere.com',
-  'Referer': 'https://partscatalog.deere.com/',
-  'Cache-Control': 'no-cache',
-  'Pragma': 'no-cache'
-};
+// Pool de User-Agents para rotar
+const USER_AGENTS = [
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+];
+
+// Índice actual del User-Agent
+let currentUserAgentIndex = 0;
+
+// Contador de peticiones para rotar headers
+let requestCount = 0;
+
+// Contador de errores 403 consecutivos
+let consecutive403Count = 0;
+
+// Delay adaptativo basado en errores
+let adaptiveDelayMultiplier = 1;
+
+/**
+ * Obtiene un User-Agent rotativo
+ */
+function getRotatingUserAgent() {
+  const userAgent = USER_AGENTS[currentUserAgentIndex];
+  currentUserAgentIndex = (currentUserAgentIndex + 1) % USER_AGENTS.length;
+  return userAgent;
+}
+
+/**
+ * Genera un delay aleatorio para simular comportamiento humano
+ * Se adapta basado en errores 403 consecutivos
+ */
+function getRandomDelay(min = MIN_DELAY_BETWEEN_REQUESTS, max = MAX_DELAY_BETWEEN_REQUESTS) {
+  const adjustedMin = min * adaptiveDelayMultiplier;
+  const adjustedMax = max * adaptiveDelayMultiplier;
+  return Math.floor(Math.random() * (adjustedMax - adjustedMin + 1)) + adjustedMin;
+}
+
+/**
+ * Genera headers dinámicos con rotación
+ */
+function getRotatingHeaders() {
+  const userAgent = getRotatingUserAgent();
+  const isChrome = userAgent.includes('Chrome') && !userAgent.includes('Edg');
+  const isFirefox = userAgent.includes('Firefox');
+  const isSafari = userAgent.includes('Safari') && !userAgent.includes('Chrome');
+  const isEdge = userAgent.includes('Edg');
+  
+  // Variar el Referer para simular navegación natural
+  const referers = [
+    'https://partscatalog.deere.com/',
+    'https://partscatalog.deere.com/jdrc/',
+    'https://partscatalog.deere.com/jdrc/sidebyside/equipment',
+    'https://partscatalog.deere.com/jdrc/sidebyside/search'
+  ];
+  const randomReferer = referers[Math.floor(Math.random() * referers.length)];
+  
+  // Variar Accept-Language ligeramente
+  const languages = [
+    'en-US,en;q=0.9,es;q=0.8',
+    'en-US,en;q=0.9',
+    'en-US,en;q=0.9,es;q=0.8,fr;q=0.7'
+  ];
+  const randomLanguage = languages[Math.floor(Math.random() * languages.length)];
+  
+  const baseHeaders = {
+    'User-Agent': userAgent,
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': randomLanguage,
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Connection': 'keep-alive',
+    'Origin': 'https://partscatalog.deere.com',
+    'Referer': randomReferer,
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache'
+  };
+  
+  // Agregar headers específicos del navegador
+  if (isChrome || isEdge) {
+    baseHeaders['Sec-Fetch-Dest'] = 'empty';
+    baseHeaders['Sec-Fetch-Mode'] = 'cors';
+    baseHeaders['Sec-Fetch-Site'] = 'same-origin';
+    baseHeaders['Sec-Ch-Ua'] = isEdge 
+      ? '"Not_A Brand";v="8", "Chromium";v="120", "Microsoft Edge";v="120"'
+      : '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"';
+    baseHeaders['Sec-Ch-Ua-Mobile'] = '?0';
+    baseHeaders['Sec-Ch-Ua-Platform'] = userAgent.includes('Windows') ? '"Windows"' : '"macOS"';
+  }
+  
+  return baseHeaders;
+}
+
+// Headers base (se actualizarán dinámicamente)
+let COMMON_HEADERS = getRotatingHeaders();
 
 // Configuración de axios con interceptores para simular comportamiento humano
 const axiosInstance = axios.create({
   timeout: 30000,
   maxRedirects: 5,
   validateStatus: (status) => status >= 200 && status < 500, // Aceptar más rangos de status
-  headers: COMMON_HEADERS
+});
+
+// Interceptor para agregar delay aleatorio y rotar headers
+axiosInstance.interceptors.request.use(async (config) => {
+  // Agregar delay aleatorio entre peticiones
+  const delay = getRandomDelay();
+  console.log(`⏳ Esperando ${(delay/1000).toFixed(1)}s antes de petición...`);
+  await new Promise(resolve => setTimeout(resolve, delay));
+  
+  // Rotar headers cada 3 peticiones
+  requestCount++;
+  if (requestCount % 3 === 0) {
+    COMMON_HEADERS = getRotatingHeaders();
+    console.log(`🔄 Rotando headers (petición #${requestCount})`);
+  }
+  
+  // Aplicar headers actuales
+  config.headers = {
+    ...COMMON_HEADERS,
+    ...config.headers
+  };
+  
+  // Log del User-Agent actual
+  console.log(`🌐 User-Agent: ${config.headers['User-Agent'].substring(0, 50)}...`);
+  
+  return config;
+}, (error) => {
+  return Promise.reject(error);
 });
 
 /**
@@ -44,14 +153,40 @@ const axiosInstance = axios.create({
  */
 async function retryOnError(fn, context, retries = MAX_RETRIES) {
   try {
-    return await fn();
+    const result = await fn();
+    
+    // Si la petición fue exitosa, resetear contadores
+    consecutive403Count = 0;
+    if (adaptiveDelayMultiplier > 1) {
+      adaptiveDelayMultiplier = Math.max(1, adaptiveDelayMultiplier - 0.2);
+      console.log(`✅ Petición exitosa. Reduciendo delay adaptativo a ${adaptiveDelayMultiplier.toFixed(1)}x`);
+    }
+    
+    return result;
   } catch (error) {
     const status = error.response?.status;
     const isRecoverableError = status === 403 || status === 502;
     
     if (isRecoverableError && retries > 0) {
-      const delay = status === 403 ? RETRY_DELAY_403_MS : RETRY_DELAY_MS;
-      console.warn(`⚠️  Error ${status} en ${context}. Reintentando en ${delay/1000}s... (${MAX_RETRIES - retries + 1}/${MAX_RETRIES})`);
+      // Incrementar contador de 403 consecutivos
+      if (status === 403) {
+        consecutive403Count++;
+        
+        // Aumentar delay adaptativo progresivamente
+        if (consecutive403Count >= 2) {
+          adaptiveDelayMultiplier = Math.min(8, adaptiveDelayMultiplier + 0.8);
+          console.warn(`🐌 ${consecutive403Count} errores 403 consecutivos. Aumentando delay a ${adaptiveDelayMultiplier.toFixed(1)}x`);
+        }
+      }
+      
+      // Forzar rotación de headers MÚLTIPLES VECES para cambiar más
+      for (let i = 0; i < 3; i++) {
+        COMMON_HEADERS = getRotatingHeaders();
+      }
+      console.log(`🔄 Headers rotados agresivamente`);
+      
+      const delay = status === 403 ? RETRY_DELAY_403_MS * adaptiveDelayMultiplier : RETRY_DELAY_MS;
+      console.warn(`⚠️  Error ${status} en ${context}. Rotando headers y reintentando en ${(delay/1000).toFixed(1)}s... (${MAX_RETRIES - retries + 1}/${MAX_RETRIES})`);
       
       await new Promise(resolve => setTimeout(resolve, delay));
       return retryOnError(fn, context, retries - 1);
@@ -99,7 +234,6 @@ async function getAllModelsByPart(searchTerm) {
       method: "post",
       url: url,
       headers: {
-        ...COMMON_HEADERS,
         "Content-Type": "application/json",
       },
       data: data,
@@ -151,7 +285,9 @@ async function getModelsByPartNumber() {
     // Procesar cada pieza secuencialmente
 
     for (let i = 0; i < piezas.length; i++) {
+      const startTime = Date.now();
       ModelParts = [];
+      pieceDetail = []
       const modelData = [];
 
       const item = piezas[i];
@@ -199,7 +335,11 @@ async function getModelsByPartNumber() {
           `model_${item.id_pieza}`,
           `models/`
         );
-
+        await jsonToCsv(
+          pieceDetail,
+          `${item.id_pieza}`,
+          `pieces/`
+        );
 
 
         console.log(`✓ Completado: ${item.id_pieza}\n`);
@@ -213,6 +353,10 @@ async function getModelsByPartNumber() {
           error: error.message,
         });
       }
+
+      const endTime = Date.now();
+      const duration = ((endTime - startTime) / 1000).toFixed(2);
+      console.log(`⏱️  Duración iteración ${i + 1}: ${duration}s\n`);
 
       // Pequeña pausa entre peticiones (opcional, para no saturar el servidor)
       /*if (i < piezas.length - 1) {
@@ -333,7 +477,6 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
         method: "post",
         url: url,
         headers: {
-          ...COMMON_HEADERS,
           "Content-Type": "application/json",
         },
         data: data,
@@ -426,7 +569,6 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
             method: "post",
             url: "https://partscatalog.deere.com/jdrc-services/v1/sidebyside/sidebysidePage",
             headers: {
-              ...COMMON_HEADERS,
               "Content-Type": "application/json",
             },
             data: {
@@ -455,7 +597,7 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
 
        /* for (let j = 0; j < getImageModel.data.partItems.length; j++) {
           try {*/
-            console.log("piece detail",getImageModel.data);
+            console.log("piece detail",getImageModel.status);
 
             if (getImageModel.data.partItems) {
               const piece = getImageModel.data.partItems.find(
@@ -465,18 +607,19 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
                 }
               );
               if(Object.keys(piece).length > 0){
-                console.log("encontrado", partNumber);
+                console.log("encontrado*****", partNumber);
 
                 // Verificar si el archivo CSV ya existe
                 const csvFilePath = path.join(__dirname, "csv_output", "pieces", `${partNumber}.csv`);
                 
-                if (!fs.existsSync(csvFilePath)) {
+                /*if (!fs.existsSync(csvFilePath)) {
                   console.log(`Procesando pieza ${partNumber}...`);
-                  await getPieceDetail({...piece, equipmentRefId: equipmentRefId,parte:parte});
-                  //TODO await getPieceDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
+                  console.log("******************************");/*/
+                  await getPieceDetail({...piece, equipmentRefId: equipmentRefId,pageId:pageId, parte:parte});
+                /*  //TODO await getPieceDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
                 } else {
                   console.log(`⏭ Saltando ${partNumber} - archivo CSV ya existe`);
-                }
+                }*/
               }
               else{
                 console.log("No encontrado");
@@ -526,7 +669,7 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
 */
 // id es el id de la parte
 async function getPieceDetailRemarks(
-  { equipmentRefId, partNumber, id },
+  { equipmentRefId, partNumber, pageId, id },
   isAlternative = true
 ) {
   const url =
@@ -558,7 +701,6 @@ async function getPieceDetailRemarks(
       method: "post",
       url: url,
       headers: {
-        ...COMMON_HEADERS,
         "Content-Type": "application/json",
       },
       data: data,
@@ -596,9 +738,9 @@ async function getPieceDetailRemarks(
     "error": null
 }
 */
-
+let pieceDetail = [];
 async function getPieceDetail(
-  { equipmentRefId, partNumber, id,parte},
+  { equipmentRefId, partNumber, id,parte, pageId},
   isAlternative = true
 ) {
   const url =
@@ -627,7 +769,6 @@ async function getPieceDetail(
         method: "post",
         url: url,
         headers: {
-          ...COMMON_HEADERS,
           "Content-Type": "application/json",
         },
         data: data,
@@ -653,11 +794,13 @@ async function getPieceDetail(
 
     const images = await getImagesPart({ partNumber });
     const partOps = response.data.partOps;
-    const pieceDetail = {
+      const pieceDetailData = {
       piece_id: partOps[0].partBasicInfo.partNumber,
       piece_name: remarks.name,
       piece_parte: parte,
       piece_description: remarks.description,
+      piece_model: equipmentRefId,
+      piece_part:pageId,
       piece_qty: remarks.qty,
       piece_remarks: remarks.remarks,
       piece_packageWeight: partOps[0].partShippingInfo.packageWeight,
@@ -686,40 +829,25 @@ async function getPieceDetail(
       remarks.alternateParts.length > 0 
     ) {
       console.log("alternativa");
-      /*
-      TODO
-       for (
+      
+      for (
         let index = 0;
         index < remarks.alternateParts.length;
         index++
-      ) {*/
-        //const { partNumber, partId } = remarks.alternateParts[index];
-        /*await getPieceDetail({ 
-          equipmentRefId, 
-          partNumber: remarks.alternateParts[index].partNumber,
-          id: remarks.alternateParts[index].partId }, false);*/
-          
-          pieceDetail.piece_alternative_part_id = remarks.alternateParts[0].partId;
-          
-          /*
-          en teoria en algun momento se va a guardar
-          await getPieceDetail({ 
-            equipmentRefId, 
-            partNumber: remarks.alternateParts[0].partNumber,
-            id: remarks.alternateParts[0].partId, 
-            parte: parte }, false);*/
-
-      //}
+      ) {
+        const alternativePartId = remarks.alternateParts[index].partNumber;
+        
+        pieceDetail.push({
+          ...pieceDetailData,
+          piece_alternative_part_id: alternativePartId
+        });
+        
+        console.log("******************************");
+      }
+    } else {
+      // Si no hay alternativas, agregar el pieceDetailData sin alternative_part_id
+      pieceDetail.push(pieceDetailData);
     }
-    console.log("crearia",pieceDetail,partNumber);
-
-    await jsonToCsv(
-      [pieceDetail],
-      `${partNumber}`,
-      `pieces/`
-    );
-    
-
 
 
   } catch (error) {
@@ -802,7 +930,6 @@ async function getImagesPart({ partNumber }) {
         method: "post",
         url: url,
         headers: {
-          ...COMMON_HEADERS,
           "Content-Type": "application/json",
         },
         data: data,
