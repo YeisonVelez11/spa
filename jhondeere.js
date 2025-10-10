@@ -1,10 +1,12 @@
 const axios = require("axios");
+const http = require("http");
+const https = require("https");
 const fs = require("fs");
 const path = require("path");
 const { jsonToCsv } = require("./funciones");
 
 // Configuración para reintentos
-const MAX_RETRIES = 5;
+const MAX_RETRIES = Infinity; // ♾️ REINTENTOS ILIMITADOS - La aplicación nunca morirá
 const RETRY_DELAY_MS = 8000; // 8 segundos
 const RETRY_DELAY_403_MS = 30000; // 30 segundos para 403
 const MIN_DELAY_BETWEEN_REQUESTS = 2000; // 2 segundos mínimo
@@ -109,20 +111,43 @@ function getRotatingHeaders() {
 // Headers base (se actualizarán dinámicamente)
 let COMMON_HEADERS = getRotatingHeaders();
 
+// Configuración de agentes HTTP/HTTPS para manejar mejor las conexiones
+const httpAgent = new http.Agent({ 
+  keepAlive: true,
+  keepAliveMsecs: 30000,
+  maxSockets: 50,
+  maxFreeSockets: 10,
+  timeout: 60000
+});
+
+const httpsAgent = new https.Agent({ 
+  keepAlive: true,
+  keepAliveMsecs: 30000,
+  maxSockets: 50,
+  maxFreeSockets: 10,
+  timeout: 60000,
+  rejectUnauthorized: true
+});
+
 // Configuración de axios con interceptores para simular comportamiento humano
 const axiosInstance = axios.create({
-  timeout: 30000,
+  timeout: 60000, // 60 segundos de timeout
   maxRedirects: 5,
   validateStatus: (status) => status >= 200 && status < 500, // Aceptar más rangos de status
+  httpAgent: httpAgent,
+  httpsAgent: httpsAgent
 });
 
 // Interceptor para agregar delay aleatorio y rotar headers
 axiosInstance.interceptors.request.use(async (config) => {
   // Agregar delay aleatorio entre peticiones
   const delay = getRandomDelay();
-  console.log(`⏳ Esperando ${(delay/1000).toFixed(1)}s antes de petición...`);
-  await new Promise(resolve => setTimeout(resolve, delay));
-  
+    console.log("⏳ Esperando 1s");
+
+  //console.log(`⏳ Esperando ${(delay/1000).toFixed(1)}s antes de petición...`);
+  //await new Promise(resolve => setTimeout(resolve, delay));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
   // Rotar headers cada 3 peticiones
   requestCount++;
   if (requestCount % 3 === 0) {
@@ -144,14 +169,26 @@ axiosInstance.interceptors.request.use(async (config) => {
   return Promise.reject(error);
 });
 
+// Interceptor de respuesta para manejar errores
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    // Enriquecer el error con información adicional
+    if (error.code) {
+      console.error(`🔴 Error de red detectado: ${error.code} - ${error.message}`);
+    }
+    return Promise.reject(error);
+  }
+);
+
 /**
- * Función auxiliar para manejar reintentos en caso de errores 403/502
+ * Función auxiliar para manejar reintentos ILIMITADOS en caso de errores recuperables
  * @param {Function} fn - Función a ejecutar
  * @param {string} context - Contexto para logging
- * @param {number} retries - Número de reintentos restantes
- * @returns {Promise} - Resultado de la función o null si falla
+ * @param {number} attemptNumber - Número de intento actual (solo para logging)
+ * @returns {Promise} - Resultado de la función (nunca falla, reintenta indefinidamente)
  */
-async function retryOnError(fn, context, retries = MAX_RETRIES) {
+async function retryOnError(fn, context, attemptNumber = 1) {
   try {
     const result = await fn();
     
@@ -165,10 +202,31 @@ async function retryOnError(fn, context, retries = MAX_RETRIES) {
     return result;
   } catch (error) {
     const status = error.response?.status;
-    const isRecoverableError = status === 403 || status === 502;
+    const errorCode = error.code;
     
-    if (isRecoverableError && retries > 0) {
-      // Incrementar contador de 403 consecutivos
+    // Detectar errores de red (sin internet, timeout, conexión rechazada, etc.)
+    const networkErrors = [
+      'ECONNRESET', 'ENOTFOUND', 'ETIMEDOUT', 'ECONNREFUSED', 
+      'ENETUNREACH', 'EAI_AGAIN', 'ECONNABORTED', 'EHOSTUNREACH'
+    ];
+    const isNetworkError = networkErrors.includes(errorCode) || error.message?.includes('network');
+    
+    // Errores HTTP recuperables
+    const isHttpRecoverableError = status === 403 || status === 502 || status === 503 || status === 429;
+    
+    // Determinar si es un error recuperable
+    const isRecoverableError = isHttpRecoverableError || isNetworkError;
+    
+    if (isRecoverableError) {
+      // Manejo específico de errores de red - REINTENTOS ILIMITADOS
+      if (isNetworkError) {
+        const delay = 10000; // 10 segundos para errores de red
+        console.warn(`🌐 Error de red (${errorCode || error.message}) en ${context}. Reintentando en ${(delay/1000).toFixed(1)}s... (Intento #${attemptNumber}) ♾️ REINTENTOS ILIMITADOS`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+        return retryOnError(fn, context, attemptNumber + 1);
+      }
+      
+      // Manejo de errores HTTP - REINTENTOS ILIMITADOS
       if (status === 403) {
         consecutive403Count++;
         
@@ -186,20 +244,14 @@ async function retryOnError(fn, context, retries = MAX_RETRIES) {
       console.log(`🔄 Headers rotados agresivamente`);
       
       const delay = status === 403 ? RETRY_DELAY_403_MS * adaptiveDelayMultiplier : RETRY_DELAY_MS;
-      console.warn(`⚠️  Error ${status} en ${context}. Rotando headers y reintentando en ${(delay/1000).toFixed(1)}s... (${MAX_RETRIES - retries + 1}/${MAX_RETRIES})`);
+      console.warn(`⚠️  Error ${status} en ${context}. Rotando headers y reintentando en ${(delay/1000).toFixed(1)}s... (Intento #${attemptNumber}) ♾️ REINTENTOS ILIMITADOS`);
       
       await new Promise(resolve => setTimeout(resolve, delay));
-      return retryOnError(fn, context, retries - 1);
+      return retryOnError(fn, context, attemptNumber + 1);
     }
     
-    // Si no es recuperable o se agotaron los reintentos, registrar y continuar
-    if (isRecoverableError) {
-      console.error(`❌ Error ${status} en ${context} después de ${MAX_RETRIES} intentos. Continuando...`);
-      return null;
-    }
-    
-    // Para otros errores, también continuar pero registrar
-    console.error(`❌ Error en ${context}: ${error.message}. Continuando...`);
+    // Para errores NO recuperables, registrar y continuar (retornar null)
+    console.error(`❌ Error NO recuperable en ${context}: ${error.message}. Continuando con siguiente operación...`);
     return null;
   }
 }
@@ -273,10 +325,21 @@ async function getAllModelsByPart(searchTerm) {
 
 async function getModelsByPartNumber() {
   try {
+    const scriptStartTime = Date.now();
+    const scriptStartDate = new Date().toLocaleString('es-ES', { 
+      year: 'numeric', 
+      month: '2-digit', 
+      day: '2-digit', 
+      hour: '2-digit', 
+      minute: '2-digit', 
+      second: '2-digit' 
+    });
+    
     // Leer el archivo JSON
     const fileContent = fs.readFileSync("./data/id_piezas1.json", "utf-8");
     const piezas = JSON.parse(fileContent);
 
+    console.log(`🚀 Script iniciado: ${scriptStartDate}`);
     console.log(`Total de piezas a procesar: ${piezas.length}\n`);
 
     // Declarar resultados fuera del loop
@@ -300,7 +363,7 @@ async function getModelsByPartNumber() {
         
         // Si resultado es null (error recuperable), saltar esta pieza
         if (!resultado || !resultado.searchResults) {
-          console.warn(`⚠️  Saltando pieza ${item.id_pieza} debido a errores`);
+          console.warn(`⚠️  error pieza ${item.id_pieza} debido a errores`);
           resultados.push({
             ...item,
             success: false,
@@ -356,7 +419,13 @@ async function getModelsByPartNumber() {
 
       const endTime = Date.now();
       const duration = ((endTime - startTime) / 1000).toFixed(2);
-      console.log(`⏱️  Duración iteración ${i + 1}: ${duration}s\n`);
+      const totalElapsed = ((endTime - scriptStartTime) / 1000).toFixed(2);
+      const currentTime = new Date().toLocaleString('es-ES', { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+      });
+      console.log(`⏱️  Iteración ${i + 1}: ${duration}s | Tiempo total: ${totalElapsed}s | Hora: ${currentTime}\n`);
 
       // Pequeña pausa entre peticiones (opcional, para no saturar el servidor)
       /*if (i < piezas.length - 1) {
@@ -801,6 +870,7 @@ async function getPieceDetail(
       piece_description: remarks.description,
       piece_model: equipmentRefId,
       piece_part:pageId,
+      piece_alternative_part_id: "",
       piece_qty: remarks.qty,
       piece_remarks: remarks.remarks,
       piece_packageWeight: partOps[0].partShippingInfo.packageWeight,
@@ -811,7 +881,6 @@ async function getPieceDetail(
       piece_packageLength: partOps[0].partShippingInfo.packageLength,
       piece_packageLengthUnit: partOps[0].partShippingInfo.packageLengthUnit,
       piece_packageQty: partOps[0].partShippingInfo.packageQty,
-      piece_alternative_part_id: "",
       piece_images: images,
     };
 
@@ -968,7 +1037,7 @@ async function getImagesPart({ partNumber }) {
           arrayImages += `${fileName}.png`;
           // Agregar salto de línea si no es el último elemento
           if (index < imageIds.length - 1) {
-            arrayImages += "\n";
+            arrayImages += "|";
           }
 
         } catch (error) {
