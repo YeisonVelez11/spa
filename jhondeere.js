@@ -218,6 +218,11 @@ async function retryOnError(fn, context, attemptNumber = 1) {
     const isRecoverableError = isHttpRecoverableError || isNetworkError;
     
     if (isRecoverableError) {
+      // Imprimir "error" para errores 403 o 502
+      if (status === 403 || status === 502) {
+        console.log("error");
+      }
+      
       // Manejo específico de errores de red - REINTENTOS ILIMITADOS
       if (isNetworkError) {
         const delay = 10000; // 10 segundos para errores de red
