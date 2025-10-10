@@ -73,7 +73,7 @@ const jsonToCsv = async (arrayJson, nameFile, path) =>{
 
     try {
         await csvWriter.writeRecords(arrayJson);
-        console.log('✓ Se creó el archivo ' + nameFile +".csv" );
+        //console.log('✓ Se creó el archivo ' + nameFile +".csv" );
     } catch (error) {
         console.error('✗ Error writing CSV: '+ nameFile +".csv", error);
         throw error;

@@ -20,9 +20,10 @@ const FOLDERS_TO_PROCESS = [
 
 /**
  * Combina múltiples archivos CSV en uno solo usando streams para optimizar memoria
+ * NOTA: Automáticamente remueve líneas duplicadas durante el proceso de merge
  * @param {string} folderName - Nombre de la carpeta dentro de csv_output (ej: 'parts', 'pieces', 'models')
  * @param {string} outputFileName - Nombre del archivo de salida (sin extensión)
- * @returns {Promise<object>} - Estadísticas del proceso
+ * @returns {Promise<object>} - Estadísticas del proceso (incluye duplicatesRemoved)
  */
 async function mergeCsvFiles(folderName, outputFileName = null) {
   const inputDir = path.join(__dirname, 'csv_output', folderName);
@@ -32,6 +33,7 @@ async function mergeCsvFiles(folderName, outputFileName = null) {
   console.log(`\n${'='.repeat(60)}`);
   console.log(`📁 Procesando archivos de: ${folderName}`);
   console.log(`📄 Archivo de salida: ${outputFile}.csv`);
+  console.log(`🗑️  Modo: Remover duplicados automáticamente`);
   console.log(`${'='.repeat(60)}\n`);
 
   // Verificar que el directorio existe
@@ -57,6 +59,10 @@ async function mergeCsvFiles(folderName, outputFileName = null) {
   let totalLines = 0;
   let filesProcessed = 0;
   let headerWritten = false;
+  let duplicatesRemoved = 0;
+  
+  // Set para almacenar líneas únicas y detectar duplicados
+  const uniqueLines = new Set();
 
   try {
     for (const file of files) {
@@ -84,11 +90,17 @@ async function mergeCsvFiles(folderName, outputFileName = null) {
           continue;
         }
 
-        // Escribir la línea de datos
+        // Escribir la línea de datos solo si no es duplicada
         if (line.trim()) { // Ignorar líneas vacías
-          writeStream.write(line + '\n');
-          linesInFile++;
-          totalLines++;
+          // Verificar si la línea ya existe
+          if (!uniqueLines.has(line)) {
+            uniqueLines.add(line);
+            writeStream.write(line + '\n');
+            linesInFile++;
+            totalLines++;
+          } else {
+            duplicatesRemoved++;
+          }
         }
       }
 
@@ -110,6 +122,7 @@ async function mergeCsvFiles(folderName, outputFileName = null) {
     const stats = {
       filesProcessed,
       totalLines,
+      duplicatesRemoved,
       outputFile: outputPath,
       outputSize: fs.statSync(outputPath).size
     };
@@ -118,7 +131,8 @@ async function mergeCsvFiles(folderName, outputFileName = null) {
     console.log(`✅ PROCESO COMPLETADO`);
     console.log(`${'='.repeat(60)}`);
     console.log(`📁 Archivos procesados: ${stats.filesProcessed}`);
-    console.log(`📊 Total de líneas: ${stats.totalLines.toLocaleString()}`);
+    console.log(`📊 Total de líneas únicas: ${stats.totalLines.toLocaleString()}`);
+    console.log(`🗑️  Duplicados removidos: ${stats.duplicatesRemoved.toLocaleString()}`);
     console.log(`💾 Tamaño del archivo: ${(stats.outputSize / 1024 / 1024).toFixed(2)} MB`);
     console.log(`📄 Archivo guardado en: ${stats.outputFile}`);
     console.log(`${'='.repeat(60)}\n`);

@@ -142,17 +142,17 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(async (config) => {
   // Agregar delay aleatorio entre peticiones
   const delay = getRandomDelay();
-    console.log("⏳ Esperando 1s");
+    //console.log("⏳ Esperando 1s");
 
   //console.log(`⏳ Esperando ${(delay/1000).toFixed(1)}s antes de petición...`);
   //await new Promise(resolve => setTimeout(resolve, delay));
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  await new Promise(resolve => setTimeout(resolve, 300));
 
   // Rotar headers cada 3 peticiones
   requestCount++;
   if (requestCount % 3 === 0) {
     COMMON_HEADERS = getRotatingHeaders();
-    console.log(`🔄 Rotando headers (petición #${requestCount})`);
+    //console.log(`🔄 Rotando headers (petición #${requestCount})`);
   }
   
   // Aplicar headers actuales
@@ -162,7 +162,7 @@ axiosInstance.interceptors.request.use(async (config) => {
   };
   
   // Log del User-Agent actual
-  console.log(`🌐 User-Agent: ${config.headers['User-Agent'].substring(0, 50)}...`);
+  //console.log(`🌐 User-Agent: ${config.headers['User-Agent'].substring(0, 50)}...`);
   
   return config;
 }, (error) => {
@@ -360,20 +360,19 @@ async function getModelsByPartNumber() {
 
       const item = piezas[i];
       console.log(
-        `[------${i + 1}/${piezas.length}] ${item.id_pieza}`
+        `------${i + 1}/${piezas.length}] ${item.id_pieza}`
       );
-      console.log("getAllModelsByPart");
       try {
         const resultado = await getAllModelsByPart(item.id_pieza);
         
         // Si resultado es null (error recuperable), saltar esta pieza
         if (!resultado || !resultado.searchResults) {
           console.warn(`⚠️  error pieza ${item.id_pieza} debido a errores`);
-          resultados.push({
-            ...item,
-            success: false,
-            error: "Error recuperable - saltado",
-          });
+          // resultados.push({
+          //   ...item,
+          //   success: false,
+          //   error: "Error recuperable - saltado",
+          // });
           continue;
         }
         
@@ -383,7 +382,6 @@ async function getModelsByPartNumber() {
         //for (let j = 0; j <= 1; j++) {
           console.log("MODELO",`${j+ 1}/${resultado.searchResults.length}`, j, item.id_pieza);
           const { baseCode, model, equipmentName,equipmentRefId } = resultado.searchResults[j];
-          console.log("equipmentRefId",equipmentRefId);
           modelData.push({
             model_id: equipmentRefId,
             model_code: baseCode,
@@ -397,12 +395,14 @@ async function getModelsByPartNumber() {
           //TODO descomentar lo anterior await getModelPart(item.id_pieza, resultado.data.searchResults[j]);
           //await getModelPart(item.id_pieza, resultado.searchResults[0]);
         }
+        console.log("model",modelData);
 
         await jsonToCsv(
            modelData,
           `model_${item.id_pieza}`,
           `models/`
         );
+        console.log("piece",pieceDetail);
         await jsonToCsv(
           pieceDetail,
           `${item.id_pieza}`,
@@ -410,16 +410,15 @@ async function getModelsByPartNumber() {
         );
 
 
-        console.log(`✓ Completado: ${item.id_pieza}\n`);
       } catch (error) {
         console.error(`✗ Error en ${item.id_pieza}: ${error.message}\n`);
         
         // Ya no propagamos errores 403/502, solo registramos y continuamos
-        resultados.push({
-          ...item,
-          success: false,
-          error: error.message,
-        });
+        // resultados.push({
+        //   ...item,
+        //   success: false,
+        //   error: error.message,
+        // });
       }
 
       const endTime = Date.now();
@@ -473,7 +472,7 @@ async function saveBase64Image(base64Data, fileName, pathFull = "") {
     // Guardar la imagen de forma asíncrona
     await fs.promises.writeFile(filePath, imageBuffer);
 
-    console.log(`✓ Imagen guardada: ${filePath}`);
+    //console.log(`✓ Imagen guardada: ${filePath}`);
     return filePath;
   } catch (error) {
     console.error(`✗ Error al guardar imagen: ${error.message}`);
@@ -543,7 +542,6 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
   };
 
   try {
-    console.log(`PARTE ${partNumber} - ${equipmentRefId}`);
     
     const response = await retryOnError(async () => {
       //await new Promise(resolve => setTimeout(resolve, tiempoMs));
@@ -634,7 +632,7 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
               }
         ]
   
-  
+        
           
           */
         getImageModel = await retryOnError(async () => {
@@ -653,7 +651,6 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
             },
           });
         }, `getImageModel(${partNumber}, ${equipmentRefId}, ${pageId})`);
-        
         // Si getImageModel es null, saltar este modelo
         if (!getImageModel || !getImageModel.data) {
           console.warn(`⚠️  Saltando imagen de modelo para ${partNumber}`);
@@ -668,24 +665,20 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
           );
           getImageModel.data.imageFilePath = imageFilePath;
         }
-
        /* for (let j = 0; j < getImageModel.data.partItems.length; j++) {
           try {*/
-            console.log("piece detail",getImageModel.status);
 
             if (getImageModel.data.partItems) {
               const piece = getImageModel.data.partItems.find(
                 (partItem) => {
+
                   //console.log(`Comparando: ${partItem.partNumber} === R520632`);
                   return partItem.partNumber === partNumber
                 }
               );
-              if(Object.keys(piece).length > 0){
-                console.log("encontrado*****", partNumber);
-
+              if(piece && Object.keys(piece).length > 0){
                 // Verificar si el archivo CSV ya existe
                 const csvFilePath = path.join(__dirname, "csv_output", "pieces", `${partNumber}.csv`);
-                
                 /*if (!fs.existsSync(csvFilePath)) {
                   console.log(`Procesando pieza ${partNumber}...`);
                   console.log("******************************");/*/
@@ -696,11 +689,11 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
                 }*/
               }
               else{
-                console.log("No encontrado");
+                console.log("error, No encontrado");
               }
             }
             else{
-              console.log("no hay",getImageModel.data.partItems);
+              console.log("error no hay",getImageModel.data.partItems);
             }
          /* } catch (error) {
             console.error("Error:", error.message);
@@ -779,7 +772,6 @@ async function getPieceDetailRemarks(
       },
       data: data,
     });
-    console.log("respuesta detalle remarks");
     return response.data;
   }, `getPieceDetailRemarks(${partNumber})`);
 }
@@ -836,7 +828,6 @@ async function getPieceDetail(
   };
 
   try {
-    
     const response = await retryOnError(async () => {
      // await new Promise(resolve => setTimeout(resolve, tiempoMs));
       return await axiosInstance({
@@ -851,18 +842,16 @@ async function getPieceDetail(
     
     // Si response es null, salir
     if (!response || !response.data || !response.data.partOps) {
-      console.warn(`⚠️  Saltando getPieceDetail para ${partNumber}`);
+      console.warn(`⚠️  error Saltando getPieceDetail para ${partNumber}`);
       return;
     }
-
-    console.log("respuesta detalle");
 
     ///remark
     const remarks = await getPieceDetailRemarks({ equipmentRefId, id }, isAlternative);
     
     // Si remarks es null, salir
     if (!remarks) {
-      console.warn(`⚠️  No se pudieron obtener remarks para ${partNumber}`);
+      console.warn(`⚠️ error No se pudieron obtener remarks para ${partNumber}`);
       return;
     }
 
@@ -902,7 +891,6 @@ async function getPieceDetail(
       remarks.alternateParts &&
       remarks.alternateParts.length > 0 
     ) {
-      console.log("alternativa");
       
       for (
         let index = 0;
@@ -916,7 +904,6 @@ async function getPieceDetail(
           piece_alternative_part_id: alternativePartId
         });
         
-        console.log("******************************");
       }
     } else {
       // Si no hay alternativas, agregar el pieceDetailData sin alternative_part_id
@@ -1021,9 +1008,9 @@ async function getImagesPart({ partNumber }) {
       const imagesMap = response.data.imagesMap;
       const imageIds = Object.keys(imagesMap);
 
-      console.log(
-        `📸 Encontradas ${imageIds.length} imágenes para ${partNumber}`
-      );
+      // console.log(
+      //   `📸 Encontradas ${imageIds.length} imágenes para ${partNumber}`
+      // );
       let arrayImages = "";
       // Guardar cada imagen de forma secuencial
       for (let index = 0; index < imageIds.length; index++) {
@@ -1033,11 +1020,11 @@ async function getImagesPart({ partNumber }) {
 
         try {
           await saveBase64Image(base64Image, fileName);
-          console.log(
-            `  ✓ Imagen ${index + 1}/${
-              imageIds.length
-            } guardada: ${fileName}.png`
-          );
+          // console.log(
+          //   `  ✓ Imagen ${index + 1}/${
+          //     imageIds.length
+          //   } guardada: ${fileName}.png`
+          // );
           // Concatenar el nombre del archivo
           arrayImages += `${fileName}.png`;
           // Agregar salto de línea si no es el último elemento
@@ -1052,11 +1039,11 @@ async function getImagesPart({ partNumber }) {
         }
       }
 
-      console.log(`✓ Todas las imágenes de ${partNumber} guardadas\n`);
-      console.log(`📋 Lista de imágenes: ${arrayImages}`);
+      //console.log(`✓ Todas las imágenes de ${partNumber} guardadas\n`);
+      //console.log(`📋 Lista de imágenes: ${arrayImages}`);
       return arrayImages;
     } else {
-      console.log(`⚠ No se encontraron imágenes para ${partNumber}\n`);
+      //console.log(`⚠ No se encontraron imágenes para ${partNumber}\n`);
       return 0;
     }
   } catch (error) {
