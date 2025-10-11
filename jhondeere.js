@@ -146,7 +146,7 @@ axiosInstance.interceptors.request.use(async (config) => {
 
   //console.log(`⏳ Esperando ${(delay/1000).toFixed(1)}s antes de petición...`);
   //await new Promise(resolve => setTimeout(resolve, delay));
-  await new Promise(resolve => setTimeout(resolve, 300));
+  await new Promise(resolve => setTimeout(resolve, 500));
 
   // Rotar headers cada 3 peticiones
   requestCount++;
@@ -341,7 +341,7 @@ async function getModelsByPartNumber() {
     });
     
     // Leer el archivo JSON
-    const fileContent = fs.readFileSync("./data/id_piezas1.json", "utf-8");
+    const fileContent = fs.readFileSync("./data/id_piezas.json", "utf-8");
     const piezas = JSON.parse(fileContent);
 
     console.log(`🚀 Script iniciado: ${scriptStartDate}`);
@@ -380,7 +380,7 @@ async function getModelsByPartNumber() {
         for (let j = 0; j < resultado.searchResults.length; j++) {
 
         //for (let j = 0; j <= 1; j++) {
-          console.log("MODELO",`${j+ 1}/${resultado.searchResults.length}`, j, item.id_pieza);
+          console.log("MODELO",`${j+ 1}/${resultado.searchResults.length}`, j, resultado.searchResults[j].equipmentName, item.id_pieza);
           const { baseCode, model, equipmentName,equipmentRefId } = resultado.searchResults[j];
           modelData.push({
             model_id: equipmentRefId,
@@ -395,7 +395,6 @@ async function getModelsByPartNumber() {
           //TODO descomentar lo anterior await getModelPart(item.id_pieza, resultado.data.searchResults[j]);
           //await getModelPart(item.id_pieza, resultado.searchResults[0]);
         }
-        console.log("model",modelData);
 
         await jsonToCsv(
            modelData,
