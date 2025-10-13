@@ -146,7 +146,7 @@ axiosInstance.interceptors.request.use(async (config) => {
 
   //console.log(`⏳ Esperando ${(delay/1000).toFixed(1)}s antes de petición...`);
   //await new Promise(resolve => setTimeout(resolve, delay));
-  await new Promise(resolve => setTimeout(resolve, 500));
+  //await new Promise(resolve => setTimeout(resolve, 500));
 
   // Rotar headers cada 3 peticiones
   requestCount++;
@@ -634,25 +634,49 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
         
           
           */
-        getImageModel = await retryOnError(async () => {
-          //await new Promise(resolve => setTimeout(resolve, tiempoMs));
-          return await axiosInstance({
-            method: "post",
-            url: "https://partscatalog.deere.com/jdrc-services/v1/sidebyside/sidebysidePage",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            data: {
-              eqID: equipmentRefId,
-              pgID: pageId,
-              ...businessRegion,
-              locale: "en-US",
-            },
-          });
-        }, `getImageModel(${partNumber}, ${equipmentRefId}, ${pageId})`);
-        // Si getImageModel es null, saltar este modelo
-        if (!getImageModel || !getImageModel.data) {
-          console.warn(`⚠️  Saltando imagen de modelo para ${partNumber}`);
+        // Reintentar INFINITAMENTE hasta obtener partItems válido
+        let retryCount = 0;
+        let getImageModel = null;
+        
+        while (true) { // ♾️ REINTENTOS INFINITOS
+          getImageModel = await retryOnError(async () => {
+            //await new Promise(resolve => setTimeout(resolve, tiempoMs));
+            return await axiosInstance({
+              method: "post",
+              url: "https://partscatalog.deere.com/jdrc-services/v1/sidebyside/sidebysidePage",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              data: {
+                eqID: equipmentRefId,
+                pgID: pageId,
+                ...businessRegion,
+                locale: "en-US",
+              },
+            });
+          }, `getImageModel(${partNumber}, ${equipmentRefId}, ${pageId})`);
+          
+          // Si getImageModel es null, saltar este modelo
+          if (!getImageModel || !getImageModel.data) {
+            console.warn(`⚠️  Saltando imagen de modelo para ${partNumber}`);
+            break;
+          }
+          
+          // Verificar si partItems existe y es válido
+          if (getImageModel.data.partItems && Array.isArray(getImageModel.data.partItems)) {
+            // partItems válido, salir del loop
+            //console.log(`✅ partItems obtenido correctamente - ${partNumber}`);
+            break;
+          } else {
+            retryCount++;
+            console.log(`⚠️  partItems undefined, reintentando... (Intento #${retryCount}) ♾️ INFINITO - ${partNumber}`);
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos antes de reintentar
+          }
+        }
+        
+        // Si no hay partItems después del loop, saltar (solo si getImageModel es null)
+        if (!getImageModel || !getImageModel.data || !getImageModel.data.partItems) {
+          console.log(`❌ error no hay partItems - ${partNumber}`);
           continue;
         }
 
@@ -667,33 +691,28 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
        /* for (let j = 0; j < getImageModel.data.partItems.length; j++) {
           try {*/
 
-            if (getImageModel.data.partItems) {
-              const piece = getImageModel.data.partItems.find(
-                (partItem) => {
+        const piece = getImageModel.data.partItems.find(
+          (partItem) => {
 
-                  //console.log(`Comparando: ${partItem.partNumber} === R520632`);
-                  return partItem.partNumber === partNumber
-                }
-              );
-              if(piece && Object.keys(piece).length > 0){
-                // Verificar si el archivo CSV ya existe
-                const csvFilePath = path.join(__dirname, "csv_output", "pieces", `${partNumber}.csv`);
-                /*if (!fs.existsSync(csvFilePath)) {
-                  console.log(`Procesando pieza ${partNumber}...`);
-                  console.log("******************************");/*/
-                  await getPieceDetail({...piece, equipmentRefId: equipmentRefId,pageId:pageId, parte:parte});
-                /*  //TODO await getPieceDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
-                } else {
-                  console.log(`⏭ Saltando ${partNumber} - archivo CSV ya existe`);
-                }*/
-              }
-              else{
-                console.log("error, No encontrado");
-              }
-            }
-            else{
-              console.log("error no hay",getImageModel.data.partItems);
-            }
+            //console.log(`Comparando: ${partItem.partNumber} === R520632`);
+            return partItem.partNumber === partNumber
+          }
+        );
+        if(piece && Object.keys(piece).length > 0){
+          // Verificar si el archivo CSV ya existe
+          const csvFilePath = path.join(__dirname, "csv_output", "pieces", `${partNumber}.csv`);
+          /*if (!fs.existsSync(csvFilePath)) {
+            console.log(`Procesando pieza ${partNumber}...`);
+            console.log("******************************");/*/
+            await getPieceDetail({...piece, equipmentRefId: equipmentRefId,pageId:pageId, parte:parte});
+          /*  //TODO await getPieceDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
+          } else {
+            console.log(`⏭ Saltando ${partNumber} - archivo CSV ya existe`);
+          }*/
+        }
+        else{
+          console.log("error, No encontrado en partItems");
+        }
          /* } catch (error) {
             console.error("Error:", error.message);
             throw error;
@@ -827,31 +846,50 @@ async function getPieceDetail(
   };
 
   try {
-    const response = await retryOnError(async () => {
-     // await new Promise(resolve => setTimeout(resolve, tiempoMs));
-      return await axiosInstance({
-        method: "post",
-        url: url,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: data,
-      });
-    }, `getPieceDetail(${partNumber})`);
+    // Reintentar INFINITAMENTE hasta obtener partOps válido
+    let retryCountDetail = 0;
+    let response = null;
     
-    // Si response es null, salir
-    if (!response || !response.data || !response.data.partOps) {
-      console.warn(`⚠️  error Saltando getPieceDetail para ${partNumber}`);
-      return;
+    while (true) { // ♾️ REINTENTOS INFINITOS
+      response = await retryOnError(async () => {
+       // await new Promise(resolve => setTimeout(resolve, tiempoMs));
+        return await axiosInstance({
+          method: "post",
+          url: url,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: data,
+        });
+      }, `getPieceDetail(${partNumber})`);
+      
+      // Verificar si partOps existe y es válido
+      if (response && response.data && response.data.partOps && Array.isArray(response.data.partOps) && response.data.partOps.length > 0) {
+        //console.log(`✅ partOps obtenido correctamente - ${partNumber}`);
+        break;
+      } else {
+        retryCountDetail++;
+        console.log(`⚠️  partOps undefined/vacío, reintentando... (Intento #${retryCountDetail}) ♾️ INFINITO - ${partNumber}`);
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos antes de reintentar
+      }
     }
 
-    ///remark
-    const remarks = await getPieceDetailRemarks({ equipmentRefId, id }, isAlternative);
+    // Reintentar INFINITAMENTE hasta obtener remarks válido
+    let retryCountRemarks = 0;
+    let remarks = null;
     
-    // Si remarks es null, salir
-    if (!remarks) {
-      console.warn(`⚠️ error No se pudieron obtener remarks para ${partNumber}`);
-      return;
+    while (true) { // ♾️ REINTENTOS INFINITOS
+      remarks = await getPieceDetailRemarks({ equipmentRefId, id }, isAlternative);
+      
+      // Verificar si remarks es válido
+      if (remarks && typeof remarks === 'object') {
+        //console.log(`✅ remarks obtenido correctamente - ${partNumber}`);
+        break;
+      } else {
+        retryCountRemarks++;
+        console.log(`⚠️  remarks undefined, reintentando... (Intento #${retryCountRemarks}) ♾️ INFINITO - ${partNumber}`);
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos antes de reintentar
+      }
     }
 
     const images = await getImagesPart({ partNumber });
