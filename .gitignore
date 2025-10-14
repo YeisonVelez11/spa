@@ -76,7 +76,8 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
-
+csv_output
+images
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js

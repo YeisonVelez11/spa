@@ -8,9 +8,10 @@ const { jsonToCsv } = require("./funciones");
 // Configuración para reintentos
 const MAX_RETRIES = Infinity; // ♾️ REINTENTOS ILIMITADOS - La aplicación nunca morirá
 const RETRY_DELAY_MS = 8000; // 8 segundos
-const RETRY_DELAY_403_MS = 30000; // 30 segundos para 403
-const MIN_DELAY_BETWEEN_REQUESTS = 2000; // 2 segundos mínimo
-const MAX_DELAY_BETWEEN_REQUESTS = 5000; // 5 segundos máximo
+const RETRY_DELAY_403_MS = 60000; // 60 segundos para 403 (aumentado para evitar ban)
+const RETRY_DELAY_502_MS = 45000; // 45 segundos para 502
+const MIN_DELAY_BETWEEN_REQUESTS = 3000; // 3 segundos mínimo (aumentado)
+const MAX_DELAY_BETWEEN_REQUESTS = 8000; // 8 segundos máximo (aumentado)
 
 // Pool de User-Agents para rotar
 const USER_AGENTS = [
@@ -89,8 +90,11 @@ function getRotatingHeaders() {
     'Connection': 'keep-alive',
     'Origin': 'https://partscatalog.deere.com',
     'Referer': randomReferer,
-    'Cache-Control': 'no-cache',
-    'Pragma': 'no-cache'
+    'Cache-Control': 'no-cache,no-store',
+    'Pragma': 'no-cache',
+    'Expires': '0',
+    'product-line': 'JDRC',
+    'Captcha-Version': 'Enterprise'
   };
   
   // Agregar headers específicos del navegador
@@ -140,17 +144,14 @@ const axiosInstance = axios.create({
 
 // Interceptor para agregar delay aleatorio y rotar headers
 axiosInstance.interceptors.request.use(async (config) => {
-  // Agregar delay aleatorio entre peticiones
-  const delay = getRandomDelay();
-    //console.log("⏳ Esperando 1s");
-
+  // Agregar delay aleatorio entre peticiones (CRÍTICO para evitar ban)
+  //const delay = getRandomDelay();
   //console.log(`⏳ Esperando ${(delay/1000).toFixed(1)}s antes de petición...`);
   //await new Promise(resolve => setTimeout(resolve, delay));
-  //await new Promise(resolve => setTimeout(resolve, 500));
 
-  // Rotar headers cada 3 peticiones
+  // Rotar headers cada 2 peticiones (más frecuente)
   requestCount++;
-  if (requestCount % 3 === 0) {
+  if (requestCount % 2 === 0) {
     COMMON_HEADERS = getRotatingHeaders();
     //console.log(`🔄 Rotando headers (petición #${requestCount})`);
   }
@@ -237,18 +238,27 @@ async function retryOnError(fn, context, attemptNumber = 1) {
         
         // Aumentar delay adaptativo progresivamente
         if (consecutive403Count >= 2) {
-          adaptiveDelayMultiplier = Math.min(8, adaptiveDelayMultiplier + 0.8);
+          adaptiveDelayMultiplier = Math.min(10, adaptiveDelayMultiplier + 1.2);
           console.warn(`🐌 ${consecutive403Count} errores 403 consecutivos. Aumentando delay a ${adaptiveDelayMultiplier.toFixed(1)}x`);
         }
       }
       
       // Forzar rotación de headers MÚLTIPLES VECES para cambiar más
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 5; i++) {
         COMMON_HEADERS = getRotatingHeaders();
       }
-      console.log(`🔄 Headers rotados agresivamente`);
+      console.log(`🔄 Headers rotados agresivamente (5 veces)`);
       
-      const delay = status === 403 ? RETRY_DELAY_403_MS * adaptiveDelayMultiplier : RETRY_DELAY_MS;
+      // Delays específicos por tipo de error
+      let delay;
+      if (status === 403) {
+        delay = RETRY_DELAY_403_MS * adaptiveDelayMultiplier;
+      } else if (status === 502) {
+        delay = RETRY_DELAY_502_MS;
+      } else {
+        delay = RETRY_DELAY_MS;
+      }
+      
       console.warn(`⚠️  Error ${status} en ${context}. Rotando headers y reintentando en ${(delay/1000).toFixed(1)}s... (Intento #${attemptNumber}) ♾️ REINTENTOS ILIMITADOS`);
       
       await new Promise(resolve => setTimeout(resolve, delay));
@@ -401,7 +411,6 @@ async function getModelsByPartNumber() {
           `model_${item.id_pieza}`,
           `models/`
         );
-        console.log("piece",pieceDetail);
         await jsonToCsv(
           pieceDetail,
           `${item.id_pieza}`,
@@ -670,7 +679,22 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
           } else {
             retryCount++;
             console.log(`⚠️  partItems undefined, reintentando... (Intento #${retryCount}) ♾️ INFINITO - ${partNumber}`);
-            await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos antes de reintentar
+            
+            // 🛡️ ESTRATEGIA ANTI-BAN: Rotar headers agresivamente
+            console.log(`🔄 Rotando headers agresivamente para evitar ban...`);
+            for (let i = 0; i < 10; i++) {
+              COMMON_HEADERS = getRotatingHeaders();
+            }
+            
+            // 🛡️ Aumentar delay progresivamente según intentos
+            let antiBanDelay = 2000; // Base: 2 segundos
+            if (retryCount >= 3) antiBanDelay = 5000;   // 3+ intentos: 5 segundos
+            if (retryCount >= 5) antiBanDelay = 10000;  // 5+ intentos: 10 segundos
+            if (retryCount >= 10) antiBanDelay = 20000; // 10+ intentos: 20 segundos
+            if (retryCount >= 20) antiBanDelay = 40000; // 20+ intentos: 40 segundos
+            
+            console.log(`⏳ Esperando ${(antiBanDelay/1000).toFixed(1)}s antes de reintentar (estrategia anti-ban)...`);
+            await new Promise(resolve => setTimeout(resolve, antiBanDelay));
           }
         }
         
@@ -870,7 +894,22 @@ async function getPieceDetail(
       } else {
         retryCountDetail++;
         console.log(`⚠️  partOps undefined/vacío, reintentando... (Intento #${retryCountDetail}) ♾️ INFINITO - ${partNumber}`);
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos antes de reintentar
+        
+        // 🛡️ ESTRATEGIA ANTI-BAN: Rotar headers agresivamente
+        console.log(`🔄 Rotando headers agresivamente para evitar ban...`);
+        for (let i = 0; i < 10; i++) {
+          COMMON_HEADERS = getRotatingHeaders();
+        }
+        
+        // 🛡️ Aumentar delay progresivamente según intentos
+        let antiBanDelay = 2000; // Base: 2 segundos
+        if (retryCountDetail >= 3) antiBanDelay = 5000;   // 3+ intentos: 5 segundos
+        if (retryCountDetail >= 5) antiBanDelay = 10000;  // 5+ intentos: 10 segundos
+        if (retryCountDetail >= 10) antiBanDelay = 20000; // 10+ intentos: 20 segundos
+        if (retryCountDetail >= 20) antiBanDelay = 40000; // 20+ intentos: 40 segundos
+        
+        console.log(`⏳ Esperando ${(antiBanDelay/1000).toFixed(1)}s antes de reintentar (estrategia anti-ban)...`);
+        await new Promise(resolve => setTimeout(resolve, antiBanDelay));
       }
     }
 
@@ -888,7 +927,22 @@ async function getPieceDetail(
       } else {
         retryCountRemarks++;
         console.log(`⚠️  remarks undefined, reintentando... (Intento #${retryCountRemarks}) ♾️ INFINITO - ${partNumber}`);
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos antes de reintentar
+        
+        // 🛡️ ESTRATEGIA ANTI-BAN: Rotar headers agresivamente
+        console.log(`🔄 Rotando headers agresivamente para evitar ban...`);
+        for (let i = 0; i < 10; i++) {
+          COMMON_HEADERS = getRotatingHeaders();
+        }
+        
+        // 🛡️ Aumentar delay progresivamente según intentos
+        let antiBanDelay = 2000; // Base: 2 segundos
+        if (retryCountRemarks >= 3) antiBanDelay = 5000;   // 3+ intentos: 5 segundos
+        if (retryCountRemarks >= 5) antiBanDelay = 10000;  // 5+ intentos: 10 segundos
+        if (retryCountRemarks >= 10) antiBanDelay = 20000; // 10+ intentos: 20 segundos
+        if (retryCountRemarks >= 20) antiBanDelay = 40000; // 20+ intentos: 40 segundos
+        
+        console.log(`⏳ Esperando ${(antiBanDelay/1000).toFixed(1)}s antes de reintentar (estrategia anti-ban)...`);
+        await new Promise(resolve => setTimeout(resolve, antiBanDelay));
       }
     }
 
