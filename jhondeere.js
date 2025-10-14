@@ -5,6 +5,50 @@ const fs = require("fs");
 const path = require("path");
 const { jsonToCsv } = require("./funciones");
 
+/**
+ * Descarga una imagen desde una URL y la guarda en el sistema de archivos
+ * @param {string} imageUrl - URL de la imagen
+ * @param {string} equipmentRefId - ID del equipo para nombrar el archivo
+ * @returns {Promise<string>} - Ruta del archivo guardado
+ */
+async function downloadAndSaveImage(imageUrl, equipmentRefId) {
+  try {
+    // Crear carpeta images si no existe
+    const imagesDir = path.join(__dirname, "images");
+    if (!fs.existsSync(imagesDir)) {
+      fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    // Verificar si la imagen ya existe
+    const fileName = `${equipmentRefId}.png`;
+    const filePath = path.join(imagesDir, fileName);
+    
+    if (fs.existsSync(filePath)) {
+      //console.log(`⏭ Imagen ya existe: ${fileName}`);
+      return filePath;
+    }
+
+    // Descargar la imagen como buffer
+    const response = await axios({
+      method: "get",
+      url: imageUrl,
+      responseType: "arraybuffer", // Importante para imágenes
+      headers: {
+        "Content-Type": "application/json",
+      },
+      timeout: 30000, // 30 segundos de timeout
+    });
+
+    // Guardar la imagen
+    fs.writeFileSync(filePath, response.data);
+    
+    return filePath;
+  } catch (error) {
+    console.error(`❌ Error al descargar imagen para ${equipmentRefId}:`, error.message);
+    return null;
+  }
+}
+
 // Configuración para reintentos
 const MAX_RETRIES = Infinity; // ♾️ REINTENTOS ILIMITADOS - La aplicación nunca morirá
 const RETRY_DELAY_MS = 8000; // 8 segundos
@@ -176,7 +220,7 @@ axiosInstance.interceptors.response.use(
   (error) => {
     // Enriquecer el error con información adicional
     if (error.code) {
-      console.error(`🔴 Error de red detectado: ${error.code} - ${error.message}`);
+      console.error(`🔴  red detectado: ${error.code} - ${error.message}`);
     }
     return Promise.reject(error);
   }
@@ -227,7 +271,7 @@ async function retryOnError(fn, context, attemptNumber = 1) {
       // Manejo específico de errores de red - REINTENTOS ILIMITADOS
       if (isNetworkError) {
         const delay = 10000; // 10 segundos para errores de red
-        console.warn(`🌐 Error de red (${errorCode || error.message}) en ${context}. Reintentando en ${(delay/1000).toFixed(1)}s... (Intento #${attemptNumber}) ♾️ REINTENTOS ILIMITADOS`);
+        console.warn(`🌐 de red (${errorCode || error.message}) en ${context}. Reintentando en ${(delay/1000).toFixed(1)}s... (Intento #${attemptNumber}) ♾️ REINTENTOS ILIMITADOS`);
         await new Promise(resolve => setTimeout(resolve, delay));
         return retryOnError(fn, context, attemptNumber + 1);
       }
@@ -259,7 +303,7 @@ async function retryOnError(fn, context, attemptNumber = 1) {
         delay = RETRY_DELAY_MS;
       }
       
-      console.warn(`⚠️  Error ${status} en ${context}. Rotando headers y reintentando en ${(delay/1000).toFixed(1)}s... (Intento #${attemptNumber}) ♾️ REINTENTOS ILIMITADOS`);
+      console.warn(`⚠️   ${status} en ${context}. Rotando headers y reintentando en ${(delay/1000).toFixed(1)}s... (Intento #${attemptNumber}) ♾️ REINTENTOS ILIMITADOS`);
       
       await new Promise(resolve => setTimeout(resolve, delay));
       return retryOnError(fn, context, attemptNumber + 1);
@@ -351,7 +395,7 @@ async function getModelsByPartNumber() {
     });
     
     // Leer el archivo JSON
-    const fileContent = fs.readFileSync("./data/id_piezas.json", "utf-8");
+    const fileContent = fs.readFileSync("./data/id_piezas_faltante2s.json", "utf-8");
     const piezas = JSON.parse(fileContent);
 
     console.log(`🚀 Script iniciado: ${scriptStartDate}`);
@@ -397,6 +441,7 @@ async function getModelsByPartNumber() {
             model_code: baseCode,
             model_name: model,
             model_full_name: equipmentName,
+            link: `https://partscatalog.deere.com/jdrc/search/type/parts/term/${item.id_pieza}`,
           });
      
 
@@ -431,13 +476,20 @@ async function getModelsByPartNumber() {
 
       const endTime = Date.now();
       const duration = ((endTime - startTime) / 1000).toFixed(2);
-      const totalElapsed = ((endTime - scriptStartTime) / 1000).toFixed(2);
+      const totalElapsedSeconds = Math.floor((endTime - scriptStartTime) / 1000);
+      
+      // Convertir tiempo total a formato HH:MM:SS
+      const hours = Math.floor(totalElapsedSeconds / 3600);
+      const minutes = Math.floor((totalElapsedSeconds % 3600) / 60);
+      const seconds = totalElapsedSeconds % 60;
+      const totalElapsedFormatted = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      
       const currentTime = new Date().toLocaleString('es-ES', { 
         hour: '2-digit', 
         minute: '2-digit', 
         second: '2-digit' 
       });
-      console.log(`⏱️  Iteración ${i + 1}: ${duration}s | Tiempo total: ${totalElapsed}s | Hora: ${currentTime}\n`);
+      console.log(`⏱️  Iteración ${i + 1}: ${duration}s | Tiempo total: ${totalElapsedFormatted} | Hora: ${currentTime}\n`);
 
       // Pequeña pausa entre peticiones (opcional, para no saturar el servidor)
       /*if (i < piezas.length - 1) {
@@ -577,18 +629,76 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
       const partUsedModel = response.data.searchResults[i];
       //TODO const partUsedModel = response.data.searchResults[0];
 
-      const { pageId, baseCode, id, chapter, partType } = partUsedModel;
+      const { pageId, baseCode, id, partItemId,chapter, partType, imageId } = partUsedModel;
       const imagePart = `${equipmentRefId}_${pageId}`;
 
       ModelParts = [];
+
+        // Descargar y guardar la imagen del equipo
+        const imageUrl = `https://partscatalog.deere.com/jdrc-services/v1/image/getImageBlob?locale=en-US&iid=${imageId}`;
+        await downloadAndSaveImage(imageUrl, equipmentRefId);
+
+        // // Image plano - verificar si ya existe antes de hacer petición
+        // const planoFileName = `${equipmentRefId}_plano.png`;
+        // const planoFilePath = path.join(__dirname, "images", planoFileName);
+        
+        // if (!fs.existsSync(planoFilePath)) {
+        //   const imagePlano = await axiosInstance({
+        //     method: "post",
+        //     url: "https://partscatalog.deere.com/jdrc-services/v1/sidebyside/getRelatedPictorial",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     data: {
+        //       eqID: equipmentRefId,
+        //       pgID: id,
+        //       pageCode: "PICT-04.2",
+        //       brID: "1061",
+        //       locale: "en-US",
+        //       originalPageId: pageId
+        //     },
+        //   });
+
+        //   if(imagePlano.data && imagePlano.data.pageDetails){
+        //     await saveBase64Image(imagePlano.data.pageDetails.image, equipmentRefId+"_plano");
+        //   }
+        // }
+
+//
+try{
+  const partsFileName = `${equipmentRefId}_parts.png`;
+  const partsFilePath = path.join(__dirname, "images", partsFileName);
+  if (!fs.existsSync(partsFilePath)) {
+    const imageParts = await axiosInstance({
+      method: "post",
+      url: "https://partscatalog.deere.com/jdrc-services/v1/image/getImage",
+      data: {
+        eq: equipmentRefId,
+        iid: imageId
+      },
+    });
+  
+    if(imageParts.data && imageParts.data.image){
+      await saveBase64Image(imageParts.data.image, equipmentRefId+"_parts");
+    }
+  }
+}
+catch(e){
+  console.log("error en getimage",e.message);
+}
+
+    console.log(`Parte ${i} /${response.data.searchResults.length} ${partLocation}| ${pageId}`);
       ModelParts.push({
         part_id: pageId,
         part_name: partLocation,
         part_path: partLocationPath,
         part_type: partType,
-        image: imagePart+".png",
+        image: equipmentRefId+".png",
+        image_parts: equipmentRefId+"_parts.png",
         id,
+        part_item_id:partItemId,
         chapter,
+        link: `https://partscatalog.deere.com/jdrc/search/type/parts/equipment/${equipmentRefId}/term/${partNumber}`,
       });
       await jsonToCsv(
         ModelParts,
@@ -647,96 +757,95 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
         let retryCount = 0;
         let getImageModel = null;
         
-        while (true) { // ♾️ REINTENTOS INFINITOS
-          getImageModel = await retryOnError(async () => {
-            //await new Promise(resolve => setTimeout(resolve, tiempoMs));
-            return await axiosInstance({
-              method: "post",
-              url: "https://partscatalog.deere.com/jdrc-services/v1/sidebyside/sidebysidePage",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              data: {
-                eqID: equipmentRefId,
-                pgID: pageId,
-                ...businessRegion,
-                locale: "en-US",
-              },
-            });
-          }, `getImageModel(${partNumber}, ${equipmentRefId}, ${pageId})`);
+        // while (true) { // ♾️ REINTENTOS INFINITOS
+        //   getImageModel = await retryOnError(async () => {
+        //     //await new Promise(resolve => setTimeout(resolve, tiempoMs));
+        //     return await axiosInstance({
+        //       method: "post",
+        //       url: "https://partscatalog.deere.com/jdrc-services/v1/sidebyside/sidebysidePage",
+        //       headers: {
+        //         "Content-Type": "application/json",
+        //       },
+        //       data: {
+        //         eqID: equipmentRefId,
+        //         pgID: pageId,
+        //         ...businessRegion,
+        //         locale: "en-US",
+        //       },
+        //     });
+        //   }, `getImageModel(${partNumber}, ${equipmentRefId}, ${pageId})`);
           
-          // Si getImageModel es null, saltar este modelo
-          if (!getImageModel || !getImageModel.data) {
-            console.warn(`⚠️  Saltando imagen de modelo para ${partNumber}`);
-            break;
-          }
+        //   // Si getImageModel es null, saltar este modelo
+        //   if (!getImageModel || !getImageModel.data) {
+        //     console.warn(`⚠️  Saltando imagen de modelo para ${partNumber}`);
+        //     break;
+        //   }
           
-          // Verificar si partItems existe y es válido
-          if (getImageModel.data.partItems && Array.isArray(getImageModel.data.partItems)) {
-            // partItems válido, salir del loop
-            //console.log(`✅ partItems obtenido correctamente - ${partNumber}`);
-            break;
-          } else {
-            retryCount++;
-            console.log(`⚠️  partItems undefined, reintentando... (Intento #${retryCount}) ♾️ INFINITO - ${partNumber}`);
+        //   // Verificar si partItems existe y es válido
+        //   if (getImageModel.data.partItems && Array.isArray(getImageModel.data.partItems)) {
+        //     // partItems válido, salir del loop
+        //     //console.log(`✅ partItems obtenido correctamente - ${partNumber}`);
+        //     break;
+        //   } else {
+        //     retryCount++;
+        //     console.log(`⚠️  partItems undefined, reintentando... (Intento #${retryCount}) ♾️ INFINITO - ${partNumber}`);
             
-            // 🛡️ ESTRATEGIA ANTI-BAN: Rotar headers agresivamente
-            console.log(`🔄 Rotando headers agresivamente para evitar ban...`);
-            for (let i = 0; i < 10; i++) {
-              COMMON_HEADERS = getRotatingHeaders();
-            }
+        //     // 🛡️ ESTRATEGIA ANTI-BAN: Rotar headers agresivamente
+        //     console.log(`🔄 Rotando headers agresivamente para evitar ban...`);
+        //     for (let i = 0; i < 10; i++) {
+        //       COMMON_HEADERS = getRotatingHeaders();
+        //     }
             
-            // 🛡️ Aumentar delay progresivamente según intentos
-            let antiBanDelay = 2000; // Base: 2 segundos
-            if (retryCount >= 3) antiBanDelay = 5000;   // 3+ intentos: 5 segundos
-            if (retryCount >= 5) antiBanDelay = 10000;  // 5+ intentos: 10 segundos
-            if (retryCount >= 10) antiBanDelay = 20000; // 10+ intentos: 20 segundos
-            if (retryCount >= 20) antiBanDelay = 40000; // 20+ intentos: 40 segundos
+        //     // 🛡️ Aumentar delay progresivamente según intentos
+        //     let antiBanDelay = 2000; // Base: 2 segundos
+        //     if (retryCount >= 3) antiBanDelay = 5000;   // 3+ intentos: 5 segundos
+        //     if (retryCount >= 5) antiBanDelay = 10000;  // 5+ intentos: 10 segundos
+        //     if (retryCount >= 10) antiBanDelay = 20000; // 10+ intentos: 20 segundos
+        //     if (retryCount >= 20) antiBanDelay = 40000; // 20+ intentos: 40 segundos
             
-            console.log(`⏳ Esperando ${(antiBanDelay/1000).toFixed(1)}s antes de reintentar (estrategia anti-ban)...`);
-            await new Promise(resolve => setTimeout(resolve, antiBanDelay));
-          }
-        }
+        //     console.log(`⏳ Esperando ${(antiBanDelay/1000).toFixed(1)}s antes de reintentar (estrategia anti-ban)...`);
+        //     await new Promise(resolve => setTimeout(resolve, antiBanDelay));
+        //   }
+        // }
         
-        // Si no hay partItems después del loop, saltar (solo si getImageModel es null)
-        if (!getImageModel || !getImageModel.data || !getImageModel.data.partItems) {
-          console.log(`❌ error no hay partItems - ${partNumber}`);
-          continue;
-        }
+        // // Si no hay partItems después del loop, saltar (solo si getImageModel es null)
+        // if (!getImageModel || !getImageModel.data || !getImageModel.data.partItems) {
+        //   console.log(`❌ error no hay partItems - ${partNumber}`);
+        //   continue;
+        // }
 
         // Guardar la imagen si existe en la respuesta
-        if (getImageModel.data && getImageModel.data.image) {
-          const imageFilePath = await saveBase64Image(
-            getImageModel.data.image,
-            imagePart,
-          );
-          getImageModel.data.imageFilePath = imageFilePath;
-        }
+        // if (getImageModel.data && getImageModel.data.image) {
+        //   const imageFilePath = await saveBase64Image(
+        //     getImageModel.data.image,
+        //     imagePart,
+        //   );
+        //   getImageModel.data.imageFilePath = imageFilePath;
+        // }
        /* for (let j = 0; j < getImageModel.data.partItems.length; j++) {
           try {*/
 
-        const piece = getImageModel.data.partItems.find(
-          (partItem) => {
+        // const piece = getImageModel.data.partItems.find(
+        //   (partItem) => {
 
-            //console.log(`Comparando: ${partItem.partNumber} === R520632`);
-            return partItem.partNumber === partNumber
-          }
-        );
-        if(piece && Object.keys(piece).length > 0){
-          // Verificar si el archivo CSV ya existe
-          const csvFilePath = path.join(__dirname, "csv_output", "pieces", `${partNumber}.csv`);
-          /*if (!fs.existsSync(csvFilePath)) {
-            console.log(`Procesando pieza ${partNumber}...`);
-            console.log("******************************");/*/
-            await getPieceDetail({...piece, equipmentRefId: equipmentRefId,pageId:pageId, parte:parte});
-          /*  //TODO await getPieceDetail({...getImageModel.data.partItems[j], equipmentRefId: equipmentRefId});
-          } else {
-            console.log(`⏭ Saltando ${partNumber} - archivo CSV ya existe`);
-          }*/
-        }
-        else{
-          console.log("error, No encontrado en partItems");
-        }
+        //     //console.log(`Comparando: ${partItem.partNumber} === R520632`);
+        //     return partItem.partNumber === partNumber
+        //   }
+        // );
+        //if(piece && Object.keys(piece).length > 0){
+       
+
+
+
+
+        
+
+        await getPieceDetail({...partUsedModel, equipmentRefId: equipmentRefId,pageId:pageId, parte:parte});
+     
+        // }
+        // else{
+        //   console.log("error, No encontrado en partItems");
+        // }
          /* } catch (error) {
             console.error("Error:", error.message);
             throw error;
@@ -778,7 +887,7 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
 */
 // id es el id de la parte
 async function getPieceDetailRemarks(
-  { equipmentRefId, partNumber, pageId, id },
+  { equipmentRefId, partNumber, pageId, id, partItemId },
   isAlternative = true
 ) {
   const url =
@@ -789,7 +898,7 @@ async function getPieceDetailRemarks(
   };
 
   const data = {
-    pid: id,
+    pid: partItemId,
     fr: {
       equipmentRefId: equipmentRefId,
       currentPin: null,
@@ -848,7 +957,7 @@ async function getPieceDetailRemarks(
 */
 let pieceDetail = [];
 async function getPieceDetail(
-  { equipmentRefId, partNumber, id,parte, pageId},
+  { equipmentRefId, partNumber, id,parte, partItemId, pageId},
   isAlternative = true
 ) {
   const url =
@@ -918,8 +1027,7 @@ async function getPieceDetail(
     let remarks = null;
     
     while (true) { // ♾️ REINTENTOS INFINITOS
-      remarks = await getPieceDetailRemarks({ equipmentRefId, id }, isAlternative);
-      
+      remarks = await getPieceDetailRemarks({ equipmentRefId, id, partItemId }, isAlternative);
       // Verificar si remarks es válido
       if (remarks && typeof remarks === 'object') {
         //console.log(`✅ remarks obtenido correctamente - ${partNumber}`);
@@ -967,6 +1075,7 @@ async function getPieceDetail(
       piece_packageLengthUnit: partOps[0].partShippingInfo.packageLengthUnit,
       piece_packageQty: partOps[0].partShippingInfo.packageQty,
       piece_images: images,
+      link: `https://partscatalog.deere.com/jdrc/partdetails/partnum/${partNumber}/referrer/sbs/pid/${partItemId}/pgId/${pageId}/eqId/${equipmentRefId}`
     };
 
     /*if (
