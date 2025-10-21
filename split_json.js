@@ -67,7 +67,7 @@ function splitJsonFile(inputFile, numberOfFiles, outputDir = './data/split') {
 // ============================================
 
 // Archivo de entrada
-const INPUT_FILE = './data/id_piezas.json';
+const INPUT_FILE = './data/id_piezas_restantes.json';
 
 // Número de archivos a generar (CAMBIAR ESTE VALOR)
 const NUMBER_OF_FILES = 32;

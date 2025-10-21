@@ -1,20 +1,399 @@
  [
-
-  
-
-
   {
-    "id_pieza": "24338",
-    "parte": "test"
-  },
-    {
-      "id_pieza": "DZ108149",
-      "parte": "Arandela"
+    "id_pieza": "26H72",
+    "parte": "Chaveta "
     },
     {
-      "id_pieza": "24M7471",
-      "parte": "Casquillo"
-      
+    "id_pieza": "26H73",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H74",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H75",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H76",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H77",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H78",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H79",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H80",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H82",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H83",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H85",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H86",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H87",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H89",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H90",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H91",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H92",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H93",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H94",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H95",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H96",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H97",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26H99",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M4221",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M4222",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M4223",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M4224",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M4226",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M4227",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M4228",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M5447",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M6731",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M6733",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M6787",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M7000",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M7001",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M7002",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M7003",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26M7008",
+    "parte": "Chaveta "
+    },
+    {
+    "id_pieza": "26100000710",
+    "parte": "Asiento "
+    },
+    {
+    "id_pieza": "26100000980",
+    "parte": "Diferencial"
+    },
+    {
+    "id_pieza": "26100200180",
+    "parte": "Pedal"
+    },
+    {
+    "id_pieza": "263G857041",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "26300000580",
+    "parte": "Rueda"
+    },
+    {
+    "id_pieza": "26303400010",
+    "parte": "Horca"
+    },
+    {
+    "id_pieza": "264R",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "267SE",
+    "parte": "Pasador de muelle "
+    },
+    {
+    "id_pieza": "268SE",
+    "parte": "Muelle"
+    },
+    {
+    "id_pieza": "27047",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "27400000675",
+    "parte": "Acople de enganche"
+    },
+    {
+    "id_pieza": "27400001375",
+    "parte": "Corona"
+    },
+    {
+    "id_pieza": "27407700070",
+    "parte": "Acople de enganche"
+    },
+    {
+    "id_pieza": "275SE",
+    "parte": "Muelle de compresiï¿½n"
+    },
+    {
+    "id_pieza": "27501000180",
+    "parte": "Eje "
+    },
+    {
+    "id_pieza": "27507700110",
+    "parte": "Lanza de remolque "
+    },
+    {
+    "id_pieza": "276SE",
+    "parte": "Diente de muelle"
+    },
+    {
+    "id_pieza": "27600020000",
+    "parte": "Juego d.etiquetas adhe"
+    },
+    {
+    "id_pieza": "279SE",
+    "parte": "Muelle"
+    },
+    {
+    "id_pieza": "28H1016",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H102",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1090",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1152",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1234",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1495",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1496",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1497",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1508",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1511",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "28H1515",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1517",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "28H1518",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "28H1519",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "28H1521",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1522",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1523",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1524",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1525",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1526",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1527",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1529",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1530",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1531",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1532",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1534",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1535",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1537",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1551",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "28H1572",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "28H1575",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1576",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1578",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1580",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1581",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1594",
+    "parte": "Casquillo "
+    },
+    {
+    "id_pieza": "28H1596",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "28H1597",
+    "parte": "Arandela"
+    },
+    {
+    "id_pieza": "28H1600",
+    "parte": "Espaciador"
+    },
+    {
+    "id_pieza": "28H1601",
+    "parte": "Casquillo "
     }
 
   ]

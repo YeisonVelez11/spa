@@ -60,11 +60,42 @@ async function mergeCsvFiles(folderName, outputFileName = null) {
   let filesProcessed = 0;
   let headerWritten = false;
   let duplicatesRemoved = 0;
+  let masterHeader = null;
+  let masterHeaderColumns = [];
   
   // Set para almacenar líneas únicas y detectar duplicados
   const uniqueLines = new Set();
 
   try {
+    // Primera pasada: encontrar el header con más columnas
+    console.log('🔍 Analizando headers de todos los archivos...');
+    for (const file of files) {
+      const fileStream = fs.createReadStream(file, { encoding: 'utf8' });
+      const rl = readline.createInterface({
+        input: fileStream,
+        crlfDelay: Infinity
+      });
+      
+      for await (const line of rl) {
+        const columns = line.split(',');
+        if (!masterHeader || columns.length > masterHeaderColumns.length) {
+          masterHeader = line;
+          masterHeaderColumns = columns;
+        }
+        break; // Solo leer la primera línea
+      }
+      
+      fileStream.destroy();
+    }
+    
+    console.log(`✓ Header maestro encontrado con ${masterHeaderColumns.length} columnas`);
+    console.log(`  ${masterHeader}\n`);
+    
+    // Escribir el header maestro
+    writeStream.write(masterHeader + '\n');
+    headerWritten = true;
+    
+    // Segunda pasada: procesar los datos
     for (const file of files) {
       filesProcessed++;
       console.log(`⏳ Procesando [${filesProcessed}/${files.length}]: ${path.basename(file)}`);
@@ -77,25 +108,35 @@ async function mergeCsvFiles(folderName, outputFileName = null) {
 
       let isFirstLine = true;
       let linesInFile = 0;
+      let currentFileHeader = null;
+      let currentFileColumns = [];
 
       for await (const line of rl) {
         // Si es la primera línea del archivo (header)
         if (isFirstLine) {
-          // Solo escribir el header una vez (del primer archivo)
-          if (!headerWritten) {
-            writeStream.write(line + '\n');
-            headerWritten = true;
-          }
+          currentFileHeader = line;
+          currentFileColumns = line.split(',');
           isFirstLine = false;
           continue;
         }
 
         // Escribir la línea de datos solo si no es duplicada
         if (line.trim()) { // Ignorar líneas vacías
+          let processedLine = line;
+          
+          // Si el archivo actual tiene menos columnas que el header maestro,
+          // agregar columnas vacías al final
+          if (currentFileColumns.length < masterHeaderColumns.length) {
+            const lineColumns = line.split(',');
+            const missingColumns = masterHeaderColumns.length - currentFileColumns.length;
+            // Agregar comas para las columnas faltantes
+            processedLine = line + ','.repeat(missingColumns);
+          }
+          
           // Verificar si la línea ya existe
-          if (!uniqueLines.has(line)) {
-            uniqueLines.add(line);
-            writeStream.write(line + '\n');
+          if (!uniqueLines.has(processedLine)) {
+            uniqueLines.add(processedLine);
+            writeStream.write(processedLine + '\n');
             linesInFile++;
             totalLines++;
           } else {

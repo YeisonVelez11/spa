@@ -12,40 +12,54 @@ const { jsonToCsv } = require("./funciones");
  * @returns {Promise<string>} - Ruta del archivo guardado
  */
 async function downloadAndSaveImage(imageUrl, equipmentRefId) {
-  try {
-    // Crear carpeta images si no existe
-    const imagesDir = path.join(__dirname, "images");
-    if (!fs.existsSync(imagesDir)) {
-      fs.mkdirSync(imagesDir, { recursive: true });
-    }
+  // Crear carpeta images si no existe
+  const imagesDir = path.join(__dirname, "images");
+  if (!fs.existsSync(imagesDir)) {
+    fs.mkdirSync(imagesDir, { recursive: true });
+  }
 
-    // Verificar si la imagen ya existe
-    const fileName = `${equipmentRefId}.png`;
-    const filePath = path.join(imagesDir, fileName);
-    
-    if (fs.existsSync(filePath)) {
-      //console.log(`⏭ Imagen ya existe: ${fileName}`);
-      return filePath;
-    }
-
-    // Descargar la imagen como buffer
-    const response = await axios({
-      method: "get",
-      url: imageUrl,
-      responseType: "arraybuffer", // Importante para imágenes
-      headers: {
-        "Content-Type": "application/json",
-      },
-      timeout: 30000, // 30 segundos de timeout
-    });
-
-    // Guardar la imagen
-    fs.writeFileSync(filePath, response.data);
-    
+  // Verificar si la imagen ya existe
+  const fileName = `${equipmentRefId}.png`;
+  const filePath = path.join(imagesDir, fileName);
+  
+  if (fs.existsSync(filePath)) {
+    //console.log(`⏭ Imagen ya existe: ${fileName}`);
     return filePath;
-  } catch (error) {
-    console.error(`❌ Error al descargar imagen para ${equipmentRefId}:`, error.message);
-    return null;
+  }
+
+  // Reintentar hasta que se descargue exitosamente (excepto error 500)
+  let attemptNumber = 1;
+  while (true) {
+    try {
+      // Descargar la imagen como buffer
+      const response = await axios({
+        method: "get",
+        url: imageUrl,
+        responseType: "arraybuffer", // Importante para imágenes
+        headers: {
+          "Content-Type": "application/json",
+        },
+        timeout: 30000, // 30 segundos de timeout
+      });
+
+      // Guardar la imagen
+      fs.writeFileSync(filePath, response.data);
+      
+      return filePath;
+    } catch (error) {
+      const status = error.response?.status;
+      
+      // Error 500 - permitir continuar
+      if (status === 500) {
+        console.warn(`⚠️  Error 500 al descargar imagen para ${equipmentRefId}. Continuando...`);
+        return null;
+      }
+      
+      console.error(`❌ Error al descargar imagen para ${equipmentRefId} (Intento #${attemptNumber}):`, error.message);
+      console.log(`🔄 Reintentando descarga de imagen en 5 segundos... ♾️`);
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      attemptNumber++;
+    }
   }
 }
 
@@ -256,11 +270,14 @@ async function retryOnError(fn, context, attemptNumber = 1) {
     ];
     const isNetworkError = networkErrors.includes(errorCode) || error.message?.includes('network');
     
-    // Errores HTTP recuperables
-    const isHttpRecoverableError = status === 403 || status === 502 || status === 503 || status === 429;
+    // Errores HTTP que requieren REINTENTOS INFINITOS
+    const isCriticalHttpError = status === 403 || status === 502 || status === 503 || status === 429;
     
-    // Determinar si es un error recuperable
-    const isRecoverableError = isHttpRecoverableError || isNetworkError;
+    // Error 500 - permitir continuar
+    const isError500 = status === 500;
+    
+    // Determinar si es un error que requiere reintentos infinitos
+    const isRecoverableError = isCriticalHttpError || isNetworkError;
     
     if (isRecoverableError) {
       // Imprimir "error" para errores 403 o 502
@@ -309,9 +326,16 @@ async function retryOnError(fn, context, attemptNumber = 1) {
       return retryOnError(fn, context, attemptNumber + 1);
     }
     
-    // Para errores NO recuperables, registrar y continuar (retornar null)
-    console.error(`❌ Error NO recuperable en ${context}: ${error.message}. Continuando con siguiente operación...`);
-    return null;
+    // Error 500 - permitir continuar con siguiente iteración
+    if (isError500) {
+      console.warn(`⚠️  Error 500 en ${context}: ${error.message}. Continuando con siguiente operación...`);
+      return null;
+    }
+    
+    // Para otros errores NO recuperables, también reintentar indefinidamente
+    console.error(`❌ Error NO recuperable en ${context}: ${error.message}. Reintentando en 10s... ♾️ (Intento #${attemptNumber})`);
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    return retryOnError(fn, context, attemptNumber + 1);
   }
 }
 
@@ -394,8 +418,16 @@ async function getModelsByPartNumber() {
       second: '2-digit' 
     });
     
+    // Obtener el argumento desde la línea de comandos (node jhondeere.js 1)
+    const fileIndex = process.argv[2]; // Captura el primer argumento después del nombre del script
+    
+    // Construir el nombre del archivo según el argumento
+    const fileName = fileIndex ? `./data/id_piezas${fileIndex}.json` : "./data/id_piezas_restantes.json";
+    
+    console.log(`📂 Archivo a procesar: ${fileName}`);
+    
     // Leer el archivo JSON
-    const fileContent = fs.readFileSync("./data/id_piezas_faltante2s.json", "utf-8");
+    const fileContent = fs.readFileSync(fileName, "utf-8");
     const piezas = JSON.parse(fileContent);
 
     console.log(`🚀 Script iniciado: ${scriptStartDate}`);
@@ -419,14 +451,9 @@ async function getModelsByPartNumber() {
       try {
         const resultado = await getAllModelsByPart(item.id_pieza);
         
-        // Si resultado es null (error recuperable), saltar esta pieza
+        // Si resultado es null (error 500), continuar con siguiente pieza
         if (!resultado || !resultado.searchResults) {
-          console.warn(`⚠️  error pieza ${item.id_pieza} debido a errores`);
-          // resultados.push({
-          //   ...item,
-          //   success: false,
-          //   error: "Error recuperable - saltado",
-          // });
+          console.warn(`⚠️  Saltando pieza ${item.id_pieza} debido a error 500`);
           continue;
         }
         
@@ -445,10 +472,12 @@ async function getModelsByPartNumber() {
           });
      
 
+          if(equipmentRefId && equipmentRefId !== "-1" && equipmentRefId !== -1){
+            await getModelPart(item.id_pieza, resultado.searchResults[j],item.parte);
+            //TODO descomentar lo anterior await getModelPart(item.id_pieza, resultado.data.searchResults[j]);
+            //await getModelPart(item.id_pieza, resultado.searchResults[0]);
+          }
 
-          await getModelPart(item.id_pieza, resultado.searchResults[j],item.parte);
-          //TODO descomentar lo anterior await getModelPart(item.id_pieza, resultado.data.searchResults[j]);
-          //await getModelPart(item.id_pieza, resultado.searchResults[0]);
         }
 
         await jsonToCsv(
@@ -464,14 +493,21 @@ async function getModelsByPartNumber() {
 
 
       } catch (error) {
-        console.error(`✗ Error en ${item.id_pieza}: ${error.message}\n`);
+        const status = error.response?.status;
         
-        // Ya no propagamos errores 403/502, solo registramos y continuamos
-        // resultados.push({
-        //   ...item,
-        //   success: false,
-        //   error: error.message,
-        // });
+        // Error 500 - continuar con siguiente pieza
+        if (status === 500) {
+          console.warn(`⚠️  Error 500 en ${item.id_pieza}. Continuando con siguiente pieza...`);
+          continue;
+        }
+        
+        // Otros errores - reintentar la misma pieza
+        console.error(`✗ Error en ${item.id_pieza}: ${error.message}\n`);
+        console.log(`🔄 Reintentando pieza ${item.id_pieza} en 10 segundos... ♾️`);
+        await new Promise(resolve => setTimeout(resolve, 10000));
+        // Reintentar la misma pieza decrementando el índice
+        i--;
+        continue;
       }
 
       const endTime = Date.now();
@@ -512,31 +548,37 @@ async function getModelsByPartNumber() {
  * @param {string} fileName - Nombre del archivo (sin extensión)
  */
 async function saveBase64Image(base64Data, fileName, pathFull = "") {
-  try {
-    // Crear el directorio images si no existe
-    const imagesDir = path.join(__dirname, "images");
-    if (!fs.existsSync(imagesDir)) {
-      fs.mkdirSync(imagesDir, { recursive: true });
+  let attemptNumber = 1;
+  while (true) {
+    try {
+      // Crear el directorio images si no existe
+      const imagesDir = path.join(__dirname, "images");
+      if (!fs.existsSync(imagesDir)) {
+        fs.mkdirSync(imagesDir, { recursive: true });
+      }
+
+      // Limpiar el base64 (remover el prefijo data:image/...;base64, si existe)
+      const base64Clean = base64Data.replace(/^data:image\/\w+;base64,/, "");
+
+      // Convertir base64 a buffer
+      const imageBuffer = Buffer.from(base64Clean, "base64");
+
+      // Crear el path completo del archivo
+      const fullFileName = `${fileName}.png`;
+      const filePath = path.join(imagesDir, fullFileName);
+
+      // Guardar la imagen de forma asíncrona
+      await fs.promises.writeFile(filePath, imageBuffer);
+
+      //console.log(`✓ Imagen guardada: ${filePath}`);
+      return filePath;
+    } catch (error) {
+      // Los errores de filesystem no tienen status HTTP, siempre reintentar
+      console.error(`✗ Error al guardar imagen ${fileName} (Intento #${attemptNumber}): ${error.message}`);
+      console.log(`🔄 Reintentando guardar imagen en 5 segundos... ♾️`);
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      attemptNumber++;
     }
-
-    // Limpiar el base64 (remover el prefijo data:image/...;base64, si existe)
-    const base64Clean = base64Data.replace(/^data:image\/\w+;base64,/, "");
-
-    // Convertir base64 a buffer
-    const imageBuffer = Buffer.from(base64Clean, "base64");
-
-    // Crear el path completo del archivo
-    const fullFileName = `${fileName}.png`;
-    const filePath = path.join(imagesDir, fullFileName);
-
-    // Guardar la imagen de forma asíncrona
-    await fs.promises.writeFile(filePath, imageBuffer);
-
-    //console.log(`✓ Imagen guardada: ${filePath}`);
-    return filePath;
-  } catch (error) {
-    console.error(`✗ Error al guardar imagen: ${error.message}`);
-    throw error;
   }
 }
 
@@ -615,9 +657,9 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
       });
     }, `getModelPart(${partNumber}, ${equipmentRefId})`);
     
-    // Si response es null (error recuperable), salir de la función
+    // Si response es null (error 500), salir de la función
     if (!response || !response.data || !response.data.searchResults) {
-      console.warn(`⚠️  Saltando getModelPart para ${partNumber}`);
+      console.warn(`⚠️  Saltando getModelPart para ${partNumber} debido a error 500`);
       return;
     }
     
@@ -852,14 +894,37 @@ catch(e){
           }
         }*/
       } catch (error) {
+        const status = error.response?.status;
+        
+        // Error 500 - continuar con siguiente modelo
+        if (status === 500) {
+          console.warn(`⚠️  Error 500 en procesamiento de modelo ${partNumber}. Continuando...`);
+          continue;
+        }
+        
+        // Otros errores - reintentar el mismo modelo
         console.error(`⚠️  Error en procesamiento de modelo ${partNumber}:`, error.message);
-        // No lanzar error, solo registrar y continuar con el siguiente
+        console.log(`🔄 Reintentando procesamiento de modelo en 10 segundos... ♾️`);
+        await new Promise(resolve => setTimeout(resolve, 10000));
+        // Reintentar el mismo modelo decrementando el índice
+        i--;
         continue;
       }
     }
   } catch (error) {
+    const status = error.response?.status;
+    
+    // Error 500 - salir sin reintentar
+    if (status === 500) {
+      console.warn(`⚠️  Error 500 en getModelPart(${partNumber}). No se reintentará.`);
+      return;
+    }
+    
+    // Otros errores - reintentar toda la función
     console.error(`⚠️  Error general en getModelPart(${partNumber}):`, error.message);
-    // No lanzar error, solo registrar
+    console.log(`🔄 Reintentando getModelPart completo en 10 segundos... ♾️`);
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    return getModelPart(partNumber, { equipmentRefId }, parte);
   }
 }
 /*
@@ -1057,24 +1122,23 @@ async function getPieceDetail(
     const images = await getImagesPart({ partNumber });
     const partOps = response.data.partOps;
       const pieceDetailData = {
-      piece_id: partOps[0].partBasicInfo.partNumber,
-      piece_name: remarks.name,
-      piece_parte: parte,
-      piece_description: remarks.description,
-      piece_model: equipmentRefId,
-      piece_part:pageId,
+      piece_id: partOps[0]?.partBasicInfo?.partNumber ?? "",
+      piece_name: remarks?.name ?? "",
+      piece_parte: parte ?? "",
+      piece_description: remarks?.description ?? "",
+      piece_model: equipmentRefId ?? "",
+      piece_part: pageId ?? "",
       piece_alternative_part_id: "",
-      piece_qty: remarks.qty,
-      piece_remarks: remarks.remarks,
-      piece_packageWeight: partOps[0].partShippingInfo.packageWeight,
-      piece_packageWeightUnit: partOps[0].partShippingInfo.packageWeightUnit,
-      piece_packageWidth: partOps[0].partShippingInfo.packageWidth,
-      piece_packageWidthUnit: partOps[0].partShippingInfo.packageWidthUnit,
-      piece_packageWidthUnit: partOps[0].partShippingInfo.packageWidthUnit,
-      piece_packageLength: partOps[0].partShippingInfo.packageLength,
-      piece_packageLengthUnit: partOps[0].partShippingInfo.packageLengthUnit,
-      piece_packageQty: partOps[0].partShippingInfo.packageQty,
-      piece_images: images,
+      piece_qty: remarks?.qty ?? "",
+      piece_remarks: remarks?.remarks ?? "",
+      piece_packageWeight: partOps[0]?.partShippingInfo?.packageWeight ?? "",
+      piece_packageWeightUnit: partOps[0]?.partShippingInfo?.packageWeightUnit ?? "",
+      piece_packageWidth: partOps[0]?.partShippingInfo?.packageWidth ?? "",
+      piece_packageWidthUnit: partOps[0]?.partShippingInfo?.packageWidthUnit ?? "",
+      piece_packageLength: partOps[0]?.partShippingInfo?.packageLength ?? "",
+      piece_packageLengthUnit: partOps[0]?.partShippingInfo?.packageLengthUnit ?? "",
+      piece_packageQty: partOps[0]?.partShippingInfo?.packageQty ?? "",
+      piece_images: images ?? "",
       link: `https://partscatalog.deere.com/jdrc/partdetails/partnum/${partNumber}/referrer/sbs/pid/${partItemId}/pgId/${pageId}/eqId/${equipmentRefId}`
     };
 
@@ -1112,8 +1176,19 @@ async function getPieceDetail(
 
 
   } catch (error) {
+    const status = error.response?.status;
+    
+    // Error 500 - salir sin reintentar
+    if (status === 500) {
+      console.warn(`⚠️  Error 500 en getPieceDetail(${partNumber}). No se reintentará.`);
+      return;
+    }
+    
+    // Otros errores - reintentar toda la función
     console.error(`⚠️  Error en getPieceDetail(${partNumber}):`, error.message);
-    // No lanzar error, solo registrar
+    console.log(`🔄 Reintentando getPieceDetail en 10 segundos... ♾️`);
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    return getPieceDetail({ equipmentRefId, partNumber, id, parte, partItemId, pageId }, isAlternative);
   }
 }
 
@@ -1197,9 +1272,9 @@ async function getImagesPart({ partNumber }) {
       });
     }, `getImagesPart(${partNumber})`);
     
-    // Si response es null, retornar 0
+    // Si response es null (error 500), retornar 0
     if (!response) {
-      console.warn(`⚠️  No se pudieron obtener imágenes para ${partNumber}`);
+      console.warn(`⚠️  Error 500 en getImagesPart para ${partNumber}. Retornando 0.`);
       return 0;
     }
 
@@ -1236,6 +1311,8 @@ async function getImagesPart({ partNumber }) {
           console.error(
             `  ✗ Error guardando imagen ${index}: ${error.message}`
           );
+          // saveBase64Image ahora reintenta automáticamente, este catch no debería ejecutarse
+          throw error;
         }
       }
 
@@ -1247,8 +1324,19 @@ async function getImagesPart({ partNumber }) {
       return 0;
     }
   } catch (error) {
+    const status = error.response?.status;
+    
+    // Error 500 - retornar 0 sin reintentar
+    if (status === 500) {
+      console.warn(`⚠️  Error 500 en getImagesPart(${partNumber}). Retornando 0.`);
+      return 0;
+    }
+    
+    // Otros errores - reintentar toda la función
     console.error(`⚠️  Error en getImagesPart(${partNumber}):`, error.message);
-    return 0;
+    console.log(`🔄 Reintentando getImagesPart en 10 segundos... ♾️`);
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    return getImagesPart({ partNumber });
   }
 }
 
