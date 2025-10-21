@@ -463,19 +463,39 @@ async function getModelsByPartNumber() {
         //for (let j = 0; j <= 1; j++) {
           console.log("MODELO",`${j+ 1}/${resultado.searchResults.length}`, j, resultado.searchResults[j].equipmentName, item.id_pieza);
           const { baseCode, model, equipmentName,equipmentRefId } = resultado.searchResults[j];
-          modelData.push({
-            model_id: equipmentRefId,
-            model_code: baseCode,
-            model_name: model,
-            model_full_name: equipmentName,
-            link: `https://partscatalog.deere.com/jdrc/search/type/parts/term/${item.id_pieza}`,
-          });
-     
+          
+          try {
+            modelData.push({
+              model_id: equipmentRefId,
+              model_code: baseCode,
+              model_name: model,
+              model_full_name: equipmentName,
+              link: `https://partscatalog.deere.com/jdrc/search/type/parts/term/${item.id_pieza}`,
+            });
+       
 
-          if(equipmentRefId && equipmentRefId !== "-1" && equipmentRefId !== -1){
-            await getModelPart(item.id_pieza, resultado.searchResults[j],item.parte);
-            //TODO descomentar lo anterior await getModelPart(item.id_pieza, resultado.data.searchResults[j]);
-            //await getModelPart(item.id_pieza, resultado.searchResults[0]);
+            if(equipmentRefId && equipmentRefId !== "-1" && equipmentRefId !== -1){
+              await getModelPart(item.id_pieza, resultado.searchResults[j],item.parte);
+              //TODO descomentar lo anterior await getModelPart(item.id_pieza, resultado.data.searchResults[j]);
+              //await getModelPart(item.id_pieza, resultado.searchResults[0]);
+            }
+          } catch (modelError) {
+            const status = modelError.response?.status;
+            
+            // Errores 500, 403, 502 - reintentar la misma iteración del modelo
+            if (status === 500 || status === 403 || status === 502 || modelError.needsRetry) {
+              const errorType = status === 500 ? '500' : status === 403 ? '403' : status === 502 ? '502' : 'recuperable';
+              console.warn(`⚠️  Error ${errorType} en modelo ${equipmentName}. Reintentando iteración...`);
+              console.log(`🔄 Repitiendo: MODELO ${j+ 1}/${resultado.searchResults.length} ${equipmentName} ${item.id_pieza}`);
+              
+              const delay = (status === 403 || status === 502) ? 10000 : 5000;
+              await new Promise(resolve => setTimeout(resolve, delay));
+              j--; // Decrementar para repetir la misma iteración
+              continue;
+            }
+            
+            // Otros errores - propagar
+            throw modelError;
           }
 
         }
@@ -501,10 +521,13 @@ async function getModelsByPartNumber() {
           continue;
         }
         
-        // Otros errores - reintentar la misma pieza
-        console.error(`✗ Error en ${item.id_pieza}: ${error.message}\n`);
-        console.log(`🔄 Reintentando pieza ${item.id_pieza} en 10 segundos... ♾️`);
-        await new Promise(resolve => setTimeout(resolve, 10000));
+        // Errores 403, 502 u otros - reintentar la misma pieza
+        const errorType = status === 403 ? '403' : status === 502 ? '502' : 'recuperable';
+        console.error(`✗ Error ${errorType} en ${item.id_pieza}: ${error.message}\n`);
+        console.log(`🔄 Repitiendo pieza: ------${i + 1}/${piezas.length}] ${item.id_pieza}`);
+        
+        const delay = (status === 403 || status === 502) ? 10000 : 5000;
+        await new Promise(resolve => setTimeout(resolve, delay));
         // Reintentar la misma pieza decrementando el índice
         i--;
         continue;
@@ -707,10 +730,21 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
         // }
 
 //
-try{
-  const partsFileName = `${equipmentRefId}_parts.png`;
-  const partsFilePath = path.join(__dirname, "images", partsFileName);
-  if (!fs.existsSync(partsFilePath)) {
+// Reintentar hasta guardar la imagen de partes exitosamente
+let partsImageSaved = false;
+let partsImageAttempt = 0;
+
+while (!partsImageSaved) {
+  try{
+    const partsFileName = `${equipmentRefId}_parts.png`;
+    const partsFilePath = path.join(__dirname, "images", partsFileName);
+    
+    if (fs.existsSync(partsFilePath)) {
+      // Ya existe, no necesita descargarse
+      partsImageSaved = true;
+      break;
+    }
+    
     const imageParts = await axiosInstance({
       method: "post",
       url: "https://partscatalog.deere.com/jdrc-services/v1/image/getImage",
@@ -722,14 +756,33 @@ try{
   
     if(imageParts.data && imageParts.data.image){
       await saveBase64Image(imageParts.data.image, equipmentRefId+"_parts");
+      partsImageSaved = true;
+    } else {
+      throw new Error("No se recibió imagen en la respuesta");
     }
   }
-}
-catch(e){
-  console.log("error en getimage",e.message);
+  catch(e){
+    partsImageAttempt++;
+    const status = e.response?.status;
+    
+    // Error 500 - continuar sin la imagen
+    if (status === 500) {
+      console.warn(`⚠️  Error 500 en getImage para ${equipmentRefId}. Continuando sin imagen de partes...`);
+      partsImageSaved = true; // Marcar como "completado" para salir del loop
+      break;
+    }
+    
+    // Errores 403, 502 u otros - reintentar
+    const errorType = status === 403 ? '403' : status === 502 ? '502' : 'recuperable';
+    console.error(`❌ Error ${errorType} en getImage (Intento #${partsImageAttempt}): ${e.message}`);
+    console.log(`🔄 Reintentando guardar imagen de partes para ${equipmentRefId}...`);
+    
+    const delay = (status === 403 || status === 502) ? 10000 : 5000;
+    await new Promise(resolve => setTimeout(resolve, delay));
+  }
 }
 
-    console.log(`Parte ${i} /${response.data.searchResults.length} ${partLocation}| ${pageId}`);
+    console.log(`Parte ${i + 1}/${response.data.searchResults.length} ${partLocation}| ${pageId}`);
       ModelParts.push({
         part_id: pageId,
         part_name: partLocation,
@@ -896,9 +949,16 @@ catch(e){
       } catch (error) {
         const status = error.response?.status;
         
-        // Error 500 - continuar con siguiente modelo
-        if (status === 500) {
-          console.warn(`⚠️  Error 500 en procesamiento de modelo ${partNumber}. Continuando...`);
+        // Errores 500, 403, 502 - reintentar la misma iteración
+        if (status === 500 || status === 403 || status === 502 || error.needsRetry) {
+          const errorType = status === 500 ? '500' : status === 403 ? '403' : status === 502 ? '502' : 'recuperable';
+          console.warn(`⚠️  Error ${errorType} en procesamiento de parte ${partLocation}. Reintentando iteración...`);
+          console.log(`🔄 Repitiendo: Parte ${i + 1}/${response.data.searchResults.length} ${partLocation}| ${pageId}`);
+          
+          // Delay más largo para 403 y 502
+          const delay = (status === 403 || status === 502) ? 10000 : 5000;
+          await new Promise(resolve => setTimeout(resolve, delay));
+          i--; // Decrementar para repetir la misma iteración
           continue;
         }
         
@@ -1161,12 +1221,31 @@ async function getPieceDetail(
         index < remarks.alternateParts.length;
         index++
       ) {
-        const alternativePartId = remarks.alternateParts[index].partNumber;
-        
-        pieceDetail.push({
-          ...pieceDetailData,
-          piece_alternative_part_id: alternativePartId
-        });
+        try {
+          const alternativePartId = remarks.alternateParts[index].partNumber;
+          
+          pieceDetail.push({
+            ...pieceDetailData,
+            piece_alternative_part_id: alternativePartId
+          });
+        } catch (altError) {
+          const status = altError.response?.status;
+          
+          // Errores 500, 403, 502 - reintentar la misma alternativa
+          if (status === 500 || status === 403 || status === 502 || altError.needsRetry) {
+            const errorType = status === 500 ? '500' : status === 403 ? '403' : status === 502 ? '502' : 'recuperable';
+            console.warn(`⚠️  Error ${errorType} en alternativa ${index + 1}. Reintentando...`);
+            console.log(`🔄 Repitiendo: Alternativa ${index + 1}/${remarks.alternateParts.length}`);
+            
+            const delay = (status === 403 || status === 502) ? 10000 : 5000;
+            await new Promise(resolve => setTimeout(resolve, delay));
+            index--; // Decrementar para repetir la misma iteración
+            continue;
+          }
+          
+          // Otros errores - propagar
+          throw altError;
+        }
         
       }
     } else {
@@ -1178,10 +1257,12 @@ async function getPieceDetail(
   } catch (error) {
     const status = error.response?.status;
     
-    // Error 500 - salir sin reintentar
-    if (status === 500) {
-      console.warn(`⚠️  Error 500 en getPieceDetail(${partNumber}). No se reintentará.`);
-      return;
+    // Errores 500, 403, 502 - lanzar error específico para que el loop lo maneje
+    if (status === 500 || status === 403 || status === 502) {
+      const errorRetry = new Error(`Error ${status} en getPieceDetail`);
+      errorRetry.needsRetry = true;
+      errorRetry.response = { status: status };
+      throw errorRetry;
     }
     
     // Otros errores - reintentar toda la función
@@ -1308,10 +1389,24 @@ async function getImagesPart({ partNumber }) {
           }
 
         } catch (error) {
+          const status = error.response?.status;
+          
+          // Errores 500, 403, 502 - reintentar la misma imagen
+          if (status === 500 || status === 403 || status === 502 || error.needsRetry) {
+            const errorType = status === 500 ? '500' : status === 403 ? '403' : status === 502 ? '502' : 'recuperable';
+            console.warn(`⚠️  Error ${errorType} guardando imagen ${index + 1}. Reintentando...`);
+            console.log(`🔄 Repitiendo: Imagen ${index + 1}/${imageIds.length} de ${partNumber}`);
+            
+            const delay = (status === 403 || status === 502) ? 10000 : 5000;
+            await new Promise(resolve => setTimeout(resolve, delay));
+            index--; // Decrementar para repetir la misma iteración
+            continue;
+          }
+          
+          // Otros errores - propagar
           console.error(
             `  ✗ Error guardando imagen ${index}: ${error.message}`
           );
-          // saveBase64Image ahora reintenta automáticamente, este catch no debería ejecutarse
           throw error;
         }
       }
