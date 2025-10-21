@@ -413,7 +413,7 @@ async function getModelsByPartNumber() {
     const fileIndex = process.argv[2]; // Captura el primer argumento después del nombre del script
     
     // Construir el nombre del archivo según el argumento
-    const fileName = fileIndex ? `./data/id_piezas${fileIndex}.json` : "./data/id_piezas_restantes.json";
+    const fileName = fileIndex ? `./data/id_piezas${fileIndex}.json` : "./data/id_piezas1.json";
     
     console.log(`📂 Archivo a procesar: ${fileName}`);
     
@@ -651,22 +651,37 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
 
   try {
     
-    const response = await retryOnError(async () => {
-      //await new Promise(resolve => setTimeout(resolve, tiempoMs));
-      return await axiosInstance({
-        method: "post",
-        url: url,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: data,
-      });
-    }, `getModelPart(${partNumber}, ${equipmentRefId})`);
+    // Reintentar hasta obtener respuesta válida
+    let response = null;
+    let attemptNumber = 0;
     
-    // Si response es null (error 500), salir de la función
-    if (!response || !response.data || !response.data.searchResults) {
-      console.warn(`⚠️  Saltando getModelPart para ${partNumber} debido a error 500`);
-      return;
+    while (!response || !response.data || !response.data.searchResults) {
+      attemptNumber++;
+      
+      try {
+        response = await retryOnError(async () => {
+          //await new Promise(resolve => setTimeout(resolve, tiempoMs));
+          return await axiosInstance({
+            method: "post",
+            url: url,
+            headers: {
+              "Content-Type": "application/json",
+            },
+            data: data,
+          });
+        }, `getModelPart(${partNumber}, ${equipmentRefId})`);
+        
+        // Verificar si la respuesta es válida
+        if (!response || !response.data || !response.data.searchResults) {
+          console.warn(`⚠️  Respuesta inválida para ${partNumber} (Intento #${attemptNumber}). Reintentando...`);
+          await new Promise(resolve => setTimeout(resolve, 5000));
+          response = null; // Forzar otra iteración
+        }
+      } catch (error) {
+        console.error(`❌ Error en getModelPart para ${partNumber} (Intento #${attemptNumber}):`, error.message);
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        response = null; // Forzar otra iteración
+      }
     }
     
     const businessRegion = { brID: "1189" };
