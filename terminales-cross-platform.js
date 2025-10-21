@@ -15,13 +15,13 @@ console.log(`🚀 Abriendo ${n} terminales...\n`);
 
 // Iterar de 1 a n para abrir n terminales
 for (let i = 1; i <= n; i++) {
-  const command = `node "${scriptPath}" ${i}`;
   const title = `jhondeere ${i}`;
   
   let terminalCommand;
   
   if (platform === 'darwin') {
     // macOS
+    const command = `node "${scriptPath}" ${i}`;
     terminalCommand = `
       osascript -e 'tell application "Terminal"
         do script "${command}"
@@ -29,12 +29,12 @@ for (let i = 1; i <= n; i++) {
       end tell'
     `;
   } else if (platform === 'win32') {
-    // Windows
-    // Escapar comillas para Windows
-    const escapedCommand = command.replace(/"/g, '\\"');
-    terminalCommand = `start "jhondeere ${i}" cmd /k "${escapedCommand}"`;
+    // Windows - NO usar comillas en la ruta del script
+    // cmd /k ejecuta el comando y mantiene la ventana abierta
+    terminalCommand = `start "${title}" cmd /k "node ${scriptPath} ${i}"`;
   } else if (platform === 'linux') {
     // Linux (intentar con gnome-terminal, xterm como fallback)
+    const command = `node "${scriptPath}" ${i}`;
     terminalCommand = `gnome-terminal --title="${title}" -- bash -c "${command}; exec bash" || xterm -T "${title}" -e "${command}; bash"`;
   } else {
     console.error(`❌ Sistema operativo no soportado: ${platform}`);
