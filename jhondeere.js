@@ -185,7 +185,7 @@ const httpsAgent = new https.Agent({
   maxSockets: 50,
   maxFreeSockets: 10,
   timeout: 60000,
-  rejectUnauthorized: true
+  rejectUnauthorized: false
 });
 
 // Configuración de axios con interceptores para simular comportamiento humano
