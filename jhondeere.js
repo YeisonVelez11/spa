@@ -5,6 +5,9 @@ const fs = require("fs");
 const path = require("path");
 const { jsonToCsv } = require("./funciones");
 
+// Desactivar verificación SSL globalmente para Node.js
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 /**
  * Descarga una imagen desde una URL y la guarda en el sistema de archivos
  * @param {string} imageUrl - URL de la imagen
@@ -40,6 +43,7 @@ async function downloadAndSaveImage(imageUrl, equipmentRefId) {
           "Content-Type": "application/json",
         },
         timeout: 30000, // 30 segundos de timeout
+        httpsAgent: new https.Agent({ rejectUnauthorized: false })
       });
 
       // Guardar la imagen
@@ -1265,6 +1269,7 @@ async function getPieceDetail(
         ...headers,
       },
       data: data,
+      httpsAgent: new https.Agent({ rejectUnauthorized: false })
     });
 
     console.log(response.data);
