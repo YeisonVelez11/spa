@@ -4,10 +4,198 @@ const https = require("https");
 const fs = require("fs");
 const path = require("path");
 const { jsonToCsv } = require("./funciones");
+const { google } = require("googleapis");
+require("dotenv").config();
 
 // Desactivar verificación SSL globalmente para Node.js
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
+/**
+ * Obtiene el cliente de autenticación global para Google Drive
+ * Si no existe, lo crea y autentica una sola vez
+ * @returns {Promise<JWT|null>} - Cliente JWT autorizado o null si faltan credenciales
+ */
+async function getAuthClient() {
+  // Si ya existe el cliente global, retornarlo
+  if (globalAuthClient) {
+    return globalAuthClient;
+  }
+
+  // Si no existe SERVER, no autenticar
+  if (!process.env.SERVER) {
+    return null;
+  }
+
+  // Verificar que existan las credenciales necesarias en .env
+  if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY) {
+    console.warn('⚠️  Google Drive credentials not found in .env file. Skipping Google Drive connection.');
+    return null;
+  }
+
+  try {
+    const jwtClient = new google.auth.JWT(
+      process.env.GOOGLE_CLIENT_EMAIL,
+      null,
+      process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      ['https://www.googleapis.com/auth/drive']
+    );
+
+    await jwtClient.authorize();
+    console.log('✅ Successfully connected to Google Drive API.');
+    
+    // Guardar en variable global para reutilizar
+    globalAuthClient = jwtClient;
+    return globalAuthClient;
+  } catch (error) {
+    console.error('❌ Error connecting to Google Drive API:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Sube un archivo CSV a Google Drive
+ * @param {Object} authClient - Cliente JWT autorizado
+ * @param {Array} data - Array de objetos a convertir en CSV
+ * @param {string} fileName - Nombre del archivo (sin extensión)
+ * @param {string} folderId - ID de la carpeta en Google Drive
+ * @returns {Promise<void>}
+ */
+async function uploadCsvToDrive(authClient, data, fileName, folderId) {
+  if (!authClient) {
+    console.warn('⚠️  No hay cliente autorizado para Google Drive');
+    return;
+  }
+
+  // Validar que data no esté vacío
+  if (!data || data.length === 0) {
+    console.warn(`⚠️  Array vacío para ${fileName}.csv - no se subirá a Google Drive`);
+    return;
+  }
+
+  try {
+    // Convertir array de objetos a CSV
+    const headers = Object.keys(data[0]);
+    const csvContent = [
+      headers.join(','),
+      ...data.map(row => headers.map(header => {
+        const value = row[header];
+        // Escapar valores que contengan comas o comillas
+        if (typeof value === 'string' && (value.includes(',') || value.includes('"') || value.includes('\n'))) {
+          return `"${value.replace(/"/g, '""')}"`;
+        }
+        return value;
+      }).join(','))
+    ].join('\n');
+
+    const drive = google.drive({ version: 'v3', auth: authClient });
+    
+    // Buscar si el archivo ya existe en la carpeta
+    const searchResponse = await drive.files.list({
+      q: `name='${fileName}.csv' and '${folderId}' in parents and trashed=false`,
+      fields: 'files(id, name)',
+      spaces: 'drive'
+    });
+
+    const fileMetadata = {
+      name: `${fileName}.csv`,
+      mimeType: 'text/csv',
+      parents: [folderId]
+    };
+
+    const { Readable } = require('stream');
+    const media = {
+      mimeType: 'text/csv',
+      body: Readable.from(csvContent)
+    };
+
+    if (searchResponse.data.files && searchResponse.data.files.length > 0) {
+      // Actualizar archivo existente
+      const fileId = searchResponse.data.files[0].id;
+      await drive.files.update({
+        fileId: fileId,
+        media: media
+      });
+      //console.log(`✅ CSV actualizado en Google Drive: ${fileName}.csv`);
+    } else {
+      // Crear nuevo archivo
+      await drive.files.create({
+        requestBody: fileMetadata,
+        media: media,
+        fields: 'id'
+      });
+      //console.log(`✅ CSV subido a Google Drive: ${fileName}.csv`);
+    }
+  } catch (error) {
+    console.error(`❌ Error subiendo CSV a Google Drive (${fileName}):`, error.message);
+    throw error;
+  }
+}
+
+/**
+ * Sube una imagen a Google Drive
+ * @param {Object} authClient - Cliente JWT autorizado
+ * @param {Buffer} imageBuffer - Buffer de la imagen
+ * @param {string} fileName - Nombre del archivo (con extensión .png)
+ * @param {string} folderId - ID de la carpeta en Google Drive
+ * @returns {Promise<void>}
+ */
+async function uploadImageToDrive(authClient, imageBuffer, fileName, folderId) {
+  if (!authClient) {
+    console.warn('⚠️  No hay cliente autorizado para Google Drive');
+    return;
+  }
+
+  try {
+    const drive = google.drive({ version: 'v3', auth: authClient });
+    
+    // Buscar si el archivo ya existe en la carpeta
+    const searchResponse = await drive.files.list({
+      q: `name='${fileName}' and '${folderId}' in parents and trashed=false`,
+      fields: 'files(id, name)',
+      spaces: 'drive'
+    });
+
+    const fileMetadata = {
+      name: fileName,
+      mimeType: 'image/png',
+      parents: [folderId]
+    };
+
+    const { Readable } = require('stream');
+    const media = {
+      mimeType: 'image/png',
+      body: Readable.from(imageBuffer)
+    };
+
+    if (searchResponse.data.files && searchResponse.data.files.length > 0) {
+      // Actualizar archivo existente
+      const fileId = searchResponse.data.files[0].id;
+      await drive.files.update({
+        fileId: fileId,
+        media: media
+      });
+      //console.log(`✅ Imagen actualizada en Google Drive: ${fileName}`);
+    } else {
+      // Crear nuevo archivo
+      await drive.files.create({
+        requestBody: fileMetadata,
+        media: media,
+        fields: 'id'
+      });
+      //console.log(`✅ Imagen subida a Google Drive: ${fileName}`);
+    }
+  } catch (error) {
+    console.error(`❌ Error subiendo imagen a Google Drive (${fileName}):`, error.message);
+    throw error;
+  }
+}
+const images = "1g23Khe6qaGzOtA1fN8jAfWMKnzXlwp99";
+const modelos = "1Rzuxro52zgGcCaB3sqLjPCRoVajP0wIO";
+const piezas = "1yP_1xoMgrzhiUFCnIQDU8HQuDYcRTnZW";
+const partes = "1VWKbXfLhmUNoM5ssuSw6bi6TOQfe_8Wa";
+
+// Cliente de autenticación global para Google Drive (se inicializa una sola vez)
+let globalAuthClient = null;
 /**
  * Descarga una imagen desde una URL y la guarda en el sistema de archivos
  * @param {string} imageUrl - URL de la imagen
@@ -15,19 +203,24 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
  * @returns {Promise<string>} - Ruta del archivo guardado
  */
 async function downloadAndSaveImage(imageUrl, equipmentRefId) {
-  // Crear carpeta images si no existe
-  const imagesDir = path.join(__dirname, "images");
-  if (!fs.existsSync(imagesDir)) {
-    fs.mkdirSync(imagesDir, { recursive: true });
-  }
-
-  // Verificar si la imagen ya existe
   const fileName = `${equipmentRefId}.png`;
-  const filePath = path.join(imagesDir, fileName);
   
-  if (fs.existsSync(filePath)) {
-    //console.log(`⏭ Imagen ya existe: ${fileName}`);
-    return filePath;
+  // Si existe SERVER, verificar en Google Drive
+  if (process.env.SERVER) {
+    // Para Google Drive, no verificamos si existe, simplemente descargamos y subimos
+  } else {
+    // Crear carpeta images si no existe (solo para modo local)
+    const imagesDir = path.join(__dirname, "images");
+    if (!fs.existsSync(imagesDir)) {
+      fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    // Verificar si la imagen ya existe localmente
+    const filePath = path.join(imagesDir, fileName);
+    if (fs.existsSync(filePath)) {
+      //console.log(`⏭ Imagen ya existe: ${fileName}`);
+      return filePath;
+    }
   }
 
   // Reintentar hasta que se descargue exitosamente (excepto error 500)
@@ -46,10 +239,21 @@ async function downloadAndSaveImage(imageUrl, equipmentRefId) {
         httpsAgent: new https.Agent({ rejectUnauthorized: false })
       });
 
-      // Guardar la imagen
-      fs.writeFileSync(filePath, response.data);
-      
-      return filePath;
+      // Guardar la imagen según el modo
+      if (process.env.SERVER) {
+        // Subir a Google Drive
+        const authClient = await getAuthClient();
+        if (authClient) {
+          await uploadImageToDrive(authClient, response.data, fileName, images);
+        }
+        return fileName; // Retornar el nombre del archivo
+      } else {
+        // Guardar localmente
+        const imagesDir = path.join(__dirname, "images");
+        const filePath = path.join(imagesDir, fileName);
+        fs.writeFileSync(filePath, response.data);
+        return filePath;
+      }
     } catch (error) {
       const status = error.response?.status;
       const errorType = status === 500 ? '500' : status === 403 ? '403' : status === 502 ? '502' : 'recuperable';
@@ -493,16 +697,42 @@ async function getModelsByPartNumber() {
 
         }
 
-        await jsonToCsv(
-           modelData,
-          `model_${item.id_pieza}`,
-          `models/`
-        );
-        await jsonToCsv(
-          pieceDetail,
-          `${item.id_pieza}`,
-          `pieces/`
-        );
+        // Guardar CSV de modelos
+        if (process.env.SERVER) {
+          // Si existe SERVER, subir a Google Drive (sin esperar)
+          getAuthClient().then(authClient => {
+            if (authClient && modelData.length > 0) {
+              uploadCsvToDrive(authClient, modelData, `model_${item.id_pieza}`, modelos).catch(err => {
+                console.error(`Error subiendo CSV de modelos ${item.id_pieza}:`, err.message);
+              });
+            }
+          });
+        } else {
+          // Si no existe SERVER, guardar localmente
+          await jsonToCsv(
+            modelData,
+            `model_${item.id_pieza}`,
+            `models/`
+          );
+        }
+        // Guardar CSV de piezas
+        if (process.env.SERVER) {
+          // Si existe SERVER, subir a Google Drive (sin esperar)
+          getAuthClient().then(authClient => {
+            if (authClient && pieceDetail.length > 0) {
+              uploadCsvToDrive(authClient, pieceDetail, `${item.id_pieza}`, piezas).catch(err => {
+                console.error(`Error subiendo CSV de piezas ${item.id_pieza}:`, err.message);
+              });
+            }
+          });
+        } else {
+          // Si no existe SERVER, guardar localmente
+          await jsonToCsv(
+            pieceDetail,
+            `${item.id_pieza}`,
+            `pieces/`
+          );
+        }
 
 
       } catch (error) {
@@ -561,27 +791,35 @@ async function saveBase64Image(base64Data, fileName, pathFull = "") {
   let attemptNumber = 1;
   while (true) {
     try {
-      // Crear el directorio images si no existe
-      const imagesDir = path.join(__dirname, "images");
-      if (!fs.existsSync(imagesDir)) {
-        fs.mkdirSync(imagesDir, { recursive: true });
-      }
-
       // Limpiar el base64 (remover el prefijo data:image/...;base64, si existe)
       const base64Clean = base64Data.replace(/^data:image\/\w+;base64,/, "");
 
       // Convertir base64 a buffer
       const imageBuffer = Buffer.from(base64Clean, "base64");
 
-      // Crear el path completo del archivo
       const fullFileName = `${fileName}.png`;
-      const filePath = path.join(imagesDir, fullFileName);
 
-      // Guardar la imagen de forma asíncrona
-      await fs.promises.writeFile(filePath, imageBuffer);
+      // Guardar según el modo
+      if (process.env.SERVER) {
+        // Subir a Google Drive
+        const authClient = await getAuthClient();
+        if (authClient) {
+          await uploadImageToDrive(authClient, imageBuffer, fullFileName, images);
+        }
+        return fullFileName; // Retornar el nombre del archivo
+      } else {
+        // Guardar localmente
+        const imagesDir = path.join(__dirname, "images");
+        if (!fs.existsSync(imagesDir)) {
+          fs.mkdirSync(imagesDir, { recursive: true });
+        }
 
-      //console.log(`✓ Imagen guardada: ${filePath}`);
-      return filePath;
+        const filePath = path.join(imagesDir, fullFileName);
+        await fs.promises.writeFile(filePath, imageBuffer);
+
+        //console.log(`✓ Imagen guardada: ${filePath}`);
+        return filePath;
+      }
     } catch (error) {
       // Los errores de filesystem no tienen status HTTP, siempre reintentar
       console.error(`✗ Error al guardar imagen ${fileName} (Intento #${attemptNumber}): ${error.message}`);
@@ -790,11 +1028,24 @@ while (!partsImageSaved) {
         chapter,
         link: `https://partscatalog.deere.com/jdrc/search/type/parts/equipment/${equipmentRefId}/term/${partNumber}`,
       });
-      await jsonToCsv(
-        ModelParts,
-        `${pageId}`,
-        `parts/`
-      );
+      // Guardar CSV de partes
+      if (process.env.SERVER) {
+        // Si existe SERVER, subir a Google Drive (sin esperar)
+        getAuthClient().then(authClient => {
+          if (authClient && ModelParts.length > 0) {
+            uploadCsvToDrive(authClient, ModelParts, `${pageId}`, partes).catch(err => {
+              console.error(`Error subiendo CSV de partes ${pageId}:`, err.message);
+            });
+          }
+        });
+      } else {
+        // Si no existe SERVER, guardar localmente
+        await jsonToCsv(
+          ModelParts,
+          `${pageId}`,
+          `parts/`
+        );
+      }
       let getImageModel;
 
       try {
@@ -1435,8 +1686,10 @@ process.on('uncaughtException', (error) => {
   setTimeout(() => main(), 5000);
 });
 
-// Iniciar el proceso
-main();
+// Iniciar el proceso solo si se ejecuta directamente (no como módulo)
+if (require.main === module) {
+  main();
+}
 
 // Exportar las funciones
 module.exports = {
