@@ -241,12 +241,15 @@ async function downloadAndSaveImage(imageUrl, equipmentRefId) {
 
       // Guardar la imagen según el modo
       if (process.env.SERVER) {
-        // Subir a Google Drive
-        const authClient = await getAuthClient();
-        if (authClient) {
-          await uploadImageToDrive(authClient, response.data, fileName, images);
-        }
-        return fileName; // Retornar el nombre del archivo
+        // Subir a Google Drive (sin esperar)
+        getAuthClient().then(authClient => {
+          if (authClient) {
+            uploadImageToDrive(authClient, response.data, fileName, images).catch(err => {
+              console.error(`Error subiendo imagen ${fileName} a Drive:`, err.message);
+            });
+          }
+        });
+        return fileName; // Retornar inmediatamente el nombre del archivo
       } else {
         // Guardar localmente
         const imagesDir = path.join(__dirname, "images");
@@ -617,6 +620,21 @@ async function getModelsByPartNumber() {
       second: '2-digit' 
     });
     
+    console.log(`🚀 Script iniciado: ${scriptStartDate}`);
+    
+    // Conectar a Google Drive si está en modo SERVER
+    if (process.env.SERVER) {
+      console.log('\n☁️  Modo SERVER detectado - Conectando a Google Drive...');
+      const authClient = await getAuthClient();
+      if (authClient) {
+        console.log('✅ Conexión a Google Drive establecida correctamente\n');
+      } else {
+        console.warn('⚠️  No se pudo conectar a Google Drive. Verifica las credenciales.\n');
+      }
+    } else {
+      console.log('\n📁 Modo LOCAL - Los archivos se guardarán localmente\n');
+    }
+    
     // Obtener el argumento desde la línea de comandos (node jhondeere.js 1)
     const fileIndex = process.argv[2]; // Captura el primer argumento después del nombre del script
     
@@ -629,7 +647,6 @@ async function getModelsByPartNumber() {
     const fileContent = fs.readFileSync(fileName, "utf-8");
     const piezas = JSON.parse(fileContent);
 
-    console.log(`🚀 Script iniciado: ${scriptStartDate}`);
     console.log(`Total de piezas a procesar: ${piezas.length}\n`);
 
     // Declarar resultados fuera del loop
@@ -801,12 +818,15 @@ async function saveBase64Image(base64Data, fileName, pathFull = "") {
 
       // Guardar según el modo
       if (process.env.SERVER) {
-        // Subir a Google Drive
-        const authClient = await getAuthClient();
-        if (authClient) {
-          await uploadImageToDrive(authClient, imageBuffer, fullFileName, images);
-        }
-        return fullFileName; // Retornar el nombre del archivo
+        // Subir a Google Drive (sin esperar)
+        getAuthClient().then(authClient => {
+          if (authClient) {
+            uploadImageToDrive(authClient, imageBuffer, fullFileName, images).catch(err => {
+              console.error(`Error subiendo imagen ${fullFileName} a Drive:`, err.message);
+            });
+          }
+        });
+        return fullFileName; // Retornar inmediatamente el nombre del archivo
       } else {
         // Guardar localmente
         const imagesDir = path.join(__dirname, "images");
