@@ -251,10 +251,20 @@ async function downloadAndSaveImage(imageUrl, equipmentRefId) {
         });
         return fileName; // Retornar inmediatamente el nombre del archivo
       } else {
-        // Guardar localmente
+        // Guardar localmente (sin esperar - en segundo plano)
         const imagesDir = path.join(__dirname, "images");
         const filePath = path.join(imagesDir, fileName);
-        fs.writeFileSync(filePath, response.data);
+        
+        // Versión asíncrona (no bloqueante)
+        Promise.resolve().then(() => {
+          fs.writeFileSync(filePath, response.data);
+        }).catch(err => {
+          console.error(`Error guardando imagen local ${fileName}:`, err.message);
+        });
+        
+        // Versión original (bloqueante) - comentada
+        // fs.writeFileSync(filePath, response.data);
+        
         return filePath;
       }
     } catch (error) {
@@ -725,12 +735,21 @@ async function getModelsByPartNumber() {
             }
           });
         } else {
-          // Si no existe SERVER, guardar localmente
-          await jsonToCsv(
+          // Si no existe SERVER, guardar localmente (sin esperar - en segundo plano)
+          jsonToCsv(
             modelData,
             `model_${item.id_pieza}`,
             `models/`
-          );
+          ).catch(err => {
+            console.error(`Error guardando CSV local de modelos ${item.id_pieza}:`, err.message);
+          });
+          
+          // Versión original (bloqueante) - comentada
+          // await jsonToCsv(
+          //   modelData,
+          //   `model_${item.id_pieza}`,
+          //   `models/`
+          // );
         }
         // Guardar CSV de piezas
         if (process.env.SERVER) {
@@ -743,12 +762,21 @@ async function getModelsByPartNumber() {
             }
           });
         } else {
-          // Si no existe SERVER, guardar localmente
-          await jsonToCsv(
+          // Si no existe SERVER, guardar localmente (sin esperar - en segundo plano)
+          jsonToCsv(
             pieceDetail,
             `${item.id_pieza}`,
             `pieces/`
-          );
+          ).catch(err => {
+            console.error(`Error guardando CSV local de piezas ${item.id_pieza}:`, err.message);
+          });
+          
+          // Versión original (bloqueante) - comentada
+          // await jsonToCsv(
+          //   pieceDetail,
+          //   `${item.id_pieza}`,
+          //   `pieces/`
+          // );
         }
 
 
@@ -828,14 +856,21 @@ async function saveBase64Image(base64Data, fileName, pathFull = "") {
         });
         return fullFileName; // Retornar inmediatamente el nombre del archivo
       } else {
-        // Guardar localmente
+        // Guardar localmente (sin esperar - en segundo plano)
         const imagesDir = path.join(__dirname, "images");
         if (!fs.existsSync(imagesDir)) {
           fs.mkdirSync(imagesDir, { recursive: true });
         }
 
         const filePath = path.join(imagesDir, fullFileName);
-        await fs.promises.writeFile(filePath, imageBuffer);
+        
+        // Versión asíncrona (no bloqueante)
+        fs.promises.writeFile(filePath, imageBuffer).catch(err => {
+          console.error(`Error guardando imagen local ${fullFileName}:`, err.message);
+        });
+        
+        // Versión original (bloqueante) - comentada
+        // await fs.promises.writeFile(filePath, imageBuffer);
 
         //console.log(`✓ Imagen guardada: ${filePath}`);
         return filePath;
@@ -959,9 +994,14 @@ async function getModelPart(partNumber, { equipmentRefId },parte) {
 
       ModelParts = [];
 
-        // Descargar y guardar la imagen del equipo
+        // Descargar y guardar la imagen del equipo (en segundo plano)
         const imageUrl = `https://partscatalog.deere.com/jdrc-services/v1/image/getImageBlob?locale=en-US&iid=${imageId}`;
-        await downloadAndSaveImage(imageUrl, equipmentRefId);
+        downloadAndSaveImage(imageUrl, equipmentRefId).catch(err => {
+          console.error(`Error guardando imagen del equipo ${equipmentRefId}:`, err.message);
+        });
+        
+        // Versión original (bloqueante) - comentada
+        // await downloadAndSaveImage(imageUrl, equipmentRefId);
 
         // // Image plano - verificar si ya existe antes de hacer petición
         // const planoFileName = `${equipmentRefId}_plano.png`;
@@ -1015,7 +1055,14 @@ while (!partsImageSaved) {
     });
   
     if(imageParts.data && imageParts.data.image){
-      await saveBase64Image(imageParts.data.image, pageId+"_parts");
+      // Guardar imagen en segundo plano
+      saveBase64Image(imageParts.data.image, pageId+"_parts").catch(err => {
+        console.error(`Error guardando imagen de partes ${pageId}:`, err.message);
+      });
+      
+      // Versión original (bloqueante) - comentada
+      // await saveBase64Image(imageParts.data.image, pageId+"_parts");
+      
       partsImageSaved = true;
     } else {
       throw new Error("No se recibió imagen en la respuesta");
@@ -1059,12 +1106,21 @@ while (!partsImageSaved) {
           }
         });
       } else {
-        // Si no existe SERVER, guardar localmente
-        await jsonToCsv(
+        // Si no existe SERVER, guardar localmente (sin esperar - en segundo plano)
+        jsonToCsv(
           ModelParts,
           `${pageId}`,
           `parts/`
-        );
+        ).catch(err => {
+          console.error(`Error guardando CSV local de partes ${pageId}:`, err.message);
+        });
+        
+        // Versión original (bloqueante) - comentada
+        // await jsonToCsv(
+        //   ModelParts,
+        //   `${pageId}`,
+        //   `parts/`
+        // );
       }
       let getImageModel;
 
@@ -1618,7 +1674,13 @@ async function getImagesPart({ partNumber }) {
         const fileName = `${partNumber}_${index}`;
 
         try {
-          await saveBase64Image(base64Image, fileName);
+          // Guardar imagen en segundo plano
+          saveBase64Image(base64Image, fileName).catch(err => {
+            console.error(`Error guardando imagen ${fileName}:`, err.message);
+          });
+          
+          // Versión original (bloqueante) - comentada
+          // await saveBase64Image(base64Image, fileName);
           // console.log(
           //   `  ✓ Imagen ${index + 1}/${
           //     imageIds.length

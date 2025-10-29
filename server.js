@@ -11,16 +11,17 @@ app.use('/front-lib', express.static(directorioFrontLib));
 
 // Endpoint de health check
 app.get('/health', (req, res) => {
-  const currentTime = new Date().toLocaleString('es-ES', {
+  const currentTime = new Date().toLocaleString('es-CO', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    hour12: false
+    hour12: false,
+    timeZone: 'America/Bogota'
   });
-  
+  console.log(`🕐 Health check - Hora Colombia: ${currentTime}`);
   res.json({
     status: 'OK',
     timestamp: currentTime,
