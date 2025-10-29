@@ -1,399 +1,2707 @@
- [
-  {
-    "id_pieza": "26H72",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H73",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H74",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H75",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H76",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H77",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H78",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H79",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H80",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H82",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H83",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H85",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H86",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H87",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H89",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H90",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H91",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H92",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H93",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H94",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H95",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H96",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H97",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26H99",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M4221",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M4222",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M4223",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M4224",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M4226",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M4227",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M4228",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M5447",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M6731",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M6733",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M6787",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M7000",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M7001",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M7002",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M7003",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26M7008",
-    "parte": "Chaveta "
-    },
-    {
-    "id_pieza": "26100000710",
-    "parte": "Asiento "
-    },
-    {
-    "id_pieza": "26100000980",
-    "parte": "Diferencial"
-    },
-    {
-    "id_pieza": "26100200180",
-    "parte": "Pedal"
-    },
-    {
-    "id_pieza": "263G857041",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "26300000580",
-    "parte": "Rueda"
-    },
-    {
-    "id_pieza": "26303400010",
-    "parte": "Horca"
-    },
-    {
-    "id_pieza": "264R",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "267SE",
-    "parte": "Pasador de muelle "
-    },
-    {
-    "id_pieza": "268SE",
-    "parte": "Muelle"
-    },
-    {
-    "id_pieza": "27047",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "27400000675",
-    "parte": "Acople de enganche"
-    },
-    {
-    "id_pieza": "27400001375",
-    "parte": "Corona"
-    },
-    {
-    "id_pieza": "27407700070",
-    "parte": "Acople de enganche"
-    },
-    {
-    "id_pieza": "275SE",
-    "parte": "Muelle de compresiï¿½n"
-    },
-    {
-    "id_pieza": "27501000180",
-    "parte": "Eje "
-    },
-    {
-    "id_pieza": "27507700110",
-    "parte": "Lanza de remolque "
-    },
-    {
-    "id_pieza": "276SE",
-    "parte": "Diente de muelle"
-    },
-    {
-    "id_pieza": "27600020000",
-    "parte": "Juego d.etiquetas adhe"
-    },
-    {
-    "id_pieza": "279SE",
-    "parte": "Muelle"
-    },
-    {
-    "id_pieza": "28H1016",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H102",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1090",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1152",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1234",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1495",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1496",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1497",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1508",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1511",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "28H1515",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1517",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "28H1518",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "28H1519",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "28H1521",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1522",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1523",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1524",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1525",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1526",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1527",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1529",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1530",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1531",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1532",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1534",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1535",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1537",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1551",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "28H1572",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "28H1575",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1576",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1578",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1580",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1581",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1594",
-    "parte": "Casquillo "
-    },
-    {
-    "id_pieza": "28H1596",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "28H1597",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "28H1600",
-    "parte": "Espaciador"
-    },
-    {
-    "id_pieza": "28H1601",
-    "parte": "Casquillo "
-    }
+[
+{
+"id_pieza": "3084656",
+"parte": "Engranaje solar"
+},
+{
+"id_pieza": "3084729",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3085038",
+"parte": "Manguito"
+},
+{
+"id_pieza": "3085927",
+"parte": "Engranaje solar"
+},
+{
+"id_pieza": "3085941",
+"parte": "Engranaje solar"
+},
+{
+"id_pieza": "3085966",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3085985",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3086006",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3086064",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "3086531",
+"parte": "Anillo"
+},
+{
+"id_pieza": "3087816",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3087882",
+"parte": "Soporte "
+},
+{
+"id_pieza": "3087987",
+"parte": "Soporte "
+},
+{
+"id_pieza": "3088126",
+"parte": "Tuberï¿½a "
+},
+{
+"id_pieza": "3088571",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3088574",
+"parte": "Pasador "
+},
+{
+"id_pieza": "3088575",
+"parte": "Pasador "
+},
+{
+"id_pieza": "3088577",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "3088578",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "3088579",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "3088580",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "3088751",
+"parte": "Pasador "
+},
+{
+"id_pieza": "3088769",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3089164",
+"parte": "Brida"
+},
+{
+"id_pieza": "3089362",
+"parte": "Tuberï¿½a "
+},
+{
+"id_pieza": "3089486",
+"parte": "Soporte "
+},
+{
+"id_pieza": "3089848",
+"parte": "Asa "
+},
+{
+"id_pieza": "3090024",
+"parte": "Portador"
+},
+{
+"id_pieza": "3090025",
+"parte": "Portador"
+},
+{
+"id_pieza": "3090648",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "3090660",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3091211",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "3091221",
+"parte": "Tubo"
+},
+{
+"id_pieza": "3091679",
+"parte": "Tuberï¿½a de aceite "
+},
+{
+"id_pieza": "3091680",
+"parte": "Tuberï¿½a de aceite "
+},
+{
+"id_pieza": "3091682",
+"parte": "Tuberï¿½a de aceite "
+},
+{
+"id_pieza": "3091683",
+"parte": "Tuberï¿½a de aceite "
+},
+{
+"id_pieza": "3091684",
+"parte": "Tuberï¿½a de aceite "
+},
+{
+"id_pieza": "3091685",
+"parte": "Tuberï¿½a de aceite "
+},
+{
+"id_pieza": "3091842",
+"parte": "Panel"
+},
+{
+"id_pieza": "3092125",
+"parte": "Adhesivo de seguridad "
+},
+{
+"id_pieza": "3092331",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3092350",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3092351",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3093514",
+"parte": "Pasador "
+},
+{
+"id_pieza": "3094636",
+"parte": "Pasador "
+},
+{
+"id_pieza": "3095197",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "3095201",
+"parte": "Articulaciï¿½n"
+},
+{
+"id_pieza": "3095375",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3095747",
+"parte": "Manguito"
+},
+{
+"id_pieza": "3095962",
+"parte": "Carrete "
+},
+{
+"id_pieza": "3097450",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3097791",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "3097862",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3098245",
+"parte": "Leva"
+},
+{
+"id_pieza": "3098619",
+"parte": "Obturador "
+},
+{
+"id_pieza": "3098750",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3099160",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "3099409",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3099628",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3099972",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3099973",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "31006",
+"parte": "Cama"
+},
+{
+"id_pieza": "31007",
+"parte": "Muelle"
+},
+{
+"id_pieza": "3100993",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3100994",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3101724",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3102084",
+"parte": "Carrete "
+},
+{
+"id_pieza": "3102334",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3102454",
+"parte": "Soporte "
+},
+{
+"id_pieza": "3103051",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3103052",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3103053",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3103054",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3103096R",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3103186",
+"parte": "Tuberï¿½a "
+},
+{
+"id_pieza": "3103418",
+"parte": "Aspilla "
+},
+{
+"id_pieza": "3103629",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3104056",
+"parte": "Eje "
+},
+{
+"id_pieza": "3104058",
+"parte": "Articulaciï¿½n"
+},
+{
+"id_pieza": "3106481",
+"parte": "Placa"
+},
+{
+"id_pieza": "3107136",
+"parte": "Brida"
+},
+{
+"id_pieza": "3107150",
+"parte": "Brida"
+},
+{
+"id_pieza": "3107277",
+"parte": "Junta"
+},
+{
+"id_pieza": "3107658",
+"parte": "Pasador "
+},
+{
+"id_pieza": "3108110",
+"parte": "Soporte "
+},
+{
+"id_pieza": "3108174",
+"parte": "Aislante"
+},
+{
+"id_pieza": "3108543",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3108925",
+"parte": "Sistema contra incendi"
+},
+{
+"id_pieza": "3108932",
+"parte": "Sistema contra incendi"
+},
+{
+"id_pieza": "3108943",
+"parte": "Manguera"
+},
+{
+"id_pieza": "3111316",
+"parte": "Manguito"
+},
+{
+"id_pieza": "3111317",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3111836",
+"parte": "Colector"
+},
+{
+"id_pieza": "3111867",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3111971",
+"parte": "Placa"
+},
+{
+"id_pieza": "3112096",
+"parte": "Placa"
+},
+{
+"id_pieza": "3112118",
+"parte": "Placa"
+},
+{
+"id_pieza": "3112132",
+"parte": "Placa"
+},
+{
+"id_pieza": "3112645",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3112762",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3112763",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3112764",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3112820",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3112877",
+"parte": "Placa"
+},
+{
+"id_pieza": "3113211",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3113330",
+"parte": "Soporte "
+},
+{
+"id_pieza": "3114509",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3114510",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115076",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115128",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3115129",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3115191",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115269",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3115336",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115345",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115428",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3115476",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115478",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115504",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115528",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3115657",
+"parte": "Rodillo "
+},
+{
+"id_pieza": "3115658",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3115868",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3116262",
+"parte": "Muelle"
+},
+{
+"id_pieza": "3116310",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "3116324",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3116337",
+"parte": "Borde cortante"
+},
+{
+"id_pieza": "3116485",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3116817",
+"parte": "Carrete "
+},
+{
+"id_pieza": "3116948",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3116949",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "3117046",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "3117070",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117072",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117073",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117074",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117075",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117078",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117079",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117080",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117110",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117111",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3117316",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3117842",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3117852",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3118194",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "3118329",
+"parte": "Tapa"
+},
+{
+"id_pieza": "3118426",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "3118432",
+"parte": "Sistema contra incendi"
+},
+{
+"id_pieza": "3118705",
+"parte": "Bisagra "
+},
+{
+"id_pieza": "3118721",
+"parte": "Soporte "
+},
+{
+"id_pieza": "3119159",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3119163",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3119165",
+"parte": "Peldaï¿½o "
+},
+{
+"id_pieza": "3119183",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3119184",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3119185",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3119195",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3119196",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3119197",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3119620",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3119623",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "3120381",
+"parte": "Protecciï¿½n"
+},
+{
+"id_pieza": "3120383",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3120384",
+"parte": "Portador"
+},
+{
+"id_pieza": "3120708",
+"parte": "Estera"
+},
+{
+"id_pieza": "3120784",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3120787",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3120788",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3120798",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3120866",
+"parte": "Aislante"
+},
+{
+"id_pieza": "3120952",
+"parte": "Manguera"
+},
+{
+"id_pieza": "3120963",
+"parte": "Estera"
+},
+{
+"id_pieza": "3120964",
+"parte": "Estera"
+},
+{
+"id_pieza": "3121081",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3121174",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3121239",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3121240",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "3121262",
+"parte": "Grupo de cables"
+},
+{
+"id_pieza": "3121422",
+"parte": "Soporte "
+},
+{
+"id_pieza": "3121522",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "3121523",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "3122520",
+"parte": "Placa"
+},
+{
+"id_pieza": "3122601",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "31415",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "31516",
+"parte": "Arandela"
+},
+{
+"id_pieza": "31721",
+"parte": "Arandela"
+},
+{
+"id_pieza": "31732",
+"parte": "Pasador "
+},
+{
+"id_pieza": "31785",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "31786",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "31787",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "31788",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "31789",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "31847",
+"parte": "Pasador "
+},
+{
+"id_pieza": "31848",
+"parte": "ï¿½ngulo"
+},
+{
+"id_pieza": "31852",
+"parte": "Cubierta de neumï¿½tico "
+},
+{
+"id_pieza": "32113",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "32166",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "32167",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "32169",
+"parte": "Tapa"
+},
+{
+"id_pieza": "32240",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "32243",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "32244",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "32246",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "32698",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "32843",
+"parte": "Pasador "
+},
+{
+"id_pieza": "32844",
+"parte": "Cï¿½ncamo "
+},
+{
+"id_pieza": "33062",
+"parte": "Tapa"
+},
+{
+"id_pieza": "33124",
+"parte": "Cuchilla circular "
+},
+{
+"id_pieza": "33131",
+"parte": "Cuchilla circular "
+},
+{
+"id_pieza": "3360A",
+"parte": "Muelle de torsiï¿½n "
+},
+{
+"id_pieza": "34H110",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H112",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H119",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H121",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H155",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H156",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H184",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H188",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H204",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H206",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H210",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H212",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H215",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H216",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H218",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H220",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H224",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H225",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H226",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H227",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H228",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H231",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H233",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H234",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H235",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H236",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H237",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H238",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H239",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H240",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H241",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H242",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H243",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H244",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H245",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H246",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H247",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H248",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H249",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H250",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H251",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H252",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H253",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H254",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H255",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H256",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H258",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H260",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H261",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H262",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H264",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H265",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H266",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H267",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H268",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H269",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H270",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H272",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H273",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H274",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H275",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H277",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H279",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H280",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H282",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H283",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H284",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H285",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H286",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H287",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H288",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H289",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H290",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H291",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H292",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H293",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H294",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H295",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H297",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H298",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H299",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H300",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H301",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H303",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H304",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H305",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H306",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H307",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H308",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H309",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H310",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H311",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H312",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H313",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H314",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H315",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H316",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H317",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H318",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H319",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H320",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H321",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H322",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H323",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H324",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H325",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H326",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H327",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H328",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H329",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H330",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H331",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H332",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H333",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H334",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H335",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H336",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H337",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H338",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H339",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H340",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H341",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H342",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H343",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H344",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H345",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H346",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H347",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H348",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H349",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H351",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H352",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H353",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H354",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H355",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H356",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H357",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H358",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H359",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H360",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H361",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H363",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H364",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H365",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H366",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H369",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H370",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H371",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H372",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H373",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H375",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H377",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H378",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H380",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H382",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H383",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H384",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H385",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H386",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H387",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H388",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H389",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H391",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H393",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "34H421",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H422",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H45",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H60",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34H89",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M3853",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M3858",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M3862",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M3866",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M3871",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M3879",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M3884",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M5028",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M5477",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M5564",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M5719",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M5723",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M5724",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M5798",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M6335",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M6336",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M6402",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M6446",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M6817",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7000",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7002",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7010",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7014",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7015",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7023",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7025",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7027",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7028",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7029",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7030",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7031",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7032",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7033",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7035",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7036",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7037",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7038",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7040",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7042",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7043",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7044",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7045",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7046",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7047",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7048",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7049",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7050",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7051",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7052",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7053",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7054",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7055",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7056",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7057",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7058",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7059",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7061",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7062",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7063",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7064",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7066",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7067",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7070",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7071",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7073",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7074",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7076",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7077",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7079",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7083",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7084",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7085",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7086",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7088",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7089",
+"parte": "Pasador de centraje"
+},
+{
+"id_pieza": "34M7090",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7091",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7093",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7094",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7095",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7098",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7099",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7100",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7102",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7103",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7104",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7107",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7111",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7113",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7114",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7116",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7117",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7118",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7119",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7120",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7122",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7124",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7125",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7126",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7127",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7128",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7129",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7130",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7131",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7132",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7133",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7135",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7137",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7138",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7141",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7144",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7145",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7153",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7154",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7157",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7158",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7159",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7160",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7162",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7172",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7173",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7176",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7180",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7181",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7184",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7189",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7190",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7192",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7197",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7199",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7200",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7201",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7203",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7204",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7205",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7206",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7207",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7210",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7212",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7213",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7214",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7215",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7216",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7217",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7220",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7221",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7223",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7224",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7225",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7226",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7229",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7230",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7231",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7232",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7233",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7239",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7241",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7242",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7243",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7244",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7245",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7246",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7247",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7248",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7249",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7250",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7251",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7252",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7253",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7254",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7255",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7256",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7257",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7258",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7259",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7260",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7262",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7266",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7267",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7268",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7269",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7270",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7272",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7273",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7274",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7275",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7276",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7277",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7278",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7279",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7280",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7281",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7282",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7283",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7284",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7285",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7286",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7287",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7288",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7289",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7290",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7291",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7292",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7293",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7297",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7298",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7300",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7301",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7302",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7305",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7308",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7310",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7312",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7314",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7316",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7323",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7326",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7328",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7329",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7331",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7332",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7333",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7335",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7336",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7337",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7338",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7340",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7342",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7344",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34M7348",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "34846",
+"parte": "Muelle"
+},
+{
+"id_pieza": "36M1001",
+"parte": "Tornillo con arandela "
+},
+{
+"id_pieza": "36012153110",
+"parte": "Luz trasera"
+},
+{
+"id_pieza": "36023100182",
+"parte": "Manï¿½metro "
+},
+{
+"id_pieza": "36081111240",
+"parte": "parte"
+},
+{
+"id_pieza": "3608111138",
+"parte": "Pasador "
+},
+{
+"id_pieza": "36084111150",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H10",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H101",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H105",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H106",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H108",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H109",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H110",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H111",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H112",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H114",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H116",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H117",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H120",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H121",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H127",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H129",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H13",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H131",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H132",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H133",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H137",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H14",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H142",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H143",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H144",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H147",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H148",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H149",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H154",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H157",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H160",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H164",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H166",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H167",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H168",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H170",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H171",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H173",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H176",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H179",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H19",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H195",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H196",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H197",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H2",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H200",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H201",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H203",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H205",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H209",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H210",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H212",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H214",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H215",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H218",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H221",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H222",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "37H228",
+"parte": "Tornillo"
+}
 
   ]
