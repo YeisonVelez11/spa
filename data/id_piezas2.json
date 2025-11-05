@@ -1,1143 +1,6474 @@
 [
     {
-    "id_pieza": "24M3529",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M3533",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M3535",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M3739",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M3756",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M3763",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M3774",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M4808",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M4810",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M4813",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M5640",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M5783",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M5808",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6208",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6502",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6504",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6560",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6631",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6639",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6690",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6736",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M6827",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7008",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7012",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7013",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7024",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7025",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7026",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7027",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7028",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7029",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7032",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7036",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7037",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7038",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7039",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7040",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7042",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7043",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7044",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7045",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7046",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7047",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7048",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7049",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7050",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7051",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7052",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7053",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7054",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7055",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7085",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7086",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7087",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7088",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7090",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7091",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7094",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7095",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7096",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7097",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7098",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7099",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7100",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7101",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7102",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7103",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7104",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7105",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7106",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7107",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7108",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7109",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7111",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7113",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7114",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7115",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7117",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7118",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7119",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7120",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7127",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7128",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7129",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7132",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7134",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7136",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7137",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7138",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7139",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7140",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7141",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7142",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7145",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7146",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7147",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7150",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7152",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7154",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7155",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7156",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7157",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7159",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7162",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7163",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7164",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7165",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7166",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7167",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7168",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7169",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7173",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7174",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7176",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7178",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7180",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7181",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7195",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7196",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7199",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7200",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7202",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7207",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7210",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7211",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7213",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7214",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7215",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7218",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7219",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7220",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7221",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7226",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7227",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7228",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7229",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7230",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7234",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7238",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7239",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7240",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7241",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7242",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7243",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7244",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7248",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7250",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7251",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7252",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7253",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7254",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7255",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7258",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7260",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7265",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7266",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7267",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7271",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7272",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7273",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7274",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7276",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7277",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7279",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7280",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7283",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7286",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7289",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7290",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7291",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7292",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7293",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7294",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7296",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7298",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7299",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7300",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7302",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7303",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7304",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7305",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7306",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7308",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7309",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7311",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7313",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7314",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7315",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7316",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7317",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7318",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7319",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7321",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7322",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7324",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7325",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7331",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7332",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7333",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7334",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7335",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7336",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7338",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7342",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7344",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7345",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7346",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7347",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7348",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7349",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7351",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7353",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7357",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7359",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7361",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7362",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7363",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7365",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7366",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7367",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7368",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7369",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7370",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7371",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7372",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7373",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7374",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7375",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7376",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7378",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7380",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7381",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7382",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7383",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7385",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7386",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7388",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7389",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7390",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7391",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7392",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7393",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7395",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7396",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7397",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7398",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7399",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7400",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7403",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7404",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7406",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7409",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7410",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7411",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7413",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7419",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7420",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7421",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7425",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7427",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7429",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7431",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7432",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7433",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7434",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7435",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7436",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7437",
-    "parte": "Arandela de seguridad "
-    },
-    {
-    "id_pieza": "24M7439",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7440",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7441",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7443",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7445",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7446",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7447",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7450",
-    "parte": "parte"
-    },
-    {
-    "id_pieza": "24M7451",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7452",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7453",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7455",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7456",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7460",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7463",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7466",
-    "parte": "Arandela"
-    },
-    {
-    "id_pieza": "24M7468",
-    "parte": "Arandela"
-    }
-
+"id_pieza": "40M7066",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7068",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7069",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7071",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7072",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7073",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7074",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7075",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7076",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7078",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7079",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7080",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7081",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7082",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7083",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7084",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7085",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7086",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7087",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7088",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7090",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7093",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7094",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7096",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7097",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7098",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7099",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7102",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7103",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7105",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7106",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7108",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7109",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7110",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7112",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7115",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7117",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7118",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7119",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7120",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7122",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7123",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7125",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7126",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7127",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7129",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7132",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7136",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7138",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7139",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7140",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7141",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7142",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7143",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7144",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7146",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7147",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7149",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7150",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7155",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7157",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7159",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7162",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7163",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7164",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7165",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7166",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7177",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7178",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7179",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7180",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7181",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7182",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7183",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7185",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7186",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7188",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7189",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7190",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7193",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7194",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7195",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7196",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7198",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7199",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7200",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7201",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7202",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7204",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7205",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7208",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7211",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7216",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7217",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7219",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7220",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7224",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7225",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7226",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7227",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7228",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7229",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7230",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7231",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7232",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7233",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7237",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7238",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7239",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7240",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7241",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7242",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7243",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7244",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7246",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7247",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7248",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7249",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7250",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7251",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7252",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7253",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7256",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7257",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7258",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7259",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7261",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7262",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7263",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7265",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7266",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7267",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7269",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7270",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7273",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7275",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7277",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7281",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7285",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7286",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7287",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7288",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7289",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7290",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7291",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7292",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7293",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7294",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7295",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7296",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7297",
+"parte": "Anillo de pistï¿½n"
+},
+{
+"id_pieza": "40M7300",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7302",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7304",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7305",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7307",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7308",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7309",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7310",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7312",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7313",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7320",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7324",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7325",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7327",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7328",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7330",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7331",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7332",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40M7335",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7336",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7337",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7338",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7339",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7340",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7341",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7344",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7345",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7347",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7349",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7351",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7352",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7353",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7354",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7355",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7356",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7357",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7358",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7360",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7362",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7364",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7367",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7370",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7371",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7372",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7374",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7375",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7377",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7378",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7381",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7382",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7384",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7385",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7386",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7387",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7388",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7390",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7393",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7394",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7395",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7397",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7398",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7399",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7400",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7401",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7402",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7403",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7404",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7406",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7407",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7408",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7409",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7411",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7413",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7415",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7416",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7417",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7418",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40M7422",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40RC7160",
+"parte": "Embrague"
+},
+{
+"id_pieza": "40RC7165B",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "40RC7167",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "40RC7202D",
+"parte": "Vï¿½lvula "
+},
+{
+"id_pieza": "40RC7607",
+"parte": "Tapa"
+},
+{
+"id_pieza": "40RC7631",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "40RC7652",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "40RC7666",
+"parte": "Regulador "
+},
+{
+"id_pieza": "40RC7726",
+"parte": "Junta"
+},
+{
+"id_pieza": "40RC7727",
+"parte": "Plato de embrague "
+},
+{
+"id_pieza": "40RC7798",
+"parte": "Arandela"
+},
+{
+"id_pieza": "40RC7806",
+"parte": "Control "
+},
+{
+"id_pieza": "40RC7839",
+"parte": "Perfil estructural"
+},
+{
+"id_pieza": "40RC7840",
+"parte": "Perfil estructural"
+},
+{
+"id_pieza": "40RC7873",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "40RC7904",
+"parte": "Colador "
+},
+{
+"id_pieza": "40RC7926",
+"parte": "Junta"
+},
+{
+"id_pieza": "40RC7932",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "40RC7938",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "40RC7939",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "40RC7951",
+"parte": "Placa"
+},
+{
+"id_pieza": "40RC7959",
+"parte": "Boca de llenado"
+},
+{
+"id_pieza": "40RC8064",
+"parte": "Aspilla "
+},
+{
+"id_pieza": "40TR7204",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "400R",
+"parte": "Bola"
+},
+{
+"id_pieza": "4000046",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "4000147",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4000148",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4000150",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4000151",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4000152",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4000154",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4000157",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4000158",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4000161",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4000163",
+"parte": "Mango"
+},
+{
+"id_pieza": "4000166",
+"parte": "Arandela de seguridad "
+},
+{
+"id_pieza": "4000167",
+"parte": "Arandela de seguridad "
+},
+{
+"id_pieza": "4000170",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4000171",
+"parte": "Arandela de seguridad "
+},
+{
+"id_pieza": "4000176",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4000269",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4000272",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4000278",
+"parte": "Articulaciï¿½n"
+},
+{
+"id_pieza": "4000279",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4000284",
+"parte": "Freno"
+},
+{
+"id_pieza": "4000326",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4000457",
+"parte": "Junta"
+},
+{
+"id_pieza": "4000468",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4000497",
+"parte": "Anillo de pistï¿½n"
+},
+{
+"id_pieza": "4000517SA",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4000518SA",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4000537",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "4000595",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4000668",
+"parte": "Tuberï¿½a de aceite "
+},
+{
+"id_pieza": "4000732",
+"parte": "Palanca acodada"
+},
+{
+"id_pieza": "4000797",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4000798",
+"parte": "Arandela de seguridad "
+},
+{
+"id_pieza": "4000799",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4000821",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4000859",
+"parte": "Presilla"
+},
+{
+"id_pieza": "4000871",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4000872",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4000972",
+"parte": "Placa"
+},
+{
+"id_pieza": "4000975",
+"parte": "Banda de freno"
+},
+{
+"id_pieza": "4001025",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4001026",
+"parte": "Engranaje recto cilï¿½nd"
+},
+{
+"id_pieza": "4001041",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4001044",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4001063",
+"parte": "Tapï¿½n hermï¿½tico"
+},
+{
+"id_pieza": "4001064",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4001074",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4001079",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4001080",
+"parte": "Tapï¿½n hermï¿½tico"
+},
+{
+"id_pieza": "4001081",
+"parte": "Vï¿½lvula "
+},
+{
+"id_pieza": "4001090",
+"parte": "Tapï¿½n hermï¿½tico"
+},
+{
+"id_pieza": "4001091",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4001112",
+"parte": "Perfil estructural"
+},
+{
+"id_pieza": "4001117",
+"parte": "Placa"
+},
+{
+"id_pieza": "4001120",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4001123",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4001142",
+"parte": "Cojinete con alojamien"
+},
+{
+"id_pieza": "4001143",
+"parte": "parte"
+},
+{
+"id_pieza": "4001150",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "4001221",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "4001290",
+"parte": "Tapï¿½n hermï¿½tico"
+},
+{
+"id_pieza": "4001339",
+"parte": "Horca"
+},
+{
+"id_pieza": "4001340",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4001346",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4001362",
+"parte": "Disco de freno"
+},
+{
+"id_pieza": "4001375",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4001383",
+"parte": "Vï¿½lvula descarga de pr"
+},
+{
+"id_pieza": "4001384",
+"parte": "Vï¿½lvula descarga de pr"
+},
+{
+"id_pieza": "4001385",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4001388",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4001394",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4001440",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4001444",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4001446",
+"parte": "Horquilla de cardï¿½n"
+},
+{
+"id_pieza": "4001450",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4001456",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4001469",
+"parte": "Tambor de freno"
+},
+{
+"id_pieza": "4001472",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4001496",
+"parte": "Brida"
+},
+{
+"id_pieza": "4001520",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4001553",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4001575",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4001576",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4001578",
+"parte": "Vï¿½lvula de mando acc. "
+},
+{
+"id_pieza": "4001587",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4001599",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4001617",
+"parte": "Pasador "
+},
+{
+"id_pieza": "4001618",
+"parte": "Tapï¿½n hermï¿½tico"
+},
+{
+"id_pieza": "4001651",
+"parte": "parte"
+},
+{
+"id_pieza": "4001738",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4001810",
+"parte": "Juego de juntas"
+},
+{
+"id_pieza": "4001811",
+"parte": "Juego de juntas"
+},
+{
+"id_pieza": "4001845",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4001846",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4001880",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4001892",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4001895",
+"parte": "Horca"
+},
+{
+"id_pieza": "4001897",
+"parte": "Presilla"
+},
+{
+"id_pieza": "4001898",
+"parte": "Collarï¿½n desplazable"
+},
+{
+"id_pieza": "4001902",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4001904",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4001910",
+"parte": "Junta"
+},
+{
+"id_pieza": "4001939",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4001940",
+"parte": "Conexiï¿½n"
+},
+{
+"id_pieza": "4001948",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4001949",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4001975",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4002017",
+"parte": "Tapï¿½n hermï¿½tico"
+},
+{
+"id_pieza": "4002030",
+"parte": "Tapï¿½n hermï¿½tico"
+},
+{
+"id_pieza": "4002032",
+"parte": "Junta"
+},
+{
+"id_pieza": "4002075",
+"parte": "Etiqueta"
+},
+{
+"id_pieza": "4002127",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4002139",
+"parte": "Horquilla de cardï¿½n"
+},
+{
+"id_pieza": "4002180",
+"parte": "Colador "
+},
+{
+"id_pieza": "4002254",
+"parte": "Placa"
+},
+{
+"id_pieza": "4002275",
+"parte": "Vï¿½lvula descarga de pr"
+},
+{
+"id_pieza": "4002276",
+"parte": "Tope"
+},
+{
+"id_pieza": "4002280",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4002350",
+"parte": "Etiqueta"
+},
+{
+"id_pieza": "4002436",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4002533",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4002562",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4002571",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4002572",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4002600",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4002605",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "4002609",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "4002610",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "4002639",
+"parte": "parte"
+},
+{
+"id_pieza": "4002655",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4002778",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4002807",
+"parte": "Junta"
+},
+{
+"id_pieza": "4002855",
+"parte": "Tubo"
+},
+{
+"id_pieza": "4002938",
+"parte": "Deflector "
+},
+{
+"id_pieza": "4003071",
+"parte": "Rotador "
+},
+{
+"id_pieza": "4003082",
+"parte": "Portador"
+},
+{
+"id_pieza": "4003088",
+"parte": "Pasador de aletas "
+},
+{
+"id_pieza": "4003091",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4003256",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4003258",
+"parte": "Colector"
+},
+{
+"id_pieza": "4003263",
+"parte": "Pasador "
+},
+{
+"id_pieza": "4003272",
+"parte": "Freno"
+},
+{
+"id_pieza": "4003274",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4003276",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4003285",
+"parte": "Racor acodado "
+},
+{
+"id_pieza": "4003290",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4003293",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4003297",
+"parte": "Conexiï¿½n"
+},
+{
+"id_pieza": "4003306",
+"parte": "Abrazadera"
+},
+{
+"id_pieza": "4003307",
+"parte": "Abrazadera"
+},
+{
+"id_pieza": "4003309",
+"parte": "Tubo"
+},
+{
+"id_pieza": "4003317",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4003323",
+"parte": "Tira/alfombrilla"
+},
+{
+"id_pieza": "4003327",
+"parte": "Pinzas de freno"
+},
+{
+"id_pieza": "4003330",
+"parte": "Racor acodado "
+},
+{
+"id_pieza": "4003358",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4003385",
+"parte": "Terminal elï¿½ctrico"
+},
+{
+"id_pieza": "4003401",
+"parte": "Rodamiento de bolas"
+},
+{
+"id_pieza": "4003438",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4003444",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4003447",
+"parte": "Indicador de temperatu"
+},
+{
+"id_pieza": "4003448",
+"parte": "Emisor"
+},
+{
+"id_pieza": "4003450",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "4003456",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "4003457",
+"parte": "Chaveta "
+},
+{
+"id_pieza": "4003458",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4003461",
+"parte": "Racor acodado "
+},
+{
+"id_pieza": "4003462",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4003467",
+"parte": "Rodamiento rodillos es"
+},
+{
+"id_pieza": "4003469",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4003470",
+"parte": "Manguera hidrï¿½ulica"
+},
+{
+"id_pieza": "4003483",
+"parte": "Cartucho de filtro"
+},
+{
+"id_pieza": "4003488",
+"parte": "Zï¿½calo"
+},
+{
+"id_pieza": "4003497",
+"parte": "Rodamiento rodillos ci"
+},
+{
+"id_pieza": "4003524",
+"parte": "Remache "
+},
+{
+"id_pieza": "4003526",
+"parte": "Abrazadera para mangue"
+},
+{
+"id_pieza": "4003529",
+"parte": "Terminal elï¿½ctrico"
+},
+{
+"id_pieza": "4003539",
+"parte": "Terminal elï¿½ctrico"
+},
+{
+"id_pieza": "4003540",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4003541",
+"parte": "Terminal elï¿½ctrico"
+},
+{
+"id_pieza": "4003543",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4003545",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4003546",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4003560",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4003566",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4003580",
+"parte": "Filtro"
+},
+{
+"id_pieza": "4003582",
+"parte": "Manguera hidrï¿½ulica"
+},
+{
+"id_pieza": "4003584",
+"parte": "Manguera hidrï¿½ulica"
+},
+{
+"id_pieza": "4003598",
+"parte": "Manguera hidrï¿½ulica"
+},
+{
+"id_pieza": "4003611",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4003612",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4003639",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4003640",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "4003642",
+"parte": "Pista ext. de rodamien"
+},
+{
+"id_pieza": "4003643",
+"parte": "Cono del cojinete "
+},
+{
+"id_pieza": "4003674",
+"parte": "Rodamiento rodillos ci"
+},
+{
+"id_pieza": "4003678",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4003680",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4003682",
+"parte": "Tira/alfombrilla"
+},
+{
+"id_pieza": "4003683",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4003685",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "4003688",
+"parte": "Tubo de aspilla de niv"
+},
+{
+"id_pieza": "4003689",
+"parte": "Abrazadera"
+},
+{
+"id_pieza": "4003690",
+"parte": "Racor acodado "
+},
+{
+"id_pieza": "4003704",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4003708",
+"parte": "Presilla"
+},
+{
+"id_pieza": "4003718",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4003725",
+"parte": "Muelle de disco"
+},
+{
+"id_pieza": "4003731",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4003732",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4003768",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "4003773",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4003774",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "4003778",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4003779",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4003783",
+"parte": "Pinzas de freno"
+},
+{
+"id_pieza": "4003788",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4003793",
+"parte": "Leva"
+},
+{
+"id_pieza": "4003807",
+"parte": "Pinzas de freno"
+},
+{
+"id_pieza": "4003809",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4003811",
+"parte": "Pasador "
+},
+{
+"id_pieza": "4003815",
+"parte": "Caja de conectores elï¿½"
+},
+{
+"id_pieza": "4003825",
+"parte": "Placa"
+},
+{
+"id_pieza": "4003830",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003831",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003832",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003833",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003834",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003835",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003836",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003837",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003838",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003839",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4003840",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4004100",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4004105",
+"parte": "Apoyo"
+},
+{
+"id_pieza": "4004111",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4004112",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4004124",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4004125",
+"parte": "Anillo reforzador "
+},
+{
+"id_pieza": "4004129",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "4004144",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4004191",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4004209",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4004236",
+"parte": "Electrovï¿½lvula"
+},
+{
+"id_pieza": "4004243",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4004247B",
+"parte": "Obturador "
+},
+{
+"id_pieza": "4004247C",
+"parte": "Obturador "
+},
+{
+"id_pieza": "4004247E",
+"parte": "Obturador "
+},
+{
+"id_pieza": "4004247G",
+"parte": "Obturador "
+},
+{
+"id_pieza": "4004247H",
+"parte": "Obturador "
+},
+{
+"id_pieza": "4004271",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4004291",
+"parte": "Brida"
+},
+{
+"id_pieza": "4004292",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4004294",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4004298",
+"parte": "Disco"
+},
+{
+"id_pieza": "4004330",
+"parte": "Manï¿½metro "
+},
+{
+"id_pieza": "4004339",
+"parte": "Llave"
+},
+{
+"id_pieza": "4004464",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4004507",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4004518",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4004519",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4004520",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4004531",
+"parte": "Tapï¿½n de vaciado"
+},
+{
+"id_pieza": "4004534",
+"parte": "Juego de partes"
+},
+{
+"id_pieza": "4004545",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4004550",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4004670",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4004686",
+"parte": "Aspilla "
+},
+{
+"id_pieza": "4004687",
+"parte": "Tapï¿½n de llenado"
+},
+{
+"id_pieza": "4004698",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "4004699",
+"parte": "Horca"
+},
+{
+"id_pieza": "4004700",
+"parte": "Junta"
+},
+{
+"id_pieza": "4004731",
+"parte": "Soporte rodamiento sin"
+},
+{
+"id_pieza": "4004737",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "4004784",
+"parte": "Perfil estructural"
+},
+{
+"id_pieza": "4004839",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4004841",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4004849",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4004882",
+"parte": "Malla"
+},
+{
+"id_pieza": "4004888",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4004894",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4004952",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "4004957",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4004985",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4004988",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4004989",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4004990",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4004993",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4005000",
+"parte": "Horquilla de cardï¿½n"
+},
+{
+"id_pieza": "4005006",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4005008",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4005015",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4005020",
+"parte": "Bomba de aceite"
+},
+{
+"id_pieza": "4005035",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4005036",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4005062",
+"parte": "Manual tï¿½cnico"
+},
+{
+"id_pieza": "4005065",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4005066",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4005067",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4005069",
+"parte": "Vï¿½lvula de mando acc. "
+},
+{
+"id_pieza": "4005140",
+"parte": "Vï¿½lvula hidrï¿½ulica man"
+},
+{
+"id_pieza": "4005234",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4005236",
+"parte": "Malla"
+},
+{
+"id_pieza": "4005281",
+"parte": "Electrovï¿½lvula hidrï¿½ul"
+},
+{
+"id_pieza": "4005283",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4005284SA",
+"parte": "Solenoide "
+},
+{
+"id_pieza": "4005290",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4005293",
+"parte": "Electrovï¿½lvula"
+},
+{
+"id_pieza": "4005295",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4005296",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4005321",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4005322",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4005323",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4005335",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4005339",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4005343",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4005350",
+"parte": "Manguera hidrï¿½ulica"
+},
+{
+"id_pieza": "4005357",
+"parte": "Brazo"
+},
+{
+"id_pieza": "4005382",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4005383",
+"parte": "Pasador "
+},
+{
+"id_pieza": "4005400",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4005401",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4005413",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4005431SA",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4005470",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4005471",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4005522",
+"parte": "Plato de embrague "
+},
+{
+"id_pieza": "4005524",
+"parte": "Plato de embrague "
+},
+{
+"id_pieza": "4005525",
+"parte": "Plato de embrague "
+},
+{
+"id_pieza": "4005552",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4005582SA",
+"parte": "Caso"
+},
+{
+"id_pieza": "4005613",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4005777",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4005814",
+"parte": "Junta"
+},
+{
+"id_pieza": "4005818",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4006018",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "4006036",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4006067",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "4006084",
+"parte": "Estï¿½tor "
+},
+{
+"id_pieza": "4006231",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4006241",
+"parte": "Plato de embrague "
+},
+{
+"id_pieza": "4006262",
+"parte": "Pista ext. de rodamien"
+},
+{
+"id_pieza": "4006274SA",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4006304",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4006404",
+"parte": "Junta"
+},
+{
+"id_pieza": "4006487",
+"parte": "Anillo de sellado "
+},
+{
+"id_pieza": "4006761",
+"parte": "Conexiï¿½n"
+},
+{
+"id_pieza": "4006763",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "4006800",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4006906",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4007027",
+"parte": "Engranaje recto cilï¿½nd"
+},
+{
+"id_pieza": "4007043",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4007219",
+"parte": "Collarï¿½n desplazable"
+},
+{
+"id_pieza": "4007222",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4007223",
+"parte": "Disco de freno"
+},
+{
+"id_pieza": "4007241",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4007249",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4007264",
+"parte": "Engranaje recto cilï¿½nd"
+},
+{
+"id_pieza": "4007291",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4007297",
+"parte": "Juego de juntas"
+},
+{
+"id_pieza": "4007300",
+"parte": "Horquilla con eje "
+},
+{
+"id_pieza": "4007307",
+"parte": "Horca"
+},
+{
+"id_pieza": "4007308",
+"parte": "Varilla de cambio "
+},
+{
+"id_pieza": "4007310",
+"parte": "Caso"
+},
+{
+"id_pieza": "4007323",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4007325",
+"parte": "Tubo"
+},
+{
+"id_pieza": "4007329",
+"parte": "Deflector "
+},
+{
+"id_pieza": "4007331",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4007334",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4007417",
+"parte": "Tambor de freno"
+},
+{
+"id_pieza": "4007428",
+"parte": "parte"
+},
+{
+"id_pieza": "4007435",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4007440",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4007446",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4007447",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4007453",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4007467",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4007523",
+"parte": "Horquilla de cardï¿½n"
+},
+{
+"id_pieza": "4008023",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4008024",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4008030",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4008066",
+"parte": "Junta"
+},
+{
+"id_pieza": "4008094",
+"parte": "Junta"
+},
+{
+"id_pieza": "4008112",
+"parte": "Placa"
+},
+{
+"id_pieza": "4008118",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4008120SA",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4008132",
+"parte": "Malla"
+},
+{
+"id_pieza": "4008202",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4008229",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4008234",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4008235",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4008236",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "4008237",
+"parte": "Pasador de centraje"
+},
+{
+"id_pieza": "4008238",
+"parte": "Jaula"
+},
+{
+"id_pieza": "4008242",
+"parte": "Tuerca de uniï¿½n"
+},
+{
+"id_pieza": "4008356",
+"parte": "Solenoide "
+},
+{
+"id_pieza": "4008361",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4008378",
+"parte": "Tapï¿½n hermï¿½tico"
+},
+{
+"id_pieza": "4008392",
+"parte": "Junta"
+},
+{
+"id_pieza": "4008393",
+"parte": "Tornillo de fijaciï¿½n"
+},
+{
+"id_pieza": "4008435",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4008461",
+"parte": "Junta"
+},
+{
+"id_pieza": "4008485",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4008489",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4008490",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4008491",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4008507",
+"parte": "Junta"
+},
+{
+"id_pieza": "4008521",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4008558",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4008564SA",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4008568",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4008574",
+"parte": "Junta"
+},
+{
+"id_pieza": "4008575",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4008677",
+"parte": "Solenoide "
+},
+{
+"id_pieza": "4008740",
+"parte": "Engranaje recto cilï¿½nd"
+},
+{
+"id_pieza": "4008742SA",
+"parte": "Electrovï¿½lvula"
+},
+{
+"id_pieza": "4008749",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4009303",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009306",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4009313",
+"parte": "Pista ext. de rodamien"
+},
+{
+"id_pieza": "4009314",
+"parte": "Cono del cojinete "
+},
+{
+"id_pieza": "4009321",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4009347",
+"parte": "ï¿½mbolo"
+},
+{
+"id_pieza": "4009348SA",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4009349SA",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4009353",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009361",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4009375",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4009385",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4009386",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009392",
+"parte": "Cono del cojinete "
+},
+{
+"id_pieza": "4009393",
+"parte": "Pista ext. de rodamien"
+},
+{
+"id_pieza": "4009396",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4009397",
+"parte": "Rodamiento de bolas"
+},
+{
+"id_pieza": "4009404",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4009407",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4009434",
+"parte": "Bobina elï¿½ctrica"
+},
+{
+"id_pieza": "4009451",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4009463",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4009492",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4009507",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4009540",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009548",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009613",
+"parte": "Junta"
+},
+{
+"id_pieza": "4009624",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "4009640",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4009651",
+"parte": "Junta"
+},
+{
+"id_pieza": "4009663",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4009675",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009700",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "4009711",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4009714",
+"parte": "parte"
+},
+{
+"id_pieza": "4009720",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4009721",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4009722",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4009729",
+"parte": "Juego de juntas"
+},
+{
+"id_pieza": "4009730",
+"parte": "Juego de juntas"
+},
+{
+"id_pieza": "4009731",
+"parte": "Juego de juntas"
+},
+{
+"id_pieza": "4009733",
+"parte": "Solenoide "
+},
+{
+"id_pieza": "4009754",
+"parte": "Kit de carcasas"
+},
+{
+"id_pieza": "4009758",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009761",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009767",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4009793",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4009798",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "4009799",
+"parte": "Rodamiento de bolas"
+},
+{
+"id_pieza": "4010167725",
+"parte": "Tambor"
+},
+{
+"id_pieza": "4010432",
+"parte": "Cojinete con alojamien"
+},
+{
+"id_pieza": "4010436",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4010456SA",
+"parte": "Horquilla "
+},
+{
+"id_pieza": "4010461",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4010464",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4010468",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4010469",
+"parte": "Junta"
+},
+{
+"id_pieza": "4010476",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4010508",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "4010554",
+"parte": "Placa"
+},
+{
+"id_pieza": "4010556",
+"parte": "Placa"
+},
+{
+"id_pieza": "4010557",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4010558",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4010559",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4010564",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4010566",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4010573",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4010595",
+"parte": "Plato de embrague "
+},
+{
+"id_pieza": "4010623",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4010665",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4010671",
+"parte": "Junta"
+},
+{
+"id_pieza": "4010672",
+"parte": "Junta"
+},
+{
+"id_pieza": "4011045",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4011118",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4011120",
+"parte": "Placa"
+},
+{
+"id_pieza": "4011122",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4011127",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4011130",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4011145",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4011146",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4012100B",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4012100C",
+"parte": "Manguito"
+},
+{
+"id_pieza": "40121066",
+"parte": "Palanca "
+},
+{
+"id_pieza": "40121205",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4012121",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4012121A",
+"parte": "Arandela"
+},
+{
+"id_pieza": "40121210",
+"parte": "Anillo"
+},
+{
+"id_pieza": "40121212",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "40121221",
+"parte": "Caso"
+},
+{
+"id_pieza": "40121222",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40121223",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40121224",
+"parte": "Manguito"
+},
+{
+"id_pieza": "40121225",
+"parte": "Arandela"
+},
+{
+"id_pieza": "40121251",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "40121259",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "40121270",
+"parte": "Placa"
+},
+{
+"id_pieza": "4012129",
+"parte": "Anillo de sellado "
+},
+{
+"id_pieza": "40121291",
+"parte": "Placa"
+},
+{
+"id_pieza": "40121322",
+"parte": "Colador "
+},
+{
+"id_pieza": "40121337",
+"parte": "Placa"
+},
+{
+"id_pieza": "40121338",
+"parte": "Placa"
+},
+{
+"id_pieza": "40121342",
+"parte": "Placa"
+},
+{
+"id_pieza": "40121347",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "40121355",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "40121437",
+"parte": "Placa"
+},
+{
+"id_pieza": "40121492",
+"parte": "Aspilla "
+},
+{
+"id_pieza": "4012161",
+"parte": "Rodamiento rodillos cï¿½"
+},
+{
+"id_pieza": "4012162J",
+"parte": "Guï¿½a"
+},
+{
+"id_pieza": "4012164A",
+"parte": "Impulsor"
+},
+{
+"id_pieza": "4012211",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4012213",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012217",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012217C",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012218B",
+"parte": "Pista de rodamiento"
+},
+{
+"id_pieza": "4012219",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "4012222",
+"parte": "Arandela"
+},
+{
+"id_pieza": "40122311",
+"parte": "Placa"
+},
+{
+"id_pieza": "40122314",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "40122315",
+"parte": "Diafragma "
+},
+{
+"id_pieza": "40122316",
+"parte": "Junta"
+},
+{
+"id_pieza": "40122319",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4012235",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012241",
+"parte": "Colector"
+},
+{
+"id_pieza": "4012293C",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012294PT",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4012295C2",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012298PT",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4012299",
+"parte": "Placa"
+},
+{
+"id_pieza": "4012328",
+"parte": "Anillo de sellado "
+},
+{
+"id_pieza": "4012329",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4012330",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012336",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4012340",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4012347",
+"parte": "Anillo de sellado "
+},
+{
+"id_pieza": "4012365",
+"parte": "Anillo de sellado "
+},
+{
+"id_pieza": "4012365A",
+"parte": "Anillo de sellado "
+},
+{
+"id_pieza": "4012370A",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4012372A",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4012374E",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4012377",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4012378A",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4012381",
+"parte": "Plato de embrague "
+},
+{
+"id_pieza": "4012388",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4012396",
+"parte": "Rodamiento rodillos cï¿½"
+},
+{
+"id_pieza": "4012422",
+"parte": "Malla"
+},
+{
+"id_pieza": "4012423",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012433",
+"parte": "Apoyo"
+},
+{
+"id_pieza": "4012443",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012501",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4012513",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4012516",
+"parte": "Muelle"
+},
+{
+"id_pieza": "4012517A",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4012527",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4012531",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012535",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4012535A",
+"parte": "Brazo"
+},
+{
+"id_pieza": "4012653",
+"parte": "Placa"
+},
+{
+"id_pieza": "4012656",
+"parte": "Apoyo"
+},
+{
+"id_pieza": "4012668",
+"parte": "ï¿½mbolo"
+},
+{
+"id_pieza": "4012681",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4012701",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012702",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4012704",
+"parte": "Collarï¿½n desplazable"
+},
+{
+"id_pieza": "4012708",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4012709",
+"parte": "Eje secundario"
+},
+{
+"id_pieza": "4012712",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012714",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012721",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012723",
+"parte": "Rodamiento rodillos cï¿½"
+},
+{
+"id_pieza": "4012725",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012726",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4012727",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4012731",
+"parte": "Caso"
+},
+{
+"id_pieza": "4012733",
+"parte": "parte"
+},
+{
+"id_pieza": "4012739",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012742",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4012744",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012746",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4012751",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4012752",
+"parte": "Horca"
+},
+{
+"id_pieza": "4012753A",
+"parte": "Horca"
+},
+{
+"id_pieza": "4012754",
+"parte": "Cambiador "
+},
+{
+"id_pieza": "4012755",
+"parte": "Guï¿½a"
+},
+{
+"id_pieza": "4012761",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "4012762",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4012771",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4012772",
+"parte": "Mangueta"
+},
+{
+"id_pieza": "4012775",
+"parte": "Pasador "
+},
+{
+"id_pieza": "4012777",
+"parte": "Pasador "
+},
+{
+"id_pieza": "4012782",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4012785",
+"parte": "Vï¿½stago "
+},
+{
+"id_pieza": "4012786",
+"parte": "Varilla de cambio "
+},
+{
+"id_pieza": "4012795",
+"parte": "Placa"
+},
+{
+"id_pieza": "4012800SA",
+"parte": "Tambor de freno"
+},
+{
+"id_pieza": "4012806",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4012808",
+"parte": "Zapata de freno"
+},
+{
+"id_pieza": "4012809",
+"parte": "ï¿½mbolo"
+},
+{
+"id_pieza": "4012810",
+"parte": "Tambor de freno"
+},
+{
+"id_pieza": "4012815",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4012815PE",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4012817",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4012818",
+"parte": "parte"
+},
+{
+"id_pieza": "4012821",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4012852",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4012854",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4012863",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4012972",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012975",
+"parte": "Junta"
+},
+{
+"id_pieza": "4012987",
+"parte": "Conexiï¿½n"
+},
+{
+"id_pieza": "4012989",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4013748",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "4017020",
+"parte": "Muelle de disco"
+},
+{
+"id_pieza": "4017025",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017026",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017027",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4017031",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017033",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017042",
+"parte": "Junta"
+},
+{
+"id_pieza": "4017045",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017063",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017065",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017070",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017076",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4017085",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017097",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4017106",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4017107",
+"parte": "ï¿½mbolo"
+},
+{
+"id_pieza": "4017128",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4017207",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017210",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017211",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4017222",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017223",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017224",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017225",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017226",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017228",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017232",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017234",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017235",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017241",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017244",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4017248",
+"parte": "Placa"
+},
+{
+"id_pieza": "4017250",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017252",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017253",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017255",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017267",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017286",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4017313",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017320",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4017323",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017324",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017327",
+"parte": "Tope"
+},
+{
+"id_pieza": "4017334",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017336",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017337",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017338",
+"parte": "Collarï¿½n desplazable"
+},
+{
+"id_pieza": "4017339",
+"parte": "Horca"
+},
+{
+"id_pieza": "4017340",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017364",
+"parte": "Aspilla "
+},
+{
+"id_pieza": "4017399",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017415",
+"parte": "Carrete "
+},
+{
+"id_pieza": "4017420",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017456",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017481",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4017482",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4017483",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4017486",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4017489",
+"parte": "Tubo"
+},
+{
+"id_pieza": "4017510",
+"parte": "Junta"
+},
+{
+"id_pieza": "4017526",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017543",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4017605",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017612",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017617",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4017633",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4017639",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4017640",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4017642",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4017644",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4020176497",
+"parte": "Revestimiento "
+},
+{
+"id_pieza": "4020200",
+"parte": "Cojinete con alojamien"
+},
+{
+"id_pieza": "4020201",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4020202",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4020203",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4020204",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4020209",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4021493",
+"parte": "Manual del operador"
+},
+{
+"id_pieza": "4021592",
+"parte": "Manual del operador"
+},
+{
+"id_pieza": "4023023",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4023024",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4023025",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4023026",
+"parte": "ï¿½mbolo"
+},
+{
+"id_pieza": "4023027",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4023028",
+"parte": "parte"
+},
+{
+"id_pieza": "4023031",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4023032",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4023034",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4023036",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4023041",
+"parte": "Horca"
+},
+{
+"id_pieza": "4023045",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4023047",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4023054",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4023055SA",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4023056",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4023065",
+"parte": "Manï¿½metro "
+},
+{
+"id_pieza": "4023068",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4023070",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4023100",
+"parte": "Manguera"
+},
+{
+"id_pieza": "4023301B",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4023302",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4023306",
+"parte": "Junta"
+},
+{
+"id_pieza": "4023307",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023308",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023310",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023311",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023314",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023354",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023355",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023371",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4023372",
+"parte": "Junta"
+},
+{
+"id_pieza": "4023381",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4023382",
+"parte": "Tambor"
+},
+{
+"id_pieza": "4023384",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "4023385",
+"parte": "Anclaje "
+},
+{
+"id_pieza": "4023386",
+"parte": "Guï¿½a"
+},
+{
+"id_pieza": "4023387",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4023388",
+"parte": "Anclaje "
+},
+{
+"id_pieza": "4023389",
+"parte": "Articulaciï¿½n"
+},
+{
+"id_pieza": "4023391",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4023406",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4023411",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4023413",
+"parte": "Barandilla"
+},
+{
+"id_pieza": "4023424",
+"parte": "Horca"
+},
+{
+"id_pieza": "4023451",
+"parte": "Pasador "
+},
+{
+"id_pieza": "4023456",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4023461",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4023463",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4023471",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4023481",
+"parte": "Junta"
+},
+{
+"id_pieza": "4023488",
+"parte": "Junta"
+},
+{
+"id_pieza": "4023489",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4023495",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4023536",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023543",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4023544",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4023694SA",
+"parte": "Freno de mano "
+},
+{
+"id_pieza": "4023701",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4023702",
+"parte": "Juego de rodamientos"
+},
+{
+"id_pieza": "4023709",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4023712",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023713",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023714",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4023717",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4023824",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4023834",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4023851",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4023858",
+"parte": "Horca"
+},
+{
+"id_pieza": "4023860",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4023863",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4024518",
+"parte": "Arandela de seguridad "
+},
+{
+"id_pieza": "4027003",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4027004",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4027013",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4027021",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4027034",
+"parte": "Placa"
+},
+{
+"id_pieza": "4027041",
+"parte": "Placa"
+},
+{
+"id_pieza": "4027043",
+"parte": "Placa"
+},
+{
+"id_pieza": "4027051",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4027056",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4027062A",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4027065",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4027069",
+"parte": "Rueda dentada "
+},
+{
+"id_pieza": "4027075",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4027091",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4027098",
+"parte": "Manguito"
+},
+{
+"id_pieza": "40271010",
+"parte": "Tapa"
+},
+{
+"id_pieza": "40271011",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40271013",
+"parte": "Arandela"
+},
+{
+"id_pieza": "40271014",
+"parte": "Junta"
+},
+{
+"id_pieza": "40271052",
+"parte": "Cubo"
+},
+{
+"id_pieza": "40271053",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "40271055",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271056",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271060",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40271064",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271065",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271069",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271070",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40271105",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271106",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "40271158",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4027117",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "40271217",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "40271257",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271258",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271264",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271265",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271270",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271277",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "40271278",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271299",
+"parte": "Arandela"
+},
+{
+"id_pieza": "40271301",
+"parte": "Tuerca de seguridad"
+},
+{
+"id_pieza": "40271310",
+"parte": "Placa"
+},
+{
+"id_pieza": "40271317",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40271319",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "40271321",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "40271333",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "40271336",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40271343",
+"parte": "Corona de tren planeta"
+},
+{
+"id_pieza": "40271345",
+"parte": "Corona de tren planeta"
+},
+{
+"id_pieza": "40271415",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "40271416",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "40271417",
+"parte": "Placa"
+},
+{
+"id_pieza": "40271443",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40271452",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40271463",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40271471",
+"parte": "Chapa de seguridad"
+},
+{
+"id_pieza": "40271472",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40271473",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4027175",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4027201",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4027216",
+"parte": "Juego de partes"
+},
+{
+"id_pieza": "4027216A",
+"parte": "parte"
+},
+{
+"id_pieza": "4027216B",
+"parte": "parte"
+},
+{
+"id_pieza": "4027216C",
+"parte": "parte"
+},
+{
+"id_pieza": "4027216D",
+"parte": "parte"
+},
+{
+"id_pieza": "4027218",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4027220",
+"parte": "Jaula"
+},
+{
+"id_pieza": "4027223",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4027228",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4027233",
+"parte": "Jaula"
+},
+{
+"id_pieza": "4027235",
+"parte": "Jaula"
+},
+{
+"id_pieza": "4027959",
+"parte": "Anillo reforzador "
+},
+{
+"id_pieza": "4028020",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4028035",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028036",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028037",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028038",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028039",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028041",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028047",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028054",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028055",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028056",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028057",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028060",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "4028062",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028070",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028080",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028081",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028082",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028083",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028090",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "40281133",
+"parte": "Placa"
+},
+{
+"id_pieza": "40281161",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281162",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281177",
+"parte": "Cubo"
+},
+{
+"id_pieza": "40281181",
+"parte": "Manguito"
+},
+{
+"id_pieza": "40281183",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "40281186",
+"parte": "Placa"
+},
+{
+"id_pieza": "40281193",
+"parte": "Placa"
+},
+{
+"id_pieza": "40281199",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281207",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281216",
+"parte": "Manguito"
+},
+{
+"id_pieza": "40281218",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "40281220SA",
+"parte": "Conjunto de conector e"
+},
+{
+"id_pieza": "40281222",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281244",
+"parte": "Mando"
+},
+{
+"id_pieza": "40281251",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281252",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281253",
+"parte": "Brida"
+},
+{
+"id_pieza": "40281259",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281260",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281261",
+"parte": "Cubo"
+},
+{
+"id_pieza": "40281262",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "40281283",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "40281291",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281294",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40281323",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281326",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281337",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40281338",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40281351",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "40281352",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4028137",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "40281379",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4028138",
+"parte": "Placa"
+},
+{
+"id_pieza": "40281380",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "40281381",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281382",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281383",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "40281385",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281386",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "40281387",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281390",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281398",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281416",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "40281424",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40281433",
+"parte": "Manï¿½metro "
+},
+{
+"id_pieza": "40281434",
+"parte": "Tubo de aspilla de niv"
+},
+{
+"id_pieza": "40281439",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4028144",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028145",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "40281483",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40281490",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281495",
+"parte": "Manguito"
+},
+{
+"id_pieza": "40281497",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40281498",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40281503",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "40281514",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "40281519",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "40281526",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4028177",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028178",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028200",
+"parte": "Placa"
+},
+{
+"id_pieza": "40282001",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "40282002",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4028202",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028237",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028241",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028242",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4028243",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4028246",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028249",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028261",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028270",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028271",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028273",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028276",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028286",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028303",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028310",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028315",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028316",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028317",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4028331",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028339",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4028341",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4028343",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "4028370",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "4028376",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4028380",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028497",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028499",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028503",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4028504",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4028506",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028507",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028508",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028509",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4028510",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4028521",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028523",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028534",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4028535",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4028546",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028547",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028550",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028564",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4028579",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028580",
+"parte": "Aspilla "
+},
+{
+"id_pieza": "4028584",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028603",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4028604",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028615",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028617",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4028623",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028663",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4028692",
+"parte": "Placa"
+},
+{
+"id_pieza": "4028707",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028723",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028765",
+"parte": "Tubo de aspilla de niv"
+},
+{
+"id_pieza": "4028788",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028923",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4028936",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4028943",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028944",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4028998",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4029006",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4029007",
+"parte": "Soporte rodamiento sin"
+},
+{
+"id_pieza": "4029009",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4029014",
+"parte": "Junta"
+},
+{
+"id_pieza": "4029018",
+"parte": "Collarï¿½n desplazable"
+},
+{
+"id_pieza": "4029028",
+"parte": "Tope"
+},
+{
+"id_pieza": "4029029",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4029031",
+"parte": "Junta"
+},
+{
+"id_pieza": "4029034",
+"parte": "Chapa de seguridad"
+},
+{
+"id_pieza": "4029044",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4030004",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4030009",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4030018",
+"parte": "Collarï¿½n desplazable"
+},
+{
+"id_pieza": "4030025A",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4030026B",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4030061",
+"parte": "Junta"
+},
+{
+"id_pieza": "4030064A",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4030066A",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4030067A",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4030069",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4030074",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4030079",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4030080",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4030081",
+"parte": "Junta"
+},
+{
+"id_pieza": "4030082",
+"parte": "Junta"
+},
+{
+"id_pieza": "4031007",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4031011",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4031013A",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4031015C",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4031016",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4031022A",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031024A",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031041",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4031064",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031069",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4031264",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031371A",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4031377",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4031379",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4031380",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4031605SA",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031635",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4031662",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4031663",
+"parte": "Horca"
+},
+{
+"id_pieza": "4031686",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4031727SA",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031728SA",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031814",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031818",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4031881",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4031895",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4031898",
+"parte": "Acoplamiento"
+},
+{
+"id_pieza": "4031902",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4031953",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4033032",
+"parte": "Caso"
+},
+{
+"id_pieza": "4033034",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4033037",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4033043",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4033044",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4033062",
+"parte": "Junta"
+},
+{
+"id_pieza": "4033108",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4033267",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4033276",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4033332",
+"parte": "Kit de juntas "
+},
+{
+"id_pieza": "4033341",
+"parte": "Manguera"
+},
+{
+"id_pieza": "4036010",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4041001",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041002",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041003",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041006",
+"parte": "Controlador de cambio "
+},
+{
+"id_pieza": "4041007",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041009",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041013",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041014",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041019",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041020",
+"parte": "Cuadrante "
+},
+{
+"id_pieza": "4041036",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4041042",
+"parte": "Dial de control"
+},
+{
+"id_pieza": "4041046",
+"parte": "Terminal elï¿½ctrico"
+},
+{
+"id_pieza": "4041057",
+"parte": "Junta"
+},
+{
+"id_pieza": "4041058",
+"parte": "Junta"
+},
+{
+"id_pieza": "4041064",
+"parte": "Remache "
+},
+{
+"id_pieza": "4041065",
+"parte": "Remache "
+},
+{
+"id_pieza": "4041068",
+"parte": "Conductor elï¿½ctrico"
+},
+{
+"id_pieza": "4041069",
+"parte": "Alambre "
+},
+{
+"id_pieza": "4041070",
+"parte": "Placa"
+},
+{
+"id_pieza": "4041072",
+"parte": "Placa"
+},
+{
+"id_pieza": "4041078",
+"parte": "Placa"
+},
+{
+"id_pieza": "4041080SA",
+"parte": "Conexiï¿½n"
+},
+{
+"id_pieza": "4041081",
+"parte": "Tapï¿½n"
+},
+{
+"id_pieza": "4041082",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4041083",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4041089",
+"parte": "Remache "
+},
+{
+"id_pieza": "4041117",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4041122",
+"parte": "Palanca "
+},
+{
+"id_pieza": "4041124",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4041125",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4041129",
+"parte": "Placa"
+},
+{
+"id_pieza": "4041161",
+"parte": "Soporte "
+},
+{
+"id_pieza": "4041163",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4041164",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4041165",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4041260",
+"parte": "Interruptor"
+},
+{
+"id_pieza": "4041261",
+"parte": "Interruptor"
+},
+{
+"id_pieza": "4041273",
+"parte": "Conjunto de conector e"
+},
+{
+"id_pieza": "4045006",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "4045009",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4045016",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4045076",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045079",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4045081",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4045129",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4045130",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4045194",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4045196",
+"parte": "Rueda de turbina"
+},
+{
+"id_pieza": "4045236",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4045281",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4045350",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4045355",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045356",
+"parte": "Impulsor"
+},
+{
+"id_pieza": "4045357",
+"parte": "Impulsor"
+},
+{
+"id_pieza": "4045358",
+"parte": "Impulsor"
+},
+{
+"id_pieza": "4045362",
+"parte": "Estï¿½tor "
+},
+{
+"id_pieza": "4045370",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "4045391",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4045492",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045493",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045533",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4045559",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4045577",
+"parte": "Impulsor"
+},
+{
+"id_pieza": "4045578",
+"parte": "Impulsor"
+},
+{
+"id_pieza": "4045579",
+"parte": "Impulsor"
+},
+{
+"id_pieza": "4045596",
+"parte": "Tapa"
+},
+{
+"id_pieza": "4045645",
+"parte": "Estï¿½tor "
+},
+{
+"id_pieza": "4045669",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4045671",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4045678",
+"parte": "Pistï¿½n"
+},
+{
+"id_pieza": "4045684",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "4045688",
+"parte": "Mando"
+},
+{
+"id_pieza": "4045723",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045726",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045727",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045767",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4045857",
+"parte": "Embrague"
+},
+{
+"id_pieza": "4045861",
+"parte": "Instrucciones "
+},
+{
+"id_pieza": "4045872",
+"parte": "Impulsor"
+},
+{
+"id_pieza": "4045884",
+"parte": "Rueda de turbina"
+},
+{
+"id_pieza": "4045887",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045888",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045892",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045894",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045896",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045899",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4045901",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "4045905",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4045906",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045910",
+"parte": "Estï¿½tor "
+},
+{
+"id_pieza": "4045911",
+"parte": "Estï¿½tor "
+},
+{
+"id_pieza": "4045915",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045916",
+"parte": "Manguito acanalado"
+},
+{
+"id_pieza": "4045917",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4045918",
+"parte": "Rueda de turbina"
+},
+{
+"id_pieza": "4045962",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045964",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045968",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045969",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045996",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4045998",
+"parte": "Convertidor de par"
+},
+{
+"id_pieza": "4046672SA",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046692",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046693",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046750",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4046751",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046754",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046756SA",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046758",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046763SA",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046782SA",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046813",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046817",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046832",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046834",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046836",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4046837",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046880",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046881",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046882",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046885",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046916",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046917",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4046922",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046925",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046935",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046936",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046939",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046941",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4046945",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4046947",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4046951",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "4046954",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046956",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046958",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046959",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046960",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046961",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046962",
+"parte": "Placa"
+},
+{
+"id_pieza": "4046969",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046973",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046974",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046977",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4046988",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4047256",
+"parte": "parte"
+},
+{
+"id_pieza": "4050001",
+"parte": "Caso"
+},
+{
+"id_pieza": "4050012",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4050030",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4050033",
+"parte": "Pasador "
+},
+{
+"id_pieza": "4050035",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4050036",
+"parte": "Junta"
+},
+{
+"id_pieza": "4050037",
+"parte": "Depï¿½sito"
+},
+{
+"id_pieza": "4050154",
+"parte": "Junta"
+},
+{
+"id_pieza": "4050161",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4050164",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4050165SA",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4050189SA",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4050276",
+"parte": "Juego de rodamientos"
+},
+{
+"id_pieza": "4050286SA",
+"parte": "Colador "
+},
+{
+"id_pieza": "4050300",
+"parte": "Junta"
+},
+{
+"id_pieza": "4050487",
+"parte": "Bomba"
+},
+{
+"id_pieza": "4050498",
+"parte": "Plato de embrague "
+},
+{
+"id_pieza": "4050516",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "4051034",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4051262",
+"parte": "Pasador elï¿½stico"
+},
+{
+"id_pieza": "4052140",
+"parte": "Junta"
+},
+{
+"id_pieza": "4053696",
+"parte": "Abrazadera"
+},
+{
+"id_pieza": "4053698",
+"parte": "Abrazadera"
+},
+{
+"id_pieza": "4055651",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4056046",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056090",
+"parte": "Placa"
+},
+{
+"id_pieza": "4056105",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056106",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4056109",
+"parte": "Placa"
+},
+{
+"id_pieza": "4056113",
+"parte": "Arandela"
+},
+{
+"id_pieza": "4056120",
+"parte": "Junta"
+},
+{
+"id_pieza": "4056121",
+"parte": "Anillo"
+},
+{
+"id_pieza": "4056122",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056125",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4056126",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "4056127",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4056132",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056133",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056140",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4056141",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4056142",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056143",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056144",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4056161",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056294",
+"parte": "Junta"
+},
+{
+"id_pieza": "4056302",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056312",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4056314",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4056333",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4056415",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056444",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056446",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056447",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056448",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056449",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056451",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056452",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056453",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056454",
+"parte": "Eje cardï¿½n"
+},
+{
+"id_pieza": "4056455",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056456",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056460",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "4056465",
+"parte": "Placa"
+},
+{
+"id_pieza": "4056466",
+"parte": "Placa"
+},
+{
+"id_pieza": "4056468",
+"parte": "Placa"
+},
+{
+"id_pieza": "4056470",
+"parte": "Placa"
+},
+{
+"id_pieza": "4056471",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4056472",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4056486",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056487",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056555SA",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "4056556SA",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "4056561SA",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056578",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "4056665",
+"parte": "Cubo"
+},
+{
+"id_pieza": "4056696",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4056705",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4056706",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4056707",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4056762",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056770",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056775",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4056776",
+"parte": "Tubo de aspilla de niv"
+},
+{
+"id_pieza": "4056779",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4056781",
+"parte": "Perfil estructural"
+},
+{
+"id_pieza": "4056782",
+"parte": "Perfil estructural"
+},
+{
+"id_pieza": "4056783",
+"parte": "Tubo"
+},
+{
+"id_pieza": "4056800",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4056908",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056914",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056917",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056947",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056951",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4056968",
+"parte": "Adaptador "
+},
+{
+"id_pieza": "4056971",
+"parte": "Canaleta"
+},
+{
+"id_pieza": "4056981",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056982",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056983",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056984",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056985",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4056987",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4058001",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4059007",
+"parte": "Engranaje recto cilï¿½nd"
+},
+{
+"id_pieza": "4059012",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059013",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4059021",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4059040",
+"parte": "Tubo de aspilla de niv"
+},
+{
+"id_pieza": "4059041",
+"parte": "Manï¿½metro "
+},
+{
+"id_pieza": "4059141",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4059340",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059344",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059346",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059404",
+"parte": "Engranaje recto cilï¿½nd"
+},
+{
+"id_pieza": "4059405",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4059411",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4059416",
+"parte": "Placa"
+},
+{
+"id_pieza": "4059419",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4059431",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4059435",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4059439",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4059442",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4059450",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4059458",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4059465",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4059469",
+"parte": "Placa"
+},
+{
+"id_pieza": "4059471",
+"parte": "Placa"
+},
+{
+"id_pieza": "4059480",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059481",
+"parte": "Racor adaptador"
+},
+{
+"id_pieza": "4059482SA",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059483",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059485",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059486SA",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4059489",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "4059571",
+"parte": "Tubo"
+},
+{
+"id_pieza": "4059578",
+"parte": "Manguito"
+},
+{
+"id_pieza": "4060012",
+"parte": "Placa"
+},
+{
+"id_pieza": "4060024",
+"parte": "Anillo tï¿½rico "
+},
+{
+"id_pieza": "4060038",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "4060045",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4060047",
+"parte": "Junta"
+},
+{
+"id_pieza": "4060074",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4060076",
+"parte": "Espï¿½rrago "
+},
+{
+"id_pieza": "4060083",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "4060097",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4060102",
+"parte": "Engranaje recto cilï¿½nd"
+},
+{
+"id_pieza": "4060105",
+"parte": "Junta"
+},
+{
+"id_pieza": "4060108",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "4060109",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4060110",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4060112",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4060114",
+"parte": "Engranaje recto cilï¿½nd"
+},
+{
+"id_pieza": "4060115",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4060116",
+"parte": "Engranaje "
+},
+{
+"id_pieza": "4060117",
+"parte": "Engranaje "
+}
 ]
