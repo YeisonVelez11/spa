@@ -191,7 +191,7 @@ async function uploadImageToDrive(authClient, imageBuffer, fileName, folderId) {
 }
 const images = "1g23Khe6qaGzOtA1fN8jAfWMKnzXlwp99";
 const modelos = "1Rzuxro52zgGcCaB3sqLjPCRoVajP0wIO";
-const piezas = "1yP_1xoMgrzhiUFCnIQDU8HQuDYcRTnZW";
+const piezas_ = "1yP_1xoMgrzhiUFCnIQDU8HQuDYcRTnZW";
 const partes = "1VWKbXfLhmUNoM5ssuSw6bi6TOQfe_8Wa";
 
 // Cliente de autenticación global para Google Drive (se inicializa una sola vez)
@@ -756,7 +756,7 @@ async function getModelsByPartNumber() {
           // Si existe SERVER, subir a Google Drive (sin esperar)
           getAuthClient().then(authClient => {
             if (authClient && pieceDetail.length > 0) {
-              uploadCsvToDrive(authClient, pieceDetail, `${item.id_pieza}`, piezas).catch(err => {
+              uploadCsvToDrive(authClient, pieceDetail, `${item.id_pieza}`, piezas_).catch(err => {
                 console.error(`Error subiendo CSV de piezas ${item.id_pieza}:`, err.message);
               });
             }
