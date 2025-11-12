@@ -649,7 +649,7 @@ async function getModelsByPartNumber() {
     const fileIndex = process.argv[2]; // Captura el primer argumento después del nombre del script
     
     // Construir el nombre del archivo según el argumento
-    const fileName = fileIndex ? `./data/id_piezas${fileIndex}.json` : "./data/id_piezas2.json";
+    const fileName = fileIndex ? `./data/id_piezas${fileIndex}.json` : "./data/id_piezas5.json";
     
     console.log(`📂 Archivo a procesar: ${fileName}`);
     
