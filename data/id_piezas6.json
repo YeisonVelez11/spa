@@ -1,0 +1,1236 @@
+[
+
+
+
+{
+"id_pieza": "SA11863",
+"parte": "Brida"
+},
+{
+"id_pieza": "SA11866",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA11868",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA11890",
+"parte": "Palanca "
+},
+{
+"id_pieza": "SA11893",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA11896",
+"parte": "Arandela"
+},
+{
+"id_pieza": "SA11903",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA12031",
+"parte": "Aislante"
+},
+{
+"id_pieza": "SA12041",
+"parte": "Anillo"
+},
+{
+"id_pieza": "SA12061",
+"parte": "Chapa de seguridad"
+},
+{
+"id_pieza": "SA12086",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA12168",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA12170",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA12182",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA12223",
+"parte": "Muelle de disco"
+},
+{
+"id_pieza": "SA12224",
+"parte": "Palanca "
+},
+{
+"id_pieza": "SA12226",
+"parte": "Sector"
+},
+{
+"id_pieza": "SA12227",
+"parte": "Tuerca de empuje"
+},
+{
+"id_pieza": "SA12230",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA12233",
+"parte": "Portador"
+},
+{
+"id_pieza": "SA12247",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA12253",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA12254",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA12255",
+"parte": "Semipolea "
+},
+{
+"id_pieza": "SA12256",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA12264",
+"parte": "Cable"
+},
+{
+"id_pieza": "SA12268",
+"parte": "Conexiï¿½n"
+},
+{
+"id_pieza": "SA12276",
+"parte": "Zuncho"
+},
+{
+"id_pieza": "SA12291",
+"parte": "Chapa de seguridad"
+},
+{
+"id_pieza": "SA12316",
+"parte": "Rodamiento de agujas"
+},
+{
+"id_pieza": "SA12493",
+"parte": "Abrazadera"
+},
+{
+"id_pieza": "SA12501",
+"parte": "Control "
+},
+{
+"id_pieza": "SA12504",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA12532",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA12571",
+"parte": "Control "
+},
+{
+"id_pieza": "SA12572",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA12576",
+"parte": "Cartucho de filtro"
+},
+{
+"id_pieza": "SA12577",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "SA12579",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "SA12581",
+"parte": "Colector de escape"
+},
+{
+"id_pieza": "SA12603",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "SA12622",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA12623",
+"parte": "Tapa"
+},
+{
+"id_pieza": "SA12624",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "SA12628",
+"parte": "Zuncho"
+},
+{
+"id_pieza": "SA12629",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA12743",
+"parte": "Tuerca de empuje"
+},
+{
+"id_pieza": "SA12746",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "SA12747",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA12748",
+"parte": "Asa "
+},
+{
+"id_pieza": "SA12766",
+"parte": "Control "
+},
+{
+"id_pieza": "SA12769",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA12787",
+"parte": "Tapa"
+},
+{
+"id_pieza": "SA12788",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA12792",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "SA12794",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "SA12807",
+"parte": "Cubierta de neumï¿½tico "
+},
+{
+"id_pieza": "SA12881",
+"parte": "Filtro"
+},
+{
+"id_pieza": "SA12922",
+"parte": "Control "
+},
+{
+"id_pieza": "SA12927",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA12934",
+"parte": "Control "
+},
+{
+"id_pieza": "SA12935",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA12939",
+"parte": "Arandela"
+},
+{
+"id_pieza": "SA12968",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA13004",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA13005",
+"parte": "Tapï¿½n de llenado"
+},
+{
+"id_pieza": "SA13006",
+"parte": "Colador "
+},
+{
+"id_pieza": "SA13007",
+"parte": "Grifo de vaciado"
+},
+{
+"id_pieza": "SA13585",
+"parte": "Freno"
+},
+{
+"id_pieza": "SA13784",
+"parte": "Grifo de vaciado"
+},
+{
+"id_pieza": "SA13820",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "SA13892",
+"parte": "Protecciï¿½n"
+},
+{
+"id_pieza": "SA13902",
+"parte": "Rodamiento rodillos ci"
+},
+{
+"id_pieza": "SA13911",
+"parte": "Arandela elï¿½stica "
+},
+{
+"id_pieza": "SA13912",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA13919",
+"parte": "Cubierta de neumï¿½tico "
+},
+{
+"id_pieza": "SA13921",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA13922",
+"parte": "Tuerca de empuje"
+},
+{
+"id_pieza": "SA13925",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA13926",
+"parte": "Arandela"
+},
+{
+"id_pieza": "SA13929",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA13931",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "SA13946",
+"parte": "Equipo de servicio"
+},
+{
+"id_pieza": "SA14264",
+"parte": "Tornillo autofrenante "
+},
+{
+"id_pieza": "SA15006",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "SA15160",
+"parte": "Coraza de cortadora"
+},
+{
+"id_pieza": "SA15168",
+"parte": "Mango"
+},
+{
+"id_pieza": "SA15169",
+"parte": "Muelle"
+},
+{
+"id_pieza": "SA15170",
+"parte": "Consola "
+},
+{
+"id_pieza": "SA15171",
+"parte": "Eje "
+},
+{
+"id_pieza": "SA15172",
+"parte": "Eje "
+},
+{
+"id_pieza": "SA15180",
+"parte": "Ventilador"
+},
+{
+"id_pieza": "SA15186",
+"parte": "Placa"
+},
+{
+"id_pieza": "SA15187",
+"parte": "Placa"
+},
+{
+"id_pieza": "SA15191",
+"parte": "Tope"
+},
+{
+"id_pieza": "SA15209",
+"parte": "Arandela"
+},
+{
+"id_pieza": "SA15223",
+"parte": "Arandela"
+},
+{
+"id_pieza": "SA15256",
+"parte": "Arandela elï¿½stica "
+},
+{
+"id_pieza": "SA15386",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA15387",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA15535",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA15593",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA15649",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA15725",
+"parte": "Tapï¿½n para cavidad elï¿½"
+},
+{
+"id_pieza": "SA15726",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA15739",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "SA15740",
+"parte": "Anillo"
+},
+{
+"id_pieza": "SA15741",
+"parte": "Anillo"
+},
+{
+"id_pieza": "SA15776",
+"parte": "Tornillo de fijaciï¿½n"
+},
+{
+"id_pieza": "SA15806",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA15807",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA15820",
+"parte": "Pasador acanalado "
+},
+{
+"id_pieza": "SA15821",
+"parte": "Pasador acanalado "
+},
+{
+"id_pieza": "SA15849",
+"parte": "Manillar"
+},
+{
+"id_pieza": "SA15857",
+"parte": "Vaso"
+},
+{
+"id_pieza": "SA15859",
+"parte": "Rodillo "
+},
+{
+"id_pieza": "SA15864",
+"parte": "Anillo elï¿½stico"
+},
+{
+"id_pieza": "SA15873",
+"parte": "parte"
+},
+{
+"id_pieza": "SA15875",
+"parte": "Caso"
+},
+{
+"id_pieza": "SA15876",
+"parte": "Muelle de compresiï¿½n"
+},
+{
+"id_pieza": "SA15882",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA15883",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA15893",
+"parte": "Tapa"
+},
+{
+"id_pieza": "SA15905",
+"parte": "Instrumento indicador "
+},
+{
+"id_pieza": "SA15959",
+"parte": "Chaveta "
+},
+{
+"id_pieza": "SA15961",
+"parte": "Chaveta "
+},
+{
+"id_pieza": "SA16010",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "SA16053",
+"parte": "Rueda loca"
+},
+{
+"id_pieza": "SA16131",
+"parte": "Zapata"
+},
+{
+"id_pieza": "SA16162",
+"parte": "Aislante"
+},
+{
+"id_pieza": "SA16169",
+"parte": "Burlete "
+},
+{
+"id_pieza": "SA16170",
+"parte": "Protecciï¿½n"
+},
+{
+"id_pieza": "SA16196",
+"parte": "Juego de llaves hexago"
+},
+{
+"id_pieza": "SA16261",
+"parte": "Tapa"
+},
+{
+"id_pieza": "SA16262",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA16267",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA16268",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA16352",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "SA16389",
+"parte": "Muelle"
+},
+{
+"id_pieza": "SA16467",
+"parte": "Tapadera"
+},
+{
+"id_pieza": "SA16469",
+"parte": "Consola "
+},
+{
+"id_pieza": "SA16473",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "SA16474",
+"parte": "Carcasa "
+},
+{
+"id_pieza": "SA16475",
+"parte": "Palanca "
+},
+{
+"id_pieza": "SA16476",
+"parte": "Soporte "
+},
+{
+"id_pieza": "SA16486",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA16487",
+"parte": "Muelle de tracciï¿½n"
+},
+{
+"id_pieza": "SA16494",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA16495",
+"parte": "Cuchillo"
+},
+{
+"id_pieza": "SA16496",
+"parte": "Arandela elï¿½stica "
+},
+{
+"id_pieza": "SA16497",
+"parte": "Polea"
+},
+{
+"id_pieza": "SA16498",
+"parte": "Portador"
+},
+{
+"id_pieza": "SA16499",
+"parte": "Correa sï¿½ncrona"
+},
+{
+"id_pieza": "SA16500",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "SA16504",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA16507",
+"parte": "Capï¿½"
+},
+{
+"id_pieza": "SA16510",
+"parte": "Revestimiento "
+},
+{
+"id_pieza": "SA16514",
+"parte": "Abrazadera"
+},
+{
+"id_pieza": "SA16536",
+"parte": "Transmisiï¿½n"
+},
+{
+"id_pieza": "SA16537",
+"parte": "Eje de mando"
+},
+{
+"id_pieza": "SA16539",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "SA16540",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA16544",
+"parte": "Bobina elï¿½ctrica"
+},
+{
+"id_pieza": "SA16551",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA16553",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA16558",
+"parte": "Saco de recogida"
+},
+{
+"id_pieza": "SA16559",
+"parte": "Faldeta "
+},
+{
+"id_pieza": "SA16564",
+"parte": "Saco de recogida"
+},
+{
+"id_pieza": "SA16579",
+"parte": "Polea"
+},
+{
+"id_pieza": "SA16584",
+"parte": "Arandela de empuje"
+},
+{
+"id_pieza": "SA16589",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA16622",
+"parte": "Ventilador"
+},
+{
+"id_pieza": "SA16624",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA16625",
+"parte": "Revestimiento "
+},
+{
+"id_pieza": "SA16630",
+"parte": "Mango"
+},
+{
+"id_pieza": "SA16653",
+"parte": "Manguera"
+},
+{
+"id_pieza": "SA16654",
+"parte": "Acoplamiento"
+},
+{
+"id_pieza": "SA16655",
+"parte": "Abrazadera para mangue"
+},
+{
+"id_pieza": "SA16658",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA16712",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "SA16713",
+"parte": "Tira"
+},
+{
+"id_pieza": "SA16715",
+"parte": "Rodillo "
+},
+{
+"id_pieza": "SA16719",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "SA16720",
+"parte": "Alineador "
+},
+{
+"id_pieza": "SA16723",
+"parte": "Brida"
+},
+{
+"id_pieza": "SA16743",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "SA16761",
+"parte": "Correa trapezoidal"
+},
+{
+"id_pieza": "SA16831",
+"parte": "Anillo"
+},
+{
+"id_pieza": "SA16832",
+"parte": "Distribuidor de ventil"
+},
+{
+"id_pieza": "SA16912",
+"parte": "Mango"
+},
+{
+"id_pieza": "SA16913",
+"parte": "Control "
+},
+{
+"id_pieza": "SA16931",
+"parte": "Muelle"
+},
+{
+"id_pieza": "SA16935",
+"parte": "Muelle de torsiï¿½n "
+},
+{
+"id_pieza": "SA16936",
+"parte": "Mango"
+},
+{
+"id_pieza": "SA16939",
+"parte": "Interruptor"
+},
+{
+"id_pieza": "SA16946",
+"parte": "Tuerca de empuje"
+},
+{
+"id_pieza": "SA17005",
+"parte": "Protecciï¿½n"
+},
+{
+"id_pieza": "SA17006",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "SA17010",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA17137",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "SA17148",
+"parte": "Aislante"
+},
+{
+"id_pieza": "SA17209",
+"parte": "Bulï¿½n"
+},
+{
+"id_pieza": "SA17374",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA17375",
+"parte": "Control "
+},
+{
+"id_pieza": "SA17379",
+"parte": "Correa trapezoidal"
+},
+{
+"id_pieza": "SA17380",
+"parte": "Polea"
+},
+{
+"id_pieza": "SA17385",
+"parte": "Pulsador"
+},
+{
+"id_pieza": "SA17481",
+"parte": "Tuerca"
+},
+{
+"id_pieza": "SA17488",
+"parte": "Polea"
+},
+{
+"id_pieza": "SA17490",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA17492",
+"parte": "Revestimiento "
+},
+{
+"id_pieza": "SA17493",
+"parte": "Polea"
+},
+{
+"id_pieza": "SA17621",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA17638",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "SA17639",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "SA17643",
+"parte": "Motor elï¿½ctrico"
+},
+{
+"id_pieza": "SA17648",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA17649",
+"parte": "Eje "
+},
+{
+"id_pieza": "SA17655",
+"parte": "Saco de recogida"
+},
+{
+"id_pieza": "SA17661",
+"parte": "Cable simï¿½trico"
+},
+{
+"id_pieza": "SA17665",
+"parte": "Distribuidor de ventil"
+},
+{
+"id_pieza": "SA17666",
+"parte": "Puente"
+},
+{
+"id_pieza": "SA17668",
+"parte": "Conducto de aire"
+},
+{
+"id_pieza": "SA17675",
+"parte": "Junta"
+},
+{
+"id_pieza": "SA17676",
+"parte": "Caso"
+},
+{
+"id_pieza": "SA17678",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "SA17679",
+"parte": "Corona para tornillo"
+},
+{
+"id_pieza": "SA17680",
+"parte": "Sinfï¿½n"
+},
+{
+"id_pieza": "SA17681",
+"parte": "ï¿½rbol de transmisiï¿½n"
+},
+{
+"id_pieza": "SA17682",
+"parte": "Collarï¿½n desplazable"
+},
+{
+"id_pieza": "SA17687",
+"parte": "Muelle"
+},
+{
+"id_pieza": "SA17689",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "SA17690",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "SA17694",
+"parte": "Cubierta de neumï¿½tico "
+},
+{
+"id_pieza": "SA17698",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "SA17699",
+"parte": "Palanca de cambio "
+},
+{
+"id_pieza": "SA17706",
+"parte": "Emisor"
+},
+{
+"id_pieza": "SA17707",
+"parte": "Barra"
+},
+{
+"id_pieza": "SA17710",
+"parte": "Estribo "
+},
+{
+"id_pieza": "SA17715",
+"parte": "Presilla"
+},
+{
+"id_pieza": "SA17726",
+"parte": "Casquillo "
+},
+{
+"id_pieza": "SA17728",
+"parte": "Tapa"
+},
+{
+"id_pieza": "SA17730",
+"parte": "Semipolea "
+},
+{
+"id_pieza": "SA17731",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA17732",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA17733",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA17734",
+"parte": "Cabeza de articul. esf"
+},
+{
+"id_pieza": "SA17759",
+"parte": "Presilla"
+},
+{
+"id_pieza": "SA17772",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA17773",
+"parte": "Mango"
+},
+{
+"id_pieza": "SA17778",
+"parte": "Inserto "
+},
+{
+"id_pieza": "SA17782",
+"parte": "Piezas cadena montaje "
+},
+{
+"id_pieza": "SA17783",
+"parte": "Rampa"
+},
+{
+"id_pieza": "SA18087",
+"parte": "Rodamiento de bolas"
+},
+{
+"id_pieza": "SA18094",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA18101",
+"parte": "Bujï¿½a"
+},
+{
+"id_pieza": "SA18231",
+"parte": "Correa trapezoidal"
+},
+{
+"id_pieza": "SA18245",
+"parte": "Correa trapezoidal"
+},
+{
+"id_pieza": "SA18298",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA18331",
+"parte": "Juego de llaves hexago"
+},
+{
+"id_pieza": "SA18332",
+"parte": "Llave"
+},
+{
+"id_pieza": "SA18334",
+"parte": "Control "
+},
+{
+"id_pieza": "SA1842M",
+"parte": "Tensor"
+},
+{
+"id_pieza": "SA18745",
+"parte": "Pasador seguridad de c"
+},
+{
+"id_pieza": "SA18746",
+"parte": "Muelle"
+},
+{
+"id_pieza": "SA18750",
+"parte": "Eje "
+},
+{
+"id_pieza": "SA18752",
+"parte": "Barra"
+},
+{
+"id_pieza": "SA18758",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA18769",
+"parte": "Ventilador"
+},
+{
+"id_pieza": "SA18776",
+"parte": "Placa"
+},
+{
+"id_pieza": "SA18777",
+"parte": "Placa"
+},
+{
+"id_pieza": "SA18787",
+"parte": "Saco de recogida"
+},
+{
+"id_pieza": "SA18788",
+"parte": "Piezas cadena montaje "
+},
+{
+"id_pieza": "SA18790",
+"parte": "Estribo "
+},
+{
+"id_pieza": "SA18791",
+"parte": "Cojinete"
+},
+{
+"id_pieza": "SA18793",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "SA18797",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA18802",
+"parte": "Eje "
+},
+{
+"id_pieza": "SA18803",
+"parte": "Tira"
+},
+{
+"id_pieza": "SA18810",
+"parte": "Tornillo"
+},
+{
+"id_pieza": "SA18817",
+"parte": "Palanca "
+},
+{
+"id_pieza": "SA18834",
+"parte": "ï¿½rbol"
+},
+{
+"id_pieza": "SA18835",
+"parte": "Cuchillo"
+},
+{
+"id_pieza": "SA18836",
+"parte": "Manguito"
+},
+{
+"id_pieza": "SA18837",
+"parte": "Espaciador"
+},
+{
+"id_pieza": "SA18840",
+"parte": "Muelle de disco"
+},
+{
+"id_pieza": "SA18841",
+"parte": "Polea"
+},
+{
+"id_pieza": "SA18851",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "SA18853",
+"parte": "Disco"
+},
+{
+"id_pieza": "SA19139",
+"parte": "Piezas cadena montaje "
+},
+{
+"id_pieza": "SA19141",
+"parte": "Etiqueta adhesiva "
+},
+{
+"id_pieza": "SA19220",
+"parte": "Correa trapezoidal"
+},
+{
+"id_pieza": "SA19227",
+"parte": "Correa trapezoidal"
+},
+{
+"id_pieza": "SA19231",
+"parte": "Retenedor "
+},
+{
+"id_pieza": "SA19232",
+"parte": "Paragolpes"
+},
+{
+"id_pieza": "SA19233",
+"parte": "Asa "
+},
+{
+"id_pieza": "SA19250",
+"parte": "Rojo retocador"
+},
+{
+"id_pieza": "SA19272",
+"parte": "Equipo de servicio"
+},
+{
+"id_pieza": "SA19291",
+"parte": "Condensador"
+},
+{
+"id_pieza": "SA19293",
+"parte": "Interruptor"
+},
+{
+"id_pieza": "SA19297",
+"parte": "Interruptor"
+},
+{
+"id_pieza": "SA19298",
+"parte": "Inserto "
+},
+{
+"id_pieza": "SA19299",
+"parte": "Interruptor"
+},
+{
+"id_pieza": "SA19302",
+"parte": "Pasador acanalado "
+},
+{
+"id_pieza": "SA20073",
+"parte": "Polea"
+},
+{
+"id_pieza": "SA20103",
+"parte": "Kit de flotaciï¿½n"
+},
+{
+"id_pieza": "SA20114",
+"parte": "Retï¿½n"
+},
+{
+"id_pieza": "SA20123",
+"parte": "Preconexiï¿½n"
+}]
